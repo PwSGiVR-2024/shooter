@@ -2,43 +2,42 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public Transform player; // Przypisz transform gracza w edytorze Unity
-    public float speed = 5.0f; // Prêdkoœæ, z jak¹ przeciwnik porusza siê w kierunku gracza
-    public float sightRange = 100.0f; // Maksymalny zasiêg widzenia przeciwnika
-    public Vector3 eyeLevelOffset = new Vector3(0, 0.7f, 0); // Przesuniêcie od centrum przeciwnika do "poziomu oczu"
-    private Vector3 lastKnownPlayerPosition;
-    private bool playerInSight = false;
+    public Transform Player; // Assign a player transform in the Unity editor
+    public float Speed = 5.0f; // The speed at which the enemy moves towards the player
+    public float SightRange = 100.0f; // Maximum enemy view range
+    public Vector3 EyeLevelOffset = new Vector3(0, 0.7f, 0); // Moving from the opponent's center to "eye level"
+    private Vector3 _lastKnownPlayerPosition;
+    private bool _playerInSight = false;
 
     void Update()
     {
-        RaycastHit hit;
-        Vector3 startRaycastPosition = transform.position + eyeLevelOffset;
-        Vector3 direction = player.position - startRaycastPosition;
+        Vector3 startRaycastPosition = transform.position + EyeLevelOffset;
+        Vector3 direction = Player.position - startRaycastPosition;
 
-        Debug.DrawLine(startRaycastPosition, startRaycastPosition + direction.normalized * sightRange, Color.red);
+        Debug.DrawLine(startRaycastPosition, startRaycastPosition + direction.normalized * SightRange, Color.red);
 
-        if (Physics.Raycast(startRaycastPosition, direction.normalized, out hit, sightRange))
+        if (Physics.Raycast(startRaycastPosition, direction.normalized, out RaycastHit hit, SightRange))
         {
             if (hit.collider.CompareTag("Player"))
             {
-                lastKnownPlayerPosition = player.position;
-                playerInSight = true;
-                MoveTowardsPlayer(player.position); // Move towards the current position of the player
+                _lastKnownPlayerPosition = Player.position;
+                _playerInSight = true;
+                MoveTowardsPlayer(Player.position); // Move towards the current position of the player
             }
             else
             {
-                playerInSight = false;
+                _playerInSight = false;
             }
         }
         else
         {
-            playerInSight = false;
+            _playerInSight = false;
         }
 
         // If the player is out of sight, move to the last known position
-        if (!playerInSight && lastKnownPlayerPosition != Vector3.zero)
+        if (!_playerInSight && _lastKnownPlayerPosition != Vector3.zero)
         {
-            MoveTowardsPlayer(lastKnownPlayerPosition);
+            MoveTowardsPlayer(_lastKnownPlayerPosition);
         }
     }
 
@@ -46,17 +45,17 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (GetComponent<Rigidbody>() != null)
         {
-            GetComponent<Rigidbody>().MovePosition(Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime));
+            GetComponent<Rigidbody>().MovePosition(Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime));
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
         }
 
         // Optionally, clear the last known position once reached, to stop moving
-        if (transform.position == lastKnownPlayerPosition)
+        if (transform.position == _lastKnownPlayerPosition)
         {
-            lastKnownPlayerPosition = Vector3.zero; // Reset the last known position to stop the enemy
+            _lastKnownPlayerPosition = Vector3.zero; // Reset the last known position to stop the enemy
         }
     }
 }

@@ -124,6 +124,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &612748185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136103475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &659431578
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
+        type: 3}
+      propertyPath: field of view
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -650,7 +661,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1453246655}
+    - targetCorrespondingSourceObject: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1453246654}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!114 &1136103476 stripped
 MonoBehaviour:
@@ -829,6 +848,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1136103475}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1453246654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612748185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b455e248c2b735b42a94f25cbc0eee02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dead: 0
+--- !u!114 &1453246655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612748185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c812e39a461f35848adfe8689ce9fc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitSound: {fileID: 0}
+  Player: {fileID: 1453246653}
+  CurrentHealth: 3
+  MaxHealth: 3
+  InvincibilityTime: 2
+  Invincibility: 0
+  InvincibilityTimer: 0
 --- !u!1001 &1552791059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -977,10 +1028,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877734e852634a64da28fb59b970f4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1453246653}
-  speed: 2
-  sightRange: 100
-  eyeLevelOffset: {x: 0, y: 0.7, z: 0}
+  Player: {fileID: 0}
+  Speed: 5
+  SightRange: 100
+  EyeLevelOffset: {x: 0, y: 0.7, z: 0}
 --- !u!136 &1616794183
 CapsuleCollider:
   m_ObjectHideFlags: 0
