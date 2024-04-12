@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public Transform Player; // Assign a player transform in the Unity editor
-    public float Speed = 5.0f; // The speed at which the enemy moves towards the player
+    public float Speed = 2.5f; // The speed at which the enemy moves towards the player
     public float SightRange = 100.0f; // Maximum enemy view range
     public Vector3 EyeLevelOffset = new Vector3(0, 0.7f, 0); // Moving from the opponent's center to "eye level"
     private Vector3 _lastKnownPlayerPosition;
