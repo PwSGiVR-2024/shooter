@@ -9,8 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject DeathMenuUI;
     public FirstPersonController FirstPersonController;
-
-    private bool canTogglePause = true; // Flag to control when pause menu can be toggled
+    private bool canTogglePause = true;
 
     private void Awake()
     {
@@ -19,7 +18,6 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        // Check if the pause menu can be toggled
         if (canTogglePause && !DeathMenuUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
@@ -38,11 +36,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-
-        // Enable camera rotation
         FirstPersonController.enabled = true;
-
-        // Show and lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -52,11 +46,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-
-        // Disable camera rotation
         FirstPersonController.enabled = false;
-
-        // Show and unlock cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -81,7 +71,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        canTogglePause = true; // Reset the toggle flag
+        canTogglePause = true;
     }
 
     public void RestartGame()
@@ -89,12 +79,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         DeathMenuUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        canTogglePause = true; // Reset the toggle flag
-    }
-
-    // Method to enable pause menu toggle after a delay
-    public void EnableTogglePause()
-    {
         canTogglePause = true;
     }
 }

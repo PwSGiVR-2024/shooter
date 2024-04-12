@@ -13,10 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public float InvincibilityTime = 1.0f;
     public bool Invincibility = false;
     public float InvincibilityTimer;
-
     public GameObject DeathMenuUI;
     public FirstPersonController FirstPersonController;
-
     private bool _isDead = false;
     [HideInInspector]
     public bool Dead;
