@@ -14,11 +14,13 @@ Game logic is located in [Assets/Shooter/Scripts](Assets/Shooter/Scripts) folder
 
 Assets from Asset Store are located into a Store folder (Assets/Store/...)
 
-## XYZ Documentation
+## Documentation
+### Player
+#### Player cameras
+Player cameras are located into Player preflab. There are two cameras. One for only weapon generation - WeaponCamera, second one for rest of layers - PlayerCamera.
+It is important to add **new layers** into PlayerCamera, otherwise you won't be able to **see the new layers**. You can do this easly by:
+Open Player preflab -> open PlayerBody -> click on PlayerCamera -> in inspector find "Camera" component -> find rendering -> click on Culling Mask and add your new layers. 
 
-```csharp
-// xyz
-```
 
 ## Assets and resources
 
