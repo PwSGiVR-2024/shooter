@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 9019738097104009017}
   - component: {fileID: 4499514073332633210}
   - component: {fileID: 5406858048141834776}
-  - component: {fileID: 1145544783744713768}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -260,18 +259,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1145544783744713768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310766435844501094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1702015491311656345
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7873350923557943788}
+  - component: {fileID: 2345639118874919102}
   m_Layer: 6
   m_Name: Ak-47
   m_TagString: Untagged
@@ -1006,6 +994,21 @@ Transform:
   - {fileID: 2248360492493479262}
   m_Father: {fileID: 5106910019973860680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2345639118874919102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934340008910141668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
+    type: 3}
+  _gunEnd: {fileID: 41425230138522664}
 --- !u!1 &5019203558704290257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,13 +1330,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3202102326644488530}
+  - component: {fileID: 5668302840624022946}
   m_Layer: 6
   m_Name: M4A1 Sopmod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3202102326644488530
 Transform:
   m_ObjectHideFlags: 0
@@ -1351,6 +1355,21 @@ Transform:
   - {fileID: 2229045468750521431}
   m_Father: {fileID: 5106910019973860680}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &5668302840624022946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6590448074127990040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
+    type: 3}
+  _gunEnd: {fileID: 6856508193632779915}
 --- !u!1 &6856508193632779915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1395,7 @@ Transform:
   m_GameObject: {fileID: 6856508193632779915}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.11500001, z: -0.8230001}
+  m_LocalPosition: {x: 0, y: 0.11500001, z: -1.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1480,13 +1499,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3424762897961079299}
+  - component: {fileID: 4798049638992633813}
   m_Layer: 6
   m_Name: UMP-45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3424762897961079299
 Transform:
   m_ObjectHideFlags: 0
@@ -1504,3 +1524,18 @@ Transform:
   - {fileID: 269519445381699072}
   m_Father: {fileID: 5106910019973860680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4798049638992633813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597760521060205440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
+    type: 3}
+  _gunEnd: {fileID: 2957444744969095628}
