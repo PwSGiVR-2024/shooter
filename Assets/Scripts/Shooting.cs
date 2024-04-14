@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         Vector3 targetDirection = ray.direction;
 
-        GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation, parent: _gunEnd.transform);
+        GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
 
         // Adding force to the bullet
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
