@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private GameObject _gunEnd;
     [SerializeField] private float _bulletForce = 10f;
+    [SerializeField] private float _dmg = 5f;
 
     private InputSystemUIInputModule _inputModule;
     private Camera _mainCamera;
@@ -34,6 +35,7 @@ public class Shooting : MonoBehaviour
         Vector3 targetDirection = ray.direction;
 
         GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
+        bullet.GetComponent<Bullet>().SetBulletDamage(_dmg);
 
         // Adding force to the bullet
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
