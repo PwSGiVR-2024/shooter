@@ -1011,12 +1011,10 @@ MonoBehaviour:
   _gunEnd: {fileID: 41425230138522664}
   _bulletForce: 10
   _dmg: 100
-  _fireRate: 0.5
+  _fireRate: 0.1
   _reloadTime: 2
   _magazineCapacity: 30
   _currentAmmo: 0
-  _isFullAuto: 0
-  _isShotgun: 0
 --- !u!1 &5019203558704290257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,12 +1391,10 @@ MonoBehaviour:
   _gunEnd: {fileID: 6856508193632779915}
   _bulletForce: 10
   _dmg: 5
-  _fireRate: 0.5
+  _fireRate: 0.06
   _reloadTime: 2
   _magazineCapacity: 30
   _currentAmmo: 0
-  _isFullAuto: 0
-  _isShotgun: 0
 --- !u!1 &6856508193632779915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,9 +1566,7 @@ MonoBehaviour:
   _gunEnd: {fileID: 2957444744969095628}
   _bulletForce: 10
   _dmg: 1
-  _fireRate: 0.5
+  _fireRate: 0.04
   _reloadTime: 2
   _magazineCapacity: 30
   _currentAmmo: 0
-  _isFullAuto: 0
-  _isShotgun: 0

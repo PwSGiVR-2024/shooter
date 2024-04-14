@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
@@ -12,7 +13,8 @@ public class Shooting : MonoBehaviour
     private Weapon _currentWeapon;
     private float _bulletForce = 10f;
     private float _dmg = 5f;
-
+    private float _fireRate = 1f;
+    private bool _canShoot = true;
 
 
     private void Start()
@@ -46,15 +48,24 @@ public class Shooting : MonoBehaviour
         _gunEnd = weapon.GunEnd;
         _bulletForce = weapon.BulletForce;
         _dmg = weapon.Dmg;
+        _fireRate = weapon.FireRate;
     }
 
     private void OnLeftClick(InputAction.CallbackContext context)
     {
         // ----------------  TO DO : Add conditions to check if the player can shoot ---------------------
-        if (_currentWeapon.IsCurrentlyUsed)
+        if (_currentWeapon.IsCurrentlyUsed && _canShoot)
         {
-            Shoot();   
+            StartCoroutine(ShootWithCheckFireRate());
         }
+    }
+
+    private IEnumerator ShootWithCheckFireRate()
+    {
+        _canShoot = false;
+        Shoot();
+        yield return new WaitForSeconds(_fireRate);
+        _canShoot = true;
     }
 
     private void Shoot()
