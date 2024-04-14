@@ -4,22 +4,46 @@ using UnityEngine.InputSystem.UI;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private GameObject _gunEnd;
-    [SerializeField] private float _bulletForce = 10f;
-    [SerializeField] private float _dmg = 5f;
+    private GameObject _bulletPrefab;
+    private GameObject _gunEnd;
+    private float _bulletForce = 10f;
+    private float _dmg = 5f;
 
     private InputSystemUIInputModule _inputModule;
     private Camera _mainCamera;
+    private Weapon[] _weapons;
 
 
     private void Start()
     {
         _inputModule = GameObject.FindObjectOfType<InputSystemUIInputModule>();
         _mainCamera = Camera.main;
-
+        GetWeaponsData();
+        
         // Subscribe to the left click event
         _inputModule.leftClick.action.performed += OnLeftClick;
+    }
+
+    private void GetWeaponsData()
+    {
+        _weapons = GetComponentsInChildren<Weapon>(true); // true argument to include inactive objects
+        foreach (Weapon weapon in _weapons)
+        {
+            weapon.OnWeaponEnable += GetCurrentWeaponData; // Subscribe to weapon changed event
+            if (weapon.gameObject.activeSelf)
+            {
+                GetCurrentWeaponData(weapon);
+            }
+        }
+    }
+
+    // Function activates on weapon enable (weapon changed)
+    private void GetCurrentWeaponData(Weapon weapon)
+    {
+        _bulletPrefab = weapon.BulletPrefab;
+        _gunEnd = weapon.GunEnd;
+        _bulletForce = weapon.BulletForce;
+        _dmg = weapon.Dmg;
     }
 
     private void OnLeftClick(InputAction.CallbackContext context)

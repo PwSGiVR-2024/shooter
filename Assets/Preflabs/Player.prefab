@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 41425230138522664}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.102, z: 0.945}
+  m_LocalPosition: {x: -0.006, y: 0.102, z: 0.917}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -537,7 +537,7 @@ Transform:
   m_GameObject: {fileID: 2957444744969095628}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024, y: 0.288, z: 0.734}
+  m_LocalPosition: {x: 0.024, y: 0.288, z: 0.677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -969,7 +969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7873350923557943788}
-  - component: {fileID: 2345639118874919102}
+  - component: {fileID: 8734672642203960040}
   m_Layer: 6
   m_Name: Ak-47
   m_TagString: Untagged
@@ -994,7 +994,7 @@ Transform:
   - {fileID: 2248360492493479262}
   m_Father: {fileID: 5106910019973860680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2345639118874919102
+--- !u!114 &8734672642203960040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1003,12 +1003,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4934340008910141668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 41425230138522664}
+  _bulletForce: 10
+  _dmg: 100
+  _fireRate: 0.5
+  _reloadTime: 2
+  _magazineCapacity: 30
+  _currentAmmo: 0
+  _isFullAuto: 0
+  _isShotgun: 0
 --- !u!1 &5019203558704290257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,8 +1195,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5106910019973860680}
+  - component: {fileID: 3141863089332536722}
   m_Layer: 0
-  m_Name: WeaponSlot
+  m_Name: ShootingManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,6 +1221,18 @@ Transform:
   - {fileID: 3424762897961079299}
   m_Father: {fileID: 6976332545400080446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3141863089332536722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509018494504933091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6303561798495701217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3202102326644488530}
-  - component: {fileID: 5668302840624022946}
+  - component: {fileID: 6993222824124952959}
   m_Layer: 6
   m_Name: M4A1 Sopmod
   m_TagString: Untagged
@@ -1355,7 +1376,7 @@ Transform:
   - {fileID: 2229045468750521431}
   m_Father: {fileID: 5106910019973860680}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &5668302840624022946
+--- !u!114 &6993222824124952959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1364,12 +1385,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 6590448074127990040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 6856508193632779915}
+  _bulletForce: 10
+  _dmg: 5
+  _fireRate: 0.5
+  _reloadTime: 2
+  _magazineCapacity: 30
+  _currentAmmo: 0
+  _isFullAuto: 0
+  _isShotgun: 0
 --- !u!1 &6856508193632779915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,7 +1528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3424762897961079299}
-  - component: {fileID: 4798049638992633813}
+  - component: {fileID: 1874496349485034556}
   m_Layer: 6
   m_Name: UMP-45
   m_TagString: Untagged
@@ -1524,7 +1553,7 @@ Transform:
   - {fileID: 269519445381699072}
   m_Father: {fileID: 5106910019973860680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4798049638992633813
+--- !u!114 &1874496349485034556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1533,9 +1562,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8597760521060205440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 2957444744969095628}
+  _bulletForce: 10
+  _dmg: 1
+  _fireRate: 0.5
+  _reloadTime: 2
+  _magazineCapacity: 30
+  _currentAmmo: 0
+  _isFullAuto: 0
+  _isShotgun: 0
