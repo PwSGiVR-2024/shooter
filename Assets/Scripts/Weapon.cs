@@ -25,10 +25,17 @@ public class Weapon : MonoBehaviour
     public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
     public int MagazineCapacity { get => _magazineCapacity; set => _magazineCapacity = value; }
     public int CurrentAmmo { get => _currentAmmo; set => _currentAmmo = value; }
-    public bool IsCurrentlyUsed { get => _isCurrentlyUsed; set => _isCurrentlyUsed = value; }
+    public bool IsCurrentlyUsed => _isCurrentlyUsed;
 
     private void OnEnable()
     {
         OnWeaponEnable?.Invoke(this);
+        _isCurrentlyUsed = true;
     }
+
+    private void OnDisable()
+    {
+        _isCurrentlyUsed = false;
+    }
+
 }

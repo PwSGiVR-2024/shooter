@@ -4,14 +4,15 @@ using UnityEngine.InputSystem.UI;
 
 public class Shooting : MonoBehaviour
 {
+    private Camera _mainCamera;
     private GameObject _bulletPrefab;
     private GameObject _gunEnd;
+    private InputSystemUIInputModule _inputModule;
+    private Weapon[] _weapons;
+    private Weapon _currentWeapon;
     private float _bulletForce = 10f;
     private float _dmg = 5f;
 
-    private InputSystemUIInputModule _inputModule;
-    private Camera _mainCamera;
-    private Weapon[] _weapons;
 
 
     private void Start()
@@ -40,6 +41,7 @@ public class Shooting : MonoBehaviour
     // Function activates on weapon enable (weapon changed)
     private void GetCurrentWeaponData(Weapon weapon)
     {
+        _currentWeapon = weapon;
         _bulletPrefab = weapon.BulletPrefab;
         _gunEnd = weapon.GunEnd;
         _bulletForce = weapon.BulletForce;
@@ -48,8 +50,11 @@ public class Shooting : MonoBehaviour
 
     private void OnLeftClick(InputAction.CallbackContext context)
     {
-        // ----------------  TO DO : Add conditions to check if the player can shoot --------------------- 
-        Shoot();   
+        // ----------------  TO DO : Add conditions to check if the player can shoot ---------------------
+        if (_currentWeapon.IsCurrentlyUsed)
+        {
+            Shoot();   
+        }
     }
 
     private void Shoot()
