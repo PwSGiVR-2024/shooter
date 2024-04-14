@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject DeathMenuUI;
     public FirstPersonController FirstPersonController;
-    private bool canTogglePause = true;
+    private bool _canTogglePause = true;
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (canTogglePause && !DeathMenuUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        if (_canTogglePause && !DeathMenuUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
@@ -71,7 +71,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        canTogglePause = true;
+        _canTogglePause = true;
     }
 
     public void RestartGame()
@@ -79,6 +79,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         DeathMenuUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        canTogglePause = true;
+        _canTogglePause = true;
     }
 }
