@@ -7,7 +7,7 @@ public class EnemyNavigation : MonoBehaviour
     private NavMeshAgent _agent;
     public float DetectionRange = 30.0f;
     private Vector3 _lastKnownPlayerPosition;
-    public float EnemySpeed = 3.0f;
+    public float EnemySpeed = 2.5f;
 
     void Start()
     {

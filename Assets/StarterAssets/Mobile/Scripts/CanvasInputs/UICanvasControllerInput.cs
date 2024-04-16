@@ -27,7 +27,11 @@ namespace StarterAssets
         {
             starterAssetsInputs.SprintInput(virtualSprintState);
         }
-        
+
+        public void VirtualCrouchInput(bool virtualCrouchState)
+        {
+            starterAssetsInputs.CrouchInput(virtualCrouchState);
+        }
     }
 
 }

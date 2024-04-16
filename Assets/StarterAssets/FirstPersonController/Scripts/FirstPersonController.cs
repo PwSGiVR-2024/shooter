@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 #endif
 
 namespace StarterAssets
@@ -16,7 +18,9 @@ namespace StarterAssets
 		public float MoveSpeed = 4.0f;
 		[Tooltip("Sprint speed of the character in m/s")]
 		public float SprintSpeed = 6.0f;
-		[Tooltip("Rotation speed of the character")]
+        [Tooltip("Crouch speed of the character in m/s")]
+        public float CrouchSpeed = 2.0f;
+        [Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
@@ -73,6 +77,8 @@ namespace StarterAssets
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
+        private const float _crouchHeight = 1f;
+        private bool _isCrouching = false;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -114,6 +120,7 @@ namespace StarterAssets
 		{
 			JumpAndGravity();
 			GroundedCheck();
+            HandleCrouch();
 			Move();
 		}
 
@@ -155,12 +162,13 @@ namespace StarterAssets
 		{
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            if (_isCrouching) targetSpeed = CrouchSpeed;
 
-			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
+            // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
-			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-			// if there is no input, set the target speed to 0
-			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
+            // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
+            // if there is no input, set the target speed to 0
+            if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
 			// a reference to the players current horizontal velocity
 			float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
@@ -246,7 +254,43 @@ namespace StarterAssets
 			}
 		}
 
-		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
+        private void HandleCrouch()
+        {
+            if (_input.crouch && !_isCrouching)
+            {
+                _controller.height = _crouchHeight;
+                _isCrouching = true;
+            }
+            else if (!_input.crouch && _isCrouching)
+            {
+                if (_crouchCoroutine != null)
+                {
+                    StopCoroutine(_crouchCoroutine);  // Stop the current coroutine if it is running
+                }
+                _crouchCoroutine = StartCoroutine(SmoothUncrouch(2.0f));
+                _isCrouching = false;
+            }
+        }
+
+        private Coroutine _crouchCoroutine = null;  // Store reference to the current coroutine
+
+        IEnumerator SmoothUncrouch(float targetHeight)
+        {
+            float currentHeight = _controller.height;
+            float duration = 0.15f;  // Reduced duration for quicker transition
+            float elapsed = 0;
+
+            while (elapsed < duration)
+            {
+                _controller.height = Mathf.Lerp(currentHeight, targetHeight, elapsed / duration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            _controller.height = targetHeight;  // Ensure it ends exactly at the target height
+        }
+
+        private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
 			if (lfAngle < -360f) lfAngle += 360f;
 			if (lfAngle > 360f) lfAngle -= 360f;
