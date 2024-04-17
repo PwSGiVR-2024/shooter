@@ -25,16 +25,16 @@ Game logic is located in [Assets/Shooter/Scripts](Assets/Shooter/Scripts) folder
 
 ## Contributors
 Diana Meleshchenkova
-- xyz
+- Product Owner
 
 Hubert Zienda
-- xyz
+- Developer
 
 Kamil Szot
-- xyz
+- Developer
 
 Szymon Sobieraj
-- xyz
+- Scrum Master
 
 Piotr Grzegorzek
-- xyz
+- Code KING
