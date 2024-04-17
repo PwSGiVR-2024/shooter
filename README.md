@@ -20,6 +20,7 @@ Game logic is located in [Assets/Shooter/Scripts](Assets/Shooter/Scripts) folder
 
 ## Assets and resources
 
+- [Shooter API](https://github.com/piotr-grzegorzek/shooter_api) used for players authentication
 - [StarterAssets - FirstPerson](https://assetstore.unity.com/packages/essentials/starterassets-firstperson-updates-in-new-charactercontroller-pac-196525) is used for the player controls and camera.
 
 ## Contributors
