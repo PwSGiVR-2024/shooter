@@ -13,13 +13,19 @@ public class Shooting : MonoBehaviour
     private float _dmg = 5f;
     private float _shootRate = 1f;
     private bool _shootDelayPassed = true;
+    private int _magazineCapacity = 0;
+    private int _currentAmmo = 0;
+    private int _backpackAmmo = 0;
+    private float _reloadTime = 2;
+    private bool _isReloading = false;
 
 
     private void Start()
     {
         _mainCamera = Camera.main;
         PlayerInput playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
-        playerInput.actions["Fire"].started += OnLeftClick; // Subscribe the left click event to Input System 
+        playerInput.actions["Fire"].started += OnLeftClick; // Subscribe the left click event to Input System
+        playerInput.actions["Reload"].started += OnReloadClick;
         GetWeaponsData();
     }
 
@@ -45,12 +51,26 @@ public class Shooting : MonoBehaviour
         _bulletForce = weapon.BulletForce;
         _dmg = weapon.Dmg;
         _shootRate = weapon.ShootRate;
+        _magazineCapacity = weapon.MagazineCapacity;
+        _backpackAmmo = weapon.BackpackAmmo;
+        _currentAmmo = weapon.CurrentAmmo;
+        _reloadTime = weapon.ReloadTime;
+    }
+
+    // Function must be changed when eq was implemented
+    private void UpdateAmmo(int currentAmmo, int backpackAmmo)
+    {
+        _currentWeapon.CurrentAmmo = currentAmmo;
+        _currentWeapon.BackpackAmmo = backpackAmmo;
+        print(_currentWeapon.CurrentAmmo);
     }
 
     private void OnLeftClick(InputAction.CallbackContext context)
     {
-        if (_currentWeapon.IsCurrentlyUsed && _shootDelayPassed)
+        if (_currentWeapon.IsCurrentlyUsed && _shootDelayPassed && _currentAmmo > 0 && !_isReloading)
         {
+            _currentAmmo--;
+            UpdateAmmo(_currentAmmo, _backpackAmmo);
             StartCoroutine(ShootWithCheckFireRate());
         }
     }
@@ -75,5 +95,38 @@ public class Shooting : MonoBehaviour
         // Adding force to the bullet
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
+    }
+
+
+    private void OnReloadClick(InputAction.CallbackContext context)
+    {
+        if (_backpackAmmo > 0 && _magazineCapacity != _currentAmmo)
+        {
+            StartCoroutine(StartReloading());
+        }
+    }
+
+    private IEnumerator StartReloading()
+    {
+        _isReloading = true;
+        yield return new WaitForSeconds(_reloadTime);
+        Reload();
+        _isReloading = false;
+    }
+
+    private void Reload()
+    {
+        int neededAmmo = _magazineCapacity - _currentAmmo; // How many bullets we need
+        if (neededAmmo < _backpackAmmo) // If we need less then we have
+        {
+            _currentAmmo = _magazineCapacity;
+            _backpackAmmo -= neededAmmo;
+        }
+        else if (neededAmmo > _backpackAmmo) // If we need more then we have
+        {
+            _currentAmmo += _backpackAmmo;
+            _backpackAmmo = 0;
+        }
+        UpdateAmmo(_currentAmmo, _backpackAmmo);
     }
 }
