@@ -62,7 +62,6 @@ public class Shooting : MonoBehaviour
     {
         _currentWeapon.CurrentAmmo = currentAmmo;
         _currentWeapon.BackpackAmmo = backpackAmmo;
-        print(_currentWeapon.CurrentAmmo);
     }
 
     private void OnLeftClick(InputAction.CallbackContext context)
@@ -95,6 +94,9 @@ public class Shooting : MonoBehaviour
         // Adding force to the bullet
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
+
+        // Shoot effects
+        AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
     }
 
 
@@ -109,6 +111,7 @@ public class Shooting : MonoBehaviour
     private IEnumerator StartReloading()
     {
         _isReloading = true;
+        AudioSource.PlayClipAtPoint( _currentWeapon.SoundOfReload, transform.position);
         yield return new WaitForSeconds(_reloadTime);
         Reload();
         _isReloading = false;

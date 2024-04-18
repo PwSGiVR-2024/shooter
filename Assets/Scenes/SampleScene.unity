@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -685,6 +685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1874496349485034556, guid: 1a0b58d305d3b6540bfc00f70004e550,
         type: 3}
+      propertyPath: _reloadTime
+      value: 3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874496349485034556, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
       propertyPath: _currentAmmo
       value: 20
       objectReference: {fileID: 0}
@@ -692,6 +697,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _backpackAmmo
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874496349485034556, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _soundOfShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
+    - target: {fileID: 1874496349485034556, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _soundOfReload
+      value: 
+      objectReference: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
+    - target: {fileID: 6993222824124952959, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _reloadTime
+      value: 3.24
       objectReference: {fileID: 0}
     - target: {fileID: 6993222824124952959, guid: 1a0b58d305d3b6540bfc00f70004e550,
         type: 3}
@@ -703,6 +723,21 @@ PrefabInstance:
       propertyPath: _backpackAmmo
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6993222824124952959, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _soundOfShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
+    - target: {fileID: 6993222824124952959, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _soundOfReload
+      value: 
+      objectReference: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
+    - target: {fileID: 8734672642203960040, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _reloadTime
+      value: 3.24
+      objectReference: {fileID: 0}
     - target: {fileID: 8734672642203960040, guid: 1a0b58d305d3b6540bfc00f70004e550,
         type: 3}
       propertyPath: _currentAmmo
@@ -713,6 +748,16 @@ PrefabInstance:
       propertyPath: _backpackAmmo
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8734672642203960040, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _soundOfShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
+    - target: {fileID: 8734672642203960040, guid: 1a0b58d305d3b6540bfc00f70004e550,
+        type: 3}
+      propertyPath: _soundOfReload
+      value: 
+      objectReference: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
