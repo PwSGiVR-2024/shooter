@@ -21,6 +21,7 @@ public class Shooting : MonoBehaviour
     private int _backpackAmmo = 0;
     private float _reloadTime = 2;
     private bool _isReloading = false;
+    private bool _isAiming = false;
 
 
     private void Start()
@@ -38,6 +39,7 @@ public class Shooting : MonoBehaviour
         {
             OnFirePressed();
         }
+        HandleAim();
     }
 
     private void GetWeaponsData()
@@ -142,5 +144,19 @@ public class Shooting : MonoBehaviour
             _backpackAmmo = 0;
         }
         UpdateAmmo(_currentAmmo, _backpackAmmo);
+    }
+
+    private void HandleAim()
+    {
+        if (_input.aim && !_isAiming)
+        {
+            _currentWeapon.Animator.SetTrigger("TrAim");
+            _isAiming = true;
+        }
+        else if (!_input.aim && _isAiming)
+        {
+            _currentWeapon.Animator.SetTrigger("TrAimUndo");
+            _isAiming = false;
+        }
     }
 }

@@ -807,6 +807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8565051171436544759}
   - component: {fileID: 4722075661503493026}
+  - component: {fileID: 8565051171436544760}
   m_Layer: 6
   m_Name: UMP-45
   m_TagString: Untagged
@@ -1199,6 +1200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3879743101794957946}
   - component: {fileID: 9128048200009099641}
+  - component: {fileID: 9128048200009099642}
   m_Layer: 6
   m_Name: Ak-47
   m_TagString: Untagged
@@ -1704,6 +1706,7 @@ MonoBehaviour:
   sprint: 0
   crouch: 0
   fire: 0
+  aim: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -1783,7 +1786,7 @@ Transform:
   m_GameObject: {fileID: 7521539084878739923}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.53, y: -0.29699993, z: 0.87}
+  m_LocalPosition: {x: 0.53, y: -0.2969999, z: 0.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1850,6 +1853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7272911968495186550}
   - component: {fileID: 3375256767939966653}
+  - component: {fileID: 7521539084878739924}
   m_Layer: 6
   m_Name: M4A1 Sopmod
   m_TagString: Untagged
@@ -1857,6 +1861,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &7521539084878739924
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521539084878739923}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d341abdd41d067a4abf325363b3d7d1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7735647481260798544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,6 +2051,27 @@ Transform:
   - {fileID: 2074318661813048391}
   m_Father: {fileID: 2026073201403734484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8565051171436544760
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368388497015316680}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8650416869032720537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,6 +2141,27 @@ MonoBehaviour:
   _magazineCapacity: 30
   _currentAmmo: 30
   _backpackAmmo: 50
+--- !u!95 &9128048200009099642
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385532143347195690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

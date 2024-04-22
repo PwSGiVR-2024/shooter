@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     //[SerializeField] private bool _isFullAuto = false;
     //[SerializeField] private bool _isShotgun = false;
     private bool _isCurrentlyUsed = false;
+    private Animator _animator;
 
     public GameObject BulletPrefab { get => _bulletPrefab; set => _bulletPrefab = value; }
     public GameObject GunEnd { get => _gunEnd; set => _gunEnd = value; }
@@ -32,11 +33,13 @@ public class Weapon : MonoBehaviour
     public int CurrentAmmo { get => _currentAmmo; set => _currentAmmo = value; }
     public bool IsCurrentlyUsed => _isCurrentlyUsed;
     public int BackpackAmmo { get => _backpackAmmo; set => _backpackAmmo = value; }
+    public Animator Animator { get => _animator; set => _animator = value; }
 
     private void OnEnable()
     {
         OnWeaponEnable?.Invoke(this);
         _isCurrentlyUsed = true;
+        _animator = GetComponent<Animator>();
     }
 
     private void OnDisable()

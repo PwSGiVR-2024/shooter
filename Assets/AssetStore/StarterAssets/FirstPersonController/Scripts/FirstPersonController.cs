@@ -20,6 +20,8 @@ namespace StarterAssets
 		public float SprintSpeed = 6.0f;
         [Tooltip("Crouch speed of the character in m/s")]
         public float CrouchSpeed = 2.0f;
+        [Tooltip("Player speed when aiming in m/s")]
+        public float AimSpeed = 1.0f;
         [Tooltip("Rotation speed of the character")]
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
@@ -163,7 +165,7 @@ namespace StarterAssets
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
             if (_isCrouching) targetSpeed = CrouchSpeed;
-
+            if (_input.aim) targetSpeed = AimSpeed;
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
