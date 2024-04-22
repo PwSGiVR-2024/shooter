@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     private GameObject _gunEnd;
     private Weapon[] _weapons;
     private Weapon _currentWeapon;
+    PlayerInput _playerInput;
     private float _bulletForce = 10f;
     private float _dmg = 5f;
     private float _shootRate = 1f;
@@ -23,10 +24,17 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         _mainCamera = Camera.main;
-        PlayerInput playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
-        playerInput.actions["Fire"].started += OnLeftClick; // Subscribe the left click event to Input System
-        playerInput.actions["Reload"].started += OnReloadClick;
+        _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+        _playerInput.actions["Reload"].started += OnReloadClick;
         GetWeaponsData();
+    }
+
+    private void Update()
+    {
+        if (_playerInput.actions["Fire"].IsPressed())
+        {
+            OnFirePressed();
+        }
     }
 
     private void GetWeaponsData()
@@ -57,14 +65,7 @@ public class Shooting : MonoBehaviour
         _reloadTime = weapon.ReloadTime;
     }
 
-    // Function must be changed when eq was implemented
-    private void UpdateAmmo(int currentAmmo, int backpackAmmo)
-    {
-        _currentWeapon.CurrentAmmo = currentAmmo;
-        _currentWeapon.BackpackAmmo = backpackAmmo;
-    }
-
-    private void OnLeftClick(InputAction.CallbackContext context)
+    private void OnFirePressed()
     {
         if (_currentWeapon.IsCurrentlyUsed && _shootDelayPassed && _currentAmmo > 0 && !_isReloading)
         {
@@ -72,6 +73,13 @@ public class Shooting : MonoBehaviour
             UpdateAmmo(_currentAmmo, _backpackAmmo);
             StartCoroutine(ShootWithCheckFireRate());
         }
+    }
+
+    // Function must be changed when eq was implemented
+    private void UpdateAmmo(int currentAmmo, int backpackAmmo)
+    {
+        _currentWeapon.CurrentAmmo = currentAmmo;
+        _currentWeapon.BackpackAmmo = backpackAmmo;
     }
 
     private IEnumerator ShootWithCheckFireRate()
