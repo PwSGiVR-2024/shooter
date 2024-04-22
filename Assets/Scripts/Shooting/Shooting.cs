@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] private GameObject _weaponsRoot;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
     private GameObject _gunEnd;
@@ -22,11 +23,13 @@ public class Shooting : MonoBehaviour
     private float _reloadTime = 2;
     private bool _isReloading = false;
     private bool _isAiming = false;
+    private RecoilShooting _recoilShooting;
 
 
     private void Start()
     {
         _mainCamera = Camera.main;
+        _recoilShooting = GetComponentInParent<RecoilShooting>();
         _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
@@ -44,7 +47,7 @@ public class Shooting : MonoBehaviour
 
     private void GetWeaponsData()
     {
-        _weapons = GetComponentsInChildren<Weapon>(true); // true argument to include inactive objects
+        _weapons = _weaponsRoot.GetComponentsInChildren<Weapon>(true); // true argument to include inactive objects
         foreach (Weapon weapon in _weapons)
         {
             weapon.OnWeaponEnable += GetCurrentWeaponData; // Subscribe to weapon changed event
@@ -110,6 +113,7 @@ public class Shooting : MonoBehaviour
 
         // Shoot effects
         AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
+        _recoilShooting.RecoilFire();
     }
 
 
