@@ -1,4 +1,5 @@
 using System.Collections;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,8 @@ public class Shooting : MonoBehaviour
     private GameObject _gunEnd;
     private Weapon[] _weapons;
     private Weapon _currentWeapon;
-    PlayerInput _playerInput;
+    private PlayerInput _playerInput;
+    private StarterAssetsInputs _input;
     private float _bulletForce = 10f;
     private float _dmg = 5f;
     private float _shootRate = 1f;
@@ -24,6 +26,7 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         _mainCamera = Camera.main;
+        _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
         GetWeaponsData();
@@ -31,7 +34,7 @@ public class Shooting : MonoBehaviour
 
     private void Update()
     {
-        if (_playerInput.actions["Fire"].IsPressed())
+        if (_input.fire)
         {
             OnFirePressed();
         }
