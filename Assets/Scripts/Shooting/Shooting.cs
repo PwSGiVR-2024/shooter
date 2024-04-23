@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] private GameObject _weaponsRoot;
+    [SerializeField] private GameObject _weaponsSlot;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
     private GameObject _gunEnd;
@@ -47,7 +47,7 @@ public class Shooting : MonoBehaviour
 
     private void GetWeaponsData()
     {
-        _weapons = _weaponsRoot.GetComponentsInChildren<Weapon>(true); // true argument to include inactive objects
+        _weapons = _weaponsSlot.GetComponentsInChildren<Weapon>(true); // true argument to include inactive objects
         foreach (Weapon weapon in _weapons)
         {
             weapon.OnWeaponEnable += GetCurrentWeaponData; // Subscribe to weapon changed event
@@ -116,12 +116,10 @@ public class Shooting : MonoBehaviour
         _recoilShooting.RecoilFire();
         if (!_isAiming)
         {
-            print("rec");
             _currentWeapon.Animator.SetTrigger("TrRecoil");
         }
         else
         {
-            print("recaim");
             _currentWeapon.Animator.SetTrigger("TrRecoilAim");
 
         }

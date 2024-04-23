@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class RecoilShooting : MonoBehaviour
 {
-    [SerializeField] private Transform _playerCamera;
-
+    [SerializeField] private Transform _weaponRoot;
     [SerializeField] private float _recoilX = -5f;
     [SerializeField] private float _recoilY = 3f;
     [SerializeField] private float _recoilZ = 0.35f;
@@ -15,7 +14,7 @@ public class RecoilShooting : MonoBehaviour
 
     void Start()
     {
-        _currentRotation = _playerCamera.localRotation.eulerAngles;
+        _currentRotation = _weaponRoot.localRotation.eulerAngles;
         _targetRotation = _currentRotation;
     }
 
@@ -23,7 +22,7 @@ public class RecoilShooting : MonoBehaviour
     {
         _targetRotation = Vector3.Lerp(_targetRotation, Vector3.zero, _returnSpeed * Time.deltaTime);
         _currentRotation = Vector3.Slerp(_currentRotation, _targetRotation, _snappiness * Time.deltaTime);
-        _playerCamera.localRotation = Quaternion.Euler(_currentRotation);
+        _weaponRoot.localRotation = Quaternion.Euler(_currentRotation);
     }
 
     public void RecoilFire()
