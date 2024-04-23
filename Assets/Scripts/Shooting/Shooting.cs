@@ -114,6 +114,17 @@ public class Shooting : MonoBehaviour
         // Shoot effects
         AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
         _recoilShooting.RecoilFire();
+        if (!_isAiming)
+        {
+            print("rec");
+            _currentWeapon.Animator.SetTrigger("TrRecoil");
+        }
+        else
+        {
+            print("recaim");
+            _currentWeapon.Animator.SetTrigger("TrRecoilAim");
+
+        }
     }
 
 
