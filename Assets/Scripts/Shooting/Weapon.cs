@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private GameObject _gunEnd;
+    [SerializeField] private GameObject _fireLight;
     [SerializeField] private AudioClip _soundOfShoot;
     [SerializeField] private AudioClip _soundOfReload;
     [SerializeField] private float _bulletForce = 10f;
@@ -23,6 +24,7 @@ public class Weapon : MonoBehaviour
 
     public GameObject BulletPrefab { get => _bulletPrefab; set => _bulletPrefab = value; }
     public GameObject GunEnd { get => _gunEnd; set => _gunEnd = value; }
+    public GameObject FireLight => _fireLight;
     public AudioClip SoundOfShoot => _soundOfShoot;
     public AudioClip SoundOfReload => _soundOfReload;
     public float BulletForce { get => _bulletForce; set => _bulletForce = value; }

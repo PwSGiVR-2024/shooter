@@ -2,10 +2,12 @@ using System.Collections;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject _weaponsSlot;
+    private VisualEffect _muzzleFlash;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
     private GameObject _gunEnd;
@@ -34,6 +36,7 @@ public class Shooting : MonoBehaviour
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
         GetWeaponsData();
+        _muzzleFlash = _gunEnd.GetComponent<VisualEffect>();
     }
 
     private void Update()
@@ -104,6 +107,7 @@ public class Shooting : MonoBehaviour
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         Vector3 targetDirection = ray.direction;
 
+        // Creating bullet
         GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
         bullet.GetComponent<Bullet>().SetBulletDamage(_dmg);
 
@@ -114,6 +118,10 @@ public class Shooting : MonoBehaviour
         // Shoot effects
         AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
         _recoilShooting.RecoilFire();
+        _muzzleFlash.Play();
+        _currentWeapon.FireLight.SetActive(true);
+
+        // Aim animation
         if (!_isAiming)
         {
             _currentWeapon.Animator.SetTrigger("TrRecoil");
@@ -121,7 +129,6 @@ public class Shooting : MonoBehaviour
         else
         {
             _currentWeapon.Animator.SetTrigger("TrRecoilAim");
-
         }
     }
 
