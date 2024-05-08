@@ -96,9 +96,59 @@ public class Shooting : MonoBehaviour
     private IEnumerator ShootWithCheckFireRate()
     {
         _shootDelayPassed = false;
-        Shoot();
+        if (_currentWeapon.IsShotgun)
+        {
+            ShotgunShoot();
+        }
+        else
+        {
+            Shoot();
+        }
         yield return new WaitForSeconds(_shootRate);
         _shootDelayPassed = true;
+    }
+
+    private void ShotgunShoot()
+    {
+        int pelletCount = 5;
+        float splashX = 0.0f;
+        float splashY = 0.2f;
+        // Getting shoot direction
+        Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+        for (int i = 0; i < pelletCount; i++)
+        {
+            Vector3 targetDirection = ray.direction;
+            targetDirection.x += Mathf.Clamp(targetDirection.x + Random.Range(-splashX, splashX), -1f, 1f);
+
+            // Creating bullet
+            Vector3 bulletPosition = _gunEnd.transform.position;
+            bulletPosition.x -= (i * 0.2f);
+            GameObject bullet = Instantiate(_bulletPrefab, bulletPosition, _gunEnd.transform.rotation);
+            print(bullet);
+            bullet.GetComponent<Bullet>().SetBulletDamage(_dmg);
+
+            // Adding force to the bullet
+            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            bulletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
+
+        }
+
+        // Shoot effects
+        AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
+        _recoilShooting.RecoilFire();
+        _muzzleFlash.Play();
+        _currentWeapon.FireLight.SetActive(true);
+        
+        // Aim animation
+        if (!_isAiming)
+        {
+            _currentWeapon.Animator.SetTrigger("TrRecoil");
+        }
+        else
+        {
+            _currentWeapon.Animator.SetTrigger("TrRecoilAim");
+        }
     }
 
     private void Shoot()
@@ -130,6 +180,7 @@ public class Shooting : MonoBehaviour
         {
             _currentWeapon.Animator.SetTrigger("TrRecoilAim");
         }
+
     }
 
 

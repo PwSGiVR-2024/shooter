@@ -17,8 +17,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int _magazineCapacity = 30;
     [SerializeField] private int _currentAmmo; // current ammo in magazine
     [SerializeField] private int _backpackAmmo;
-    //[SerializeField] private bool _isFullAuto = false;
-    //[SerializeField] private bool _isShotgun = false;
+    [SerializeField] private bool _isShotgun = false;
     private bool _isCurrentlyUsed = false;
     private Animator _animator;
 
@@ -36,6 +35,7 @@ public class Weapon : MonoBehaviour
     public bool IsCurrentlyUsed => _isCurrentlyUsed;
     public int BackpackAmmo { get => _backpackAmmo; set => _backpackAmmo = value; }
     public Animator Animator { get => _animator; set => _animator = value; }
+    public Boolean IsShotgun => _isShotgun;
 
     private void OnEnable()
     {
