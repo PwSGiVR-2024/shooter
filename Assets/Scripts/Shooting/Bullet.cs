@@ -30,6 +30,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+        if (bullet)
+        {
+            return;
+        }
+
         EnemyTest enemy = collision.gameObject.GetComponent<EnemyTest>();
         if (enemy)
         {

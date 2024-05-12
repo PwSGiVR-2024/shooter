@@ -111,21 +111,19 @@ public class Shooting : MonoBehaviour
     private void ShotgunShoot()
     {
         int pelletCount = 5;
-        float splashX = 0.0f;
-        float splashY = 0.2f;
+        float splashX = 0.1f;
+        float splashY = 0.1f;
         // Getting shoot direction
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
         for (int i = 0; i < pelletCount; i++)
         {
             Vector3 targetDirection = ray.direction;
-            targetDirection.x += Mathf.Clamp(targetDirection.x + Random.Range(-splashX, splashX), -1f, 1f);
+            targetDirection.x = Mathf.Clamp(targetDirection.x + Random.Range(-splashX, splashX), -2f, 2f);
+            targetDirection.y = Mathf.Clamp(targetDirection.y + Random.Range(-splashY, splashY), -2f, 2f);
 
             // Creating bullet
-            Vector3 bulletPosition = _gunEnd.transform.position;
-            bulletPosition.x -= (i * 0.2f);
-            GameObject bullet = Instantiate(_bulletPrefab, bulletPosition, _gunEnd.transform.rotation);
-            print(bullet);
+            GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
             bullet.GetComponent<Bullet>().SetBulletDamage(_dmg);
 
             // Adding force to the bullet
