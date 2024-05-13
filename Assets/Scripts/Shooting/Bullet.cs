@@ -6,11 +6,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _timeToDestroyBullet = 10f;
     private float _bulletDamage = 1f;
 
+    public float BulletDamage { get => _bulletDamage; set => _bulletDamage = value; }
 
-    public void SetBulletDamage(float damage)
-    {
-        _bulletDamage = damage;
-    }
 
     private void Start()
     {

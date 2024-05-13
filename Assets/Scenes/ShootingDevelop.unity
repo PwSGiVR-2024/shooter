@@ -1000,6 +1000,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4816413489793907744, guid: 6badfc9698d678c43971ef7970e773d4,
+        type: 3}
+      propertyPath: _enemyHp
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6672916415219918931, guid: 6badfc9698d678c43971ef7970e773d4,
         type: 3}
       propertyPath: m_Name
@@ -1328,7 +1333,7 @@ MonoBehaviour:
   _fireLight: {fileID: 1874689316}
   _soundOfShoot: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
   _soundOfReload: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
-  _bulletForce: 0.5
+  _bulletForce: 2.5
   _dmg: 5
   _shootRate: 0.5
   _reloadTime: 2
@@ -1336,8 +1341,8 @@ MonoBehaviour:
   _currentAmmo: 30
   _backpackAmmo: 90
   _pellets: 10
-  _splashX: 0.2
-  _splashY: 0.2
+  _splashX: 0.1
+  _splashY: 0.1
 --- !u!1 &1736491504
 GameObject:
   m_ObjectHideFlags: 0

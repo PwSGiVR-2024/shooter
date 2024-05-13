@@ -136,7 +136,7 @@ public class Shooting : MonoBehaviour
     {
         // Creating bullet
         GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
-        bullet.GetComponent<Bullet>().SetBulletDamage(_dmg);
+        bullet.GetComponent<Bullet>().BulletDamage = _dmg;
 
         // Adding force to the bullet
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
