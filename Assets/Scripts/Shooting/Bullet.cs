@@ -28,14 +28,8 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
-        Bullet bullet = collision.gameObject.GetComponent<Bullet>();
-        if (bullet)
-        {
-            return;
-        }
-
         EnemyTest enemy = collision.gameObject.GetComponent<EnemyTest>();
         if (enemy)
         {

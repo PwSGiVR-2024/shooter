@@ -96,7 +96,7 @@ public class Shooting : MonoBehaviour
     private IEnumerator ShootWithCheckFireRate()
     {
         _shootDelayPassed = false;
-        if (_currentWeapon.IsShotgun)
+        if (_currentWeapon.GetComponent<Shotgun>())
         {
             ShotgunShoot();
         }
@@ -110,9 +110,10 @@ public class Shooting : MonoBehaviour
 
     private void ShotgunShoot()
     {
-        int pelletCount = 5;
-        float splashX = 0.1f;
-        float splashY = 0.1f;
+        Shotgun shotgun = _currentWeapon.GetComponent<Shotgun>();
+        int pelletCount = shotgun.Pellets;
+        float splashX = shotgun.SplashX;
+        float splashY = shotgun.SplashY;
         // Getting shoot direction
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
@@ -123,12 +124,12 @@ public class Shooting : MonoBehaviour
             targetDirection.y = Mathf.Clamp(targetDirection.y + Random.Range(-splashY, splashY), -2f, 2f);
 
             // Creating bullet
-            GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
-            bullet.GetComponent<Bullet>().SetBulletDamage(_dmg);
+            GameObject pellet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
+            pellet.GetComponent<Pellet>().SetBulletDamage(_dmg);
 
             // Adding force to the bullet
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            bulletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
+            Rigidbody pelletRigidbody = pellet.GetComponent<Rigidbody>();
+            pelletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
 
         }
 

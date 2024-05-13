@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1249,8 +1249,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1722776176}
-  - component: {fileID: 1722776178}
   - component: {fileID: 1722776177}
+  - component: {fileID: 1722776178}
   m_Layer: 6
   m_Name: ShotgunWeapon
   m_TagString: Untagged
@@ -1305,23 +1305,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1722776175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e7bb2edf96b245f4a88d7149514f054d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
+  _bulletPrefab: {fileID: 4705823182834152769, guid: 9188bdbabdf8c404e9bc22c9fe2b79e4,
     type: 3}
   _gunEnd: {fileID: 1580425867}
   _fireLight: {fileID: 1874689316}
   _soundOfShoot: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
   _soundOfReload: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
   _bulletForce: 0.5
-  _dmg: 10
-  _shootRate: 1
-  _reloadTime: 3.24
+  _dmg: 5
+  _shootRate: 0.5
+  _reloadTime: 2
   _magazineCapacity: 30
-  _currentAmmo: 90
-  _backpackAmmo: 200
-  _isShotgun: 1
+  _currentAmmo: 30
+  _backpackAmmo: 90
+  _pellets: 10
+  _splashX: 0.2
+  _splashY: 0.2
 --- !u!1 &1736491504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1405,6 @@ MonoBehaviour:
   _magazineCapacity: 30
   _currentAmmo: 90
   _backpackAmmo: 200
-  _isShotgun: 0
 --- !u!1001 &1767834635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2540,7 +2541,6 @@ MonoBehaviour:
   _magazineCapacity: 30
   _currentAmmo: 90
   _backpackAmmo: 200
-  _isShotgun: 0
 --- !u!1 &3385532143347195690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,7 +2937,6 @@ MonoBehaviour:
   _magazineCapacity: 30
   _currentAmmo: 20
   _backpackAmmo: 20
-  _isShotgun: 0
 --- !u!1 &4817337936203556491
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,7 +3463,6 @@ MonoBehaviour:
   _magazineCapacity: 30
   _currentAmmo: 30
   _backpackAmmo: 50
-  _isShotgun: 0
 --- !u!95 &9128048200009099642
 Animator:
   serializedVersion: 5
