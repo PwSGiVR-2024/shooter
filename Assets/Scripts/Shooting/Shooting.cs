@@ -96,58 +96,9 @@ public class Shooting : MonoBehaviour
     private IEnumerator ShootWithCheckFireRate()
     {
         _shootDelayPassed = false;
-        if (_currentWeapon.GetComponent<Shotgun>())
-        {
-            ShotgunShoot();
-        }
-        else
-        {
-            Shoot();
-        }
+        Shoot();
         yield return new WaitForSeconds(_shootRate);
         _shootDelayPassed = true;
-    }
-
-    private void ShotgunShoot()
-    {
-        Shotgun shotgun = _currentWeapon.GetComponent<Shotgun>();
-        int pelletCount = shotgun.Pellets;
-        float splashX = shotgun.SplashX;
-        float splashY = shotgun.SplashY;
-        // Getting shoot direction
-        Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-        for (int i = 0; i < pelletCount; i++)
-        {
-            Vector3 targetDirection = ray.direction;
-            targetDirection.x = Mathf.Clamp(targetDirection.x + Random.Range(-splashX, splashX), -2f, 2f);
-            targetDirection.y = Mathf.Clamp(targetDirection.y + Random.Range(-splashY, splashY), -2f, 2f);
-
-            // Creating bullet
-            GameObject pellet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
-            pellet.GetComponent<Pellet>().SetBulletDamage(_dmg);
-
-            // Adding force to the bullet
-            Rigidbody pelletRigidbody = pellet.GetComponent<Rigidbody>();
-            pelletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
-
-        }
-
-        // Shoot effects
-        AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
-        _recoilShooting.RecoilFire();
-        _muzzleFlash.Play();
-        _currentWeapon.FireLight.SetActive(true);
-        
-        // Aim animation
-        if (!_isAiming)
-        {
-            _currentWeapon.Animator.SetTrigger("TrRecoil");
-        }
-        else
-        {
-            _currentWeapon.Animator.SetTrigger("TrRecoilAim");
-        }
     }
 
     private void Shoot()
@@ -156,6 +107,33 @@ public class Shooting : MonoBehaviour
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         Vector3 targetDirection = ray.direction;
 
+        // Check if weapon is shotgun
+        Shotgun shotgun = _currentWeapon.GetComponent<Shotgun>();
+        if (shotgun)
+        {
+            int pelletCount = shotgun.Pellets;
+            float splashX = shotgun.SplashX;
+            float splashY = shotgun.SplashY;
+
+            for (int i = 0; i < pelletCount; i++)
+            {
+                Vector3 pelletTargetDirection = targetDirection;
+                pelletTargetDirection.x = Mathf.Clamp(pelletTargetDirection.x + Random.Range(-splashX, splashX), -2f, 2f);
+                pelletTargetDirection.y = Mathf.Clamp(pelletTargetDirection.y + Random.Range(-splashY, splashY), -2f, 2f);
+                CreateBulletWithForce(pelletTargetDirection);
+            }
+        }
+        else
+        {
+            CreateBulletWithForce(targetDirection);
+        }
+
+        ShootEfects();
+        ShootAnimWhenAiming();
+    }
+
+    private void CreateBulletWithForce(Vector3 targetDirection)
+    {
         // Creating bullet
         GameObject bullet = Instantiate(_bulletPrefab, _gunEnd.transform.position, _gunEnd.transform.rotation);
         bullet.GetComponent<Bullet>().SetBulletDamage(_dmg);
@@ -163,14 +141,21 @@ public class Shooting : MonoBehaviour
         // Adding force to the bullet
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
+    }
 
-        // Shoot effects
+    private void ShootEfects()
+    {
+        // Sound
         AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
+
+        // Visual Effect
         _recoilShooting.RecoilFire();
         _muzzleFlash.Play();
         _currentWeapon.FireLight.SetActive(true);
+    }
 
-        // Aim animation
+    private void ShootAnimWhenAiming()
+    {
         if (!_isAiming)
         {
             _currentWeapon.Animator.SetTrigger("TrRecoil");
@@ -179,9 +164,7 @@ public class Shooting : MonoBehaviour
         {
             _currentWeapon.Animator.SetTrigger("TrRecoilAim");
         }
-
     }
-
 
     private void OnReloadClick(InputAction.CallbackContext context)
     {
