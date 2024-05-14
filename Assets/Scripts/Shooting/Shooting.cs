@@ -36,7 +36,6 @@ public class Shooting : MonoBehaviour
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
         GetWeaponsData();
-        _muzzleFlash = _gunEnd.GetComponent<VisualEffect>();
     }
 
     private void Update()
@@ -74,6 +73,7 @@ public class Shooting : MonoBehaviour
         _backpackAmmo = weapon.BackpackAmmo;
         _currentAmmo = weapon.CurrentAmmo;
         _reloadTime = weapon.ReloadTime;
+        _muzzleFlash = _gunEnd.GetComponent<VisualEffect>();
     }
 
     private void OnFirePressed()
