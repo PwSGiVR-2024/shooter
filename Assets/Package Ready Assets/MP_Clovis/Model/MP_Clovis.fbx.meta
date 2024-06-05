@@ -1,0 +1,920 @@
+fileFormatVersion: 2
+guid: b7e41c3674cab1b4fab3efcb00c3a3dd
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_clovisHair
+    second: {fileID: 2100000, guid: 5d427965da31f1a42bbfc97e115a9c6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Clovis
+    second: {fileID: 2100000, guid: 1692c6474195ba649ae54cfcda1f595a, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 1
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Clovis2_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftThumb
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftThumb1
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftThumb2
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftIndex
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftIndex1
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftIndex2
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftMiddle
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftMiddle1
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftMiddle2
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftRing
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftRing1
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftRing2
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftPinky
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftPinky1
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_LeftPinky2
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightThumb
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightThumb1
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightThumb2
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightIndex
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightIndex1
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightIndex2
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightMiddle
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightMiddle1
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightMiddle2
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightRing
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightRing1
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightRing2
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightPinky
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightPinky1
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Clovis2_RightPinky2
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: MP_Clovis(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis
+      parentName: MP_Clovis(Clone)
+      position: {x: -3.5527136e-17, y: -4.440892e-18, z: -0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_body_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Boot_Left_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Boot_Right_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Bracers_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_cowl_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_CowlAttachmentBack_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_CowlAttachmentFront_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_CowlAttachmentSide_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_CowlBill_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_duster_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Eye_Left_Low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Eye_Right_Low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Pants_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Pauldron_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_StrapLoop_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Vest_low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Zipper_Low
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis_Hair
+      parentName: Clovis
+      position: {x: 3.5527136e-17, y: 4.440892e-18, z: 0.006332898}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_Reference
+      parentName: MP_Clovis(Clone)
+      position: {x: -0.0065747052, y: 0.010590062, z: -0.013085291}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_Hips
+      parentName: Clovis2_Reference
+      position: {x: -1.110223e-18, y: 0.8318437, z: 0.026624188}
+      rotation: {x: 0.48223332, y: -0.51715666, z: -0.48223332, w: 0.51715666}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_Spine
+      parentName: Clovis2_Hips
+      position: {x: -0.096645355, y: -0.000000004038163, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.021318225, w: 0.9997727}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_Spine1
+      parentName: Clovis2_Spine
+      position: {x: -0.19316155, y: 0.0000000014174386, z: 1.110223e-18}
+      rotation: {x: 0, y: 0, z: -0.0038194472, w: 0.9999927}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftShoulder
+      parentName: Clovis2_Spine1
+      position: {x: -0.19302085, y: -0.0073707337, z: 0.060527563}
+      rotation: {x: -0.47310948, y: 0.52551633, z: 0.47310948, w: 0.52551633}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftArm
+      parentName: Clovis2_LeftShoulder
+      position: {x: -0.09079134, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftForeArm
+      parentName: Clovis2_LeftArm
+      position: {x: -0.26001385, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftHand
+      parentName: Clovis2_LeftForeArm
+      position: {x: -0.17818625, y: 8.881784e-18, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftMiddle
+      parentName: Clovis2_LeftHand
+      position: {x: -0.0999172, y: 0.012762172, z: -0.003379491}
+      rotation: {x: -0.015134124, y: -0.12276643, z: -0.016157543, w: 0.9921887}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftMiddle1
+      parentName: Clovis2_LeftMiddle
+      position: {x: -0.034458205, y: 0.00249883, z: 0.013289517}
+      rotation: {x: -0.10876856, y: 0.15893862, z: -0.022696828, w: 0.9810162}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftMiddle2
+      parentName: Clovis2_LeftMiddle1
+      position: {x: -0.026330747, y: 1.4244978e-16, z: 0.0032669832}
+      rotation: {x: 0, y: 0, z: 0.002330894, w: 0.9999973}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftMiddle3
+      parentName: Clovis2_LeftMiddle2
+      position: {x: -0.027460316, y: -1.7305731e-16, z: 0.003967051}
+      rotation: {x: 0.112829186, y: -0.23084067, z: 0.05150758, w: 0.965054}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftRing
+      parentName: Clovis2_LeftHand
+      position: {x: -0.097567506, y: -0.00969856, z: 0.0077855783}
+      rotation: {x: -0.015637996, y: -0.13054116, z: -0.030619727, w: 0.9908466}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftRing1
+      parentName: Clovis2_LeftRing
+      position: {x: -0.03288893, y: 0.00086800737, z: 0.013096301}
+      rotation: {x: -0.098188385, y: 0.09708857, z: 0.008355177, w: 0.99038535}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftRing2
+      parentName: Clovis2_LeftRing1
+      position: {x: -0.022640122, y: 7.130822e-17, z: 0.0058338987}
+      rotation: {x: -0.00012315062, y: 0.020826744, z: 0.0013107458, w: 0.9997822}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftRing3
+      parentName: Clovis2_LeftRing2
+      position: {x: -0.02868184, y: -7.1978356e-16, z: 0.003733695}
+      rotation: {x: 0.10800381, y: -0.23313734, z: 0.03142545, w: 0.96591645}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftPinky
+      parentName: Clovis2_LeftHand
+      position: {x: -0.08902679, y: -0.031324226, z: 0.017717881}
+      rotation: {x: -0.027137723, y: -0.22980726, z: -0.065486394, w: 0.97065115}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftPinky1
+      parentName: Clovis2_LeftPinky
+      position: {x: -0.02740152, y: -0.0017548678, z: 0.017513573}
+      rotation: {x: -0.08492861, y: 0.20018014, z: 0.029349776, w: 0.9756299}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftPinky2
+      parentName: Clovis2_LeftPinky1
+      position: {x: -0.016967164, y: 4.0917635e-18, z: 0.003500339}
+      rotation: {x: 0, y: 0, z: 0.018233642, w: 0.99983376}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftPinky3
+      parentName: Clovis2_LeftPinky2
+      position: {x: -0.022245917, y: -6.7220336e-18, z: 0.003967051}
+      rotation: {x: 0.10040038, y: -0.23651132, z: 0.00014156915, w: 0.9664275}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftThumb
+      parentName: Clovis2_LeftHand
+      position: {x: -0.053401086, y: 0.052280698, z: 0.017727422}
+      rotation: {x: -0.14093614, y: -0.11303975, z: -0.14547841, w: 0.97272563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftThumb1
+      parentName: Clovis2_LeftThumb
+      position: {x: -0.029344542, y: 0.016139014, z: 0.015888026}
+      rotation: {x: 0.58498836, y: 0.20412767, z: -0.21481478, w: 0.75496703}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftThumb2
+      parentName: Clovis2_LeftThumb1
+      position: {x: -0.027088944, y: 1.7211005e-17, z: -0.008542712}
+      rotation: {x: -0.60601807, y: -0.29485664, z: 0.15617108, w: 0.7220888}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftIndex
+      parentName: Clovis2_LeftHand
+      position: {x: -0.09149309, y: 0.035546944, z: -0.007119363}
+      rotation: {x: -0.017712621, y: -0.12631589, z: 0.046671793, w: 0.99073327}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftIndex1
+      parentName: Clovis2_LeftIndex
+      position: {x: -0.0330505, y: 0.009488333, z: 0.013136717}
+      rotation: {x: -0.12838225, y: 0.17608464, z: -0.08168837, w: 0.9725427}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftIndex2
+      parentName: Clovis2_LeftIndex1
+      position: {x: -0.02342681, y: 8.3329043e-17, z: 0.002744756}
+      rotation: {x: 0, y: 0, z: 0.01878469, w: 0.9998236}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftIndex3
+      parentName: Clovis2_LeftIndex2
+      position: {x: -0.021818016, y: 1.1126642e-16, z: 0.0030336273}
+      rotation: {x: 0.108955525, y: -0.23269409, z: 0.035371974, w: 0.96578}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightShoulder
+      parentName: Clovis2_Spine1
+      position: {x: -0.19302085, y: -0.0073707337, z: -0.060527563}
+      rotation: {x: 0.52551633, y: 0.47310948, z: -0.52551633, w: 0.47310948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightArm
+      parentName: Clovis2_RightShoulder
+      position: {x: 0.090791345, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightForeArm
+      parentName: Clovis2_RightArm
+      position: {x: 0.26001382, y: -8.881784e-18, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightHand
+      parentName: Clovis2_RightForeArm
+      position: {x: 0.17818625, y: 8.881784e-18, z: -2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightIndex
+      parentName: Clovis2_RightHand
+      position: {x: 0.09075529, y: -0.03279733, z: 0.0064891395}
+      rotation: {x: -0.015154363, y: -0.11972411, z: 0.10040924, w: 0.9876004}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightIndex1
+      parentName: Clovis2_RightIndex
+      position: {x: 0.028262746, y: -0.011003102, z: -0.008854018}
+      rotation: {x: 0.1322759, y: 0.14906056, z: 0.9718948, w: 0.1253178}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightIndex2
+      parentName: Clovis2_RightIndex1
+      position: {x: -0.018708177, y: 4.4817122e-17, z: -0.0025590765}
+      rotation: {x: 0.0030902997, y: 0.010503883, z: 0.0048393384, w: 0.99992836}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightIndex3
+      parentName: Clovis2_RightIndex2
+      position: {x: -0.024713825, y: -0.0016063566, z: -0.0048330007}
+      rotation: {x: 0.23297757, y: 0.10834545, z: 0.96586925, w: -0.032854035}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightMiddle
+      parentName: Clovis2_RightHand
+      position: {x: 0.0962647, y: -0.0063923406, z: 0.006906973}
+      rotation: {x: -0.01532203, y: -0.18364905, z: 0.043582454, w: 0.98190576}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightMiddle1
+      parentName: Clovis2_RightMiddle
+      position: {x: 0.03803232, y: -0.007527735, z: -0.018349797}
+      rotation: {x: 0.2064095, y: 0.11541797, z: 0.970278, w: 0.051325697}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightMiddle2
+      parentName: Clovis2_RightMiddle1
+      position: {x: -0.022229603, y: 5.0827763e-18, z: -0.002868494}
+      rotation: {x: 0, y: 0, z: 0.021057783, w: 0.9997783}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightMiddle3
+      parentName: Clovis2_RightMiddle2
+      position: {x: -0.025537902, y: 2.7048915e-17, z: -0.0033465764}
+      rotation: {x: 0.23349635, y: 0.107222795, z: 0.9660162, w: -0.028204622}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightRing
+      parentName: Clovis2_RightHand
+      position: {x: 0.09061144, y: 0.016303, z: 0.00536312}
+      rotation: {x: -0.017308027, y: -0.24341048, z: 0.015953079, w: 0.96963775}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightRing1
+      parentName: Clovis2_RightRing
+      position: {x: 0.03341712, y: -0.003769714, z: -0.021263158}
+      rotation: {x: 0.23256074, y: 0.10923726, z: 0.96573627, w: 0.036554355}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightRing2
+      parentName: Clovis2_RightRing1
+      position: {x: -0.023957875, y: -0.00022242905, z: -0.0025477328}
+      rotation: {x: 0, y: 0, z: -0.0010660964, w: 0.99999946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightRing3
+      parentName: Clovis2_RightRing2
+      position: {x: -0.0265352, y: -0.0004861483, z: -0.004627064}
+      rotation: {x: 0.23244415, y: 0.109485134, z: 0.96569675, w: -0.037583902}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightThumb
+      parentName: Clovis2_RightHand
+      position: {x: 0.04982548, y: -0.048356183, z: -0.017268034}
+      rotation: {x: -0.17313589, y: -0.16115649, z: -0.15326713, w: 0.9594591}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightThumb1
+      parentName: Clovis2_RightThumb
+      position: {x: 0.02860399, y: -0.013034526, z: -0.018606646}
+      rotation: {x: 0.28484148, y: -0.6107915, z: 0.7245597, w: 0.14426509}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightThumb2
+      parentName: Clovis2_RightThumb1
+      position: {x: -0.026600532, y: -4.9323814e-16, z: 0.012676169}
+      rotation: {x: 0.28484148, y: -0.6107915, z: 0.7245597, w: -0.14426509}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightPinky
+      parentName: Clovis2_RightHand
+      position: {x: 0.08454402, y: 0.03293173, z: -0.017239694}
+      rotation: {x: -0.013576835, y: -0.21439874, z: -0.009199575, w: 0.9766085}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightPinky1
+      parentName: Clovis2_RightPinky
+      position: {x: 0.03087621, y: -0.001220116, z: -0.01713263}
+      rotation: {x: 0.17870897, y: 0.09746643, z: 0.9789625, w: -0.013996925}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightPinky2
+      parentName: Clovis2_RightPinky1
+      position: {x: -0.017251508, y: -1.4177647e-16, z: -0.0039660553}
+      rotation: {x: 0, y: 0, z: -0.024105804, w: 0.9997094}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightPinky3
+      parentName: Clovis2_RightPinky2
+      position: {x: -0.018633097, y: -1.9330962e-16, z: -0.0042965594}
+      rotation: {x: 0.23477606, y: 0.10439102, z: 0.96628666, w: -0.016519446}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_Neck
+      parentName: Clovis2_Spine1
+      position: {x: -0.26494515, y: -0.000000007700124, z: 0}
+      rotation: {x: 0, y: 0, z: -0.050777853, w: 0.99871}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_Head
+      parentName: Clovis2_Neck
+      position: {x: -0.10335321, y: 0.0000000010745023, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightUpLeg
+      parentName: Clovis2_Hips
+      position: {x: 0.0006648555, y: 0.00078490353, z: -0.07822567}
+      rotation: {x: 0, y: 0, z: -0.034918495, w: 0.9993902}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightLeg
+      parentName: Clovis2_RightUpLeg
+      position: {x: 0.39697215, y: 4.664958e-10, z: 1.7763568e-17}
+      rotation: {x: 0, y: 0, z: -0.0000048912398, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightFoot
+      parentName: Clovis2_RightLeg
+      position: {x: 0.34896034, y: 1.11022296e-17, z: -8.881784e-18}
+      rotation: {x: -0.000018051036, y: 0.00003149379, z: 0.4972721, w: 0.86759466}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_RightToeBase
+      parentName: Clovis2_RightFoot
+      position: {x: 0.15661892, y: -0.0000000054584826, z: 0.0000000027736786}
+      rotation: {x: 0.00002540648, y: 0.000000017737538, z: -4.506484e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftUpLeg
+      parentName: Clovis2_Hips
+      position: {x: 0.0006648555, y: 0.00078490353, z: 0.078225665}
+      rotation: {x: 0, y: 0, z: 0.99939, w: 0.034923382}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftLeg
+      parentName: Clovis2_LeftUpLeg
+      position: {x: -0.3955185, y: 6.4392934e-17, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftFoot
+      parentName: Clovis2_LeftLeg
+      position: {x: -0.34995413, y: 5.7731595e-17, z: 0}
+      rotation: {x: -0.00000016483327, y: 0.00000028865608, z: 0.4958825, w: 0.86838967}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Clovis2_LeftToeBase
+      parentName: Clovis2_LeftFoot
+      position: {x: -0.15576828, y: -0.0000000033170622, z: 0.000000001348221}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
