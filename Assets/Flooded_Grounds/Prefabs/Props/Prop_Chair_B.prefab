@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487332}
   - component: {fileID: 20511504}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Prop_Chair_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}

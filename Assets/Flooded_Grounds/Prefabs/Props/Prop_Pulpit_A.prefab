@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464912}
   - component: {fileID: 20579144}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Prop_Pulpit_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}

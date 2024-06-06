@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 445300}
   - component: {fileID: 3324342}
   - component: {fileID: 2306510}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Prop_Rug_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}

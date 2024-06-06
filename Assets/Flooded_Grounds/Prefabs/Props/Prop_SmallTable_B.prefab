@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437890}
   - component: {fileID: 20505666}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Prop_SmallTable_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}

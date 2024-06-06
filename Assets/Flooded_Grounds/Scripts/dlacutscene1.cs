@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class dlacutscene1 : MonoBehaviour
+public class CutScene1 : MonoBehaviour
 {
     public Transform dziad;
     public Animator anim;

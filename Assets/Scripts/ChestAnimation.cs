@@ -1,14 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class dlacchest : MonoBehaviour
+public class ChestAnimation : MonoBehaviour
 {
-   private void OnTriggerEnter(Collider other)
-   {
-        GetComponent<PlayableDirector>().Play();
-   }
-    
-}
+    public Animator anim;
 
+    void Start()
+    {
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            anim.SetTrigger("ChestOpen");
+        }
+    }
+}
