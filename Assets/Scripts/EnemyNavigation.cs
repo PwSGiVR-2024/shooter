@@ -26,8 +26,8 @@ public class EnemyNavigation : MonoBehaviour
         if (isDead)
             return;
 
-        // Temporarily kill the enemy when the H key is pressed
-        if (Input.GetKeyDown(KeyCode.H)) // H key
+        // Temporarily kill the enemy
+        if (Input.GetKeyDown(KeyCode.H))
         {
             Die();
             return;
@@ -84,18 +84,11 @@ public class EnemyNavigation : MonoBehaviour
         anim.SetTrigger("Die");
 
         Collider collider = GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.enabled = false;
-        }
+        collider.enabled = false;
 
         Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-        }
+        rb.isKinematic = true;
 
-        // Optionally, destroy the enemy game object after a delay
-        Destroy(gameObject, 5f); // Adjust the delay as needed
+        Destroy(gameObject, 5f);
     }
 }
