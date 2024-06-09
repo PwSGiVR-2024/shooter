@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 438830}
   - component: {fileID: 20576438}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Prop_Lamp_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481948}
   - component: {fileID: 20565268}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Prop_Clock_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}

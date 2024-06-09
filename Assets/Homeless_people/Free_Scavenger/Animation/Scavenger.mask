@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Scavenger
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Scavenger_mesh_backpack
+    m_Weight: 1
+  - m_Path: Scavenger_mesh_body
+    m_Weight: 1
+  - m_Path: Scavenger_root
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ L Thigh
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ L Thigh/Scavenger_
+      L Calf
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ L Thigh/Scavenger_
+      L Calf/Scavenger_ L Foot
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ L Thigh/Scavenger_
+      L Calf/Scavenger_ L Foot/Scavenger_ L Toe0
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ R Thigh
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ R Thigh/Scavenger_
+      R Calf
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ R Thigh/Scavenger_
+      R Calf/Scavenger_ R Foot
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ R Thigh/Scavenger_
+      R Calf/Scavenger_ R Foot/Scavenger_ R Toe0
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger0
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger0/Scavenger_ L Finger01
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger0/Scavenger_ L Finger01/Scavenger_ L Finger02
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger1
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger1/Scavenger_ L Finger11
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger1/Scavenger_ L Finger11/Scavenger_ L Finger12
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger2
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger2/Scavenger_ L Finger21
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger2/Scavenger_ L Finger21/Scavenger_ L Finger22
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger3
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger3/Scavenger_ L Finger31
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger3/Scavenger_ L Finger31/Scavenger_ L Finger32
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger4
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger4/Scavenger_ L Finger41
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ L Clavicle/Scavenger_ L UpperArm/Scavenger_ L Forearm/Scavenger_
+      L Hand/Scavenger_ L Finger4/Scavenger_ L Finger41/Scavenger_ L Finger42
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ Neck
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ Neck/Scavenger_ Head
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger0
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger0/Scavenger_ R Finger01
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger0/Scavenger_ R Finger01/Scavenger_ R Finger02
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger1
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger1/Scavenger_ R Finger11
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger1/Scavenger_ R Finger11/Scavenger_ R Finger12
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger2
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger2/Scavenger_ R Finger21
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger2/Scavenger_ R Finger21/Scavenger_ R Finger22
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger3
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger3/Scavenger_ R Finger31
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger3/Scavenger_ R Finger31/Scavenger_ R Finger32
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger4
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger4/Scavenger_ R Finger41
+    m_Weight: 1
+  - m_Path: Scavenger_root/Scavenger_/Scavenger_ Pelvis/Scavenger_ Spine/Scavenger_
+      Spine1/Scavenger_ R Clavicle/Scavenger_ R UpperArm/Scavenger_ R Forearm/Scavenger_
+      R Hand/Scavenger_ R Finger4/Scavenger_ R Finger41/Scavenger_ R Finger42
+    m_Weight: 1

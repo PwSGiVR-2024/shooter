@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3332300}
   - component: {fileID: 2325456}
   - component: {fileID: 6566330}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lo_Prop_SmallTable_B_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 3373112}
   - component: {fileID: 2362258}
   - component: {fileID: 6589814}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lo_Prop_SmallTable_B_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437890}
   - component: {fileID: 20505666}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Prop_SmallTable_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
