@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,16 +32,20 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Map");
     }
 
-    public async void SetActiveView(GameObject targetView)
+    public void SetActiveView(GameObject targetView)
     {
         if (targetView == _loginView)
         {
             try
             {
                 IEnumerable<string> cookies = LoadCookies();
-                await _api.Authenticate(cookies);
-                SetActiveView(_userListView);
-                return;
+                // await _api.Authenticate(cookies);
+                string[] cookiesArray = cookies.ToArray();
+                if (cookiesArray.Length != 1 && cookiesArray[0] != "")
+                {
+                    SetActiveView(_userListView);
+                    return;
+                }
             }
             catch (HttpRequestException)
             {
@@ -79,7 +83,7 @@ public class Menu : MonoBehaviour
             string login = loginField.text;
             string password = passwordField.text;
             IEnumerable<string> cookies = await _api.Login(login, password);
-            SaveCookies(cookies);
+            SaveCookies(cookies, login, password);
             SetActiveView(_userListView);
         }
         catch (APIException ex)
@@ -97,13 +101,15 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public async void Logout()
+    public void Logout()
     {
         try
         {
             IEnumerable<string> cookies = LoadCookies();
-            await _api.Logout(cookies);
+            // await _api.Logout(cookies);
             PlayerPrefs.DeleteKey("cookies");
+            PlayerPrefs.DeleteKey("username");
+            PlayerPrefs.DeleteKey("password");
             SetActiveView(_mainMenuView);
         }
         catch (APIException ex)
@@ -163,7 +169,9 @@ public class Menu : MonoBehaviour
             {
                 Destroy(child.gameObject);
             }
-            IEnumerable<string> cookies = LoadCookies();
+            string login = PlayerPrefs.GetString("username");
+            string password = PlayerPrefs.GetString("password");
+            IEnumerable<string> cookies = await _api.Login(login, password);
             List<ReadUser> users = await _api.Users(cookies);
             foreach (ReadUser user in users)
             {
@@ -181,10 +189,12 @@ public class Menu : MonoBehaviour
         }
     }
 
-    private void SaveCookies(IEnumerable<string> cookies)
+    private void SaveCookies(IEnumerable<string> cookies, string login, string password)
     {
         // Save cookies for future requests in player prefs
         PlayerPrefs.SetString("cookies", string.Join(";", cookies));
+        PlayerPrefs.SetString("username", login);
+        PlayerPrefs.SetString("password", password);
         Debug.Log(PlayerPrefs.GetString("cookies"));
     }
 
