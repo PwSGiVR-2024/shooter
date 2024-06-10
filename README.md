@@ -176,6 +176,7 @@ private void UpdateItemContainerCount(int itemContainerCount)
     - [Vendor](https://youtu.be/iqDIpVf9tkU?si=6YzMluuB22lvySNd)
     - [Crafting](https://youtu.be/PN73b-0rf0g?si=fJSaUw5kVrreClog)
 - [Shooter API](https://github.com/piotr-grzegorzek/shooter_api) used for players authentication
+- [Json & MessagePack Serialization](https://assetstore.unity.com/packages/p/json-messagepack-serialization-59918) for josn array serialization (built in library does not provide that)
 - [StarterAssets - FirstPerson](https://assetstore.unity.com/packages/essentials/starterassets-firstperson-updates-in-new-charactercontroller-pac-196525) is used for the player controls and camera.
 - [Modern Weapons Pack](https://assetstore.unity.com/packages/3d/props/guns/modern-weapons-pack-14233) some of weapons models and textures.
 

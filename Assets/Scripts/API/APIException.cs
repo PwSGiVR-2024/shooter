@@ -1,12 +1,12 @@
 using System;
 
-public class APIException : Exception
+internal class APIException : Exception
 {
-    public APIException() { }
+    internal APIException() { }
 
-    public APIException(string message)
+    internal APIException(string message)
         : base(message) { }
 
-    public APIException(string message, Exception inner)
+    internal APIException(string message, Exception inner)
         : base(message, inner) { }
 }
