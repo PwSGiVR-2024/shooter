@@ -32,14 +32,14 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Map");
     }
 
-    public void SetActiveView(GameObject targetView)
+    public async void SetActiveView(GameObject targetView)
     {
         if (targetView == _loginView)
         {
             try
             {
                 IEnumerable<string> cookies = LoadCookies();
-                // await _api.Authenticate(cookies);
+                await _api.Authenticate(cookies);
                 string[] cookiesArray = cookies.ToArray();
                 if (cookiesArray.Length != 1 && cookiesArray[0] != "")
                 {
@@ -54,7 +54,15 @@ public class Menu : MonoBehaviour
                 return;
             }
             catch (APIException)
-            { }
+            {
+                IEnumerable<string> cookies = LoadCookies();
+                string[] cookiesArray = cookies.ToArray();
+                if (cookiesArray.Length != 1 && cookiesArray[0] != "")
+                {
+                    SetActiveView(_userListView);
+                    return;
+                }
+            }
         }
 
         if (targetView == _userListView)
