@@ -169,7 +169,7 @@ private void UpdateItemContainerCount(int itemContainerCount)
 ## Assets and resources
 - [Item & Inventory System by Devion Games](https://assetstore.unity.com/packages/tools/gui/item-inventory-system-45568) used for inventory system, items, shop.
     - [Core concepts](https://deviongames.com/inventory-system/getting-started/core-concepts)
-    - [How to setup library, create currency and create first collectible and usable item][https://youtu.be/bz1Gm-l1OXA?si=Lk8PfrSl1rD6AdY0]
+    - [How to setup library, create currency and create first collectible and usable item](https://youtu.be/bz1Gm-l1OXA?si=Lk8PfrSl1rD6AdY0)
     - [Custom actions](https://youtu.be/VPnWPQF1tWs?si=yLo6379q3y2j1NP0)
     - [Item containers](https://youtu.be/Zewsd8h-nkk?si=Wp3f5zKdGOmtcaoy)
     - [Lootboxes](https://youtu.be/FtWYRSa8n5o?si=hcwrKJB97YYoaY-A)
