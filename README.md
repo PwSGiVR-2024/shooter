@@ -1,9 +1,5 @@
 # XYZ
 
-XYZ (concept).
-
-# Plot
-
 ### PL
 
 Nasza gra to shooter z elementami fabularnymi osadzonymi w otwartym świecie. Gracz pojawia się na mapie, podziwiając widoki i grafikę przyrody. Podczas eksploracji zauważa dziewczynę i jej ojca spacerujących. Kiedy dziewczyna gubi się w jaskini, gracz rusza, by odkryć, co się stało. Jednakże, wkraczając do jaskini, świat zmienia się z jasnych kolorów na ciemne, wskazując na zło. Gracz zdaje sobie sprawę, że musi uratować dziewczynkę z tego złego świata. Ojciec dziewczyny będzie udzielał mu wskazówek, a broń będzie dostępna w skrzynkach. Podczas podróży gracz będzie walczył z różnymi potworami, zbierając monety i ulepszając broń. Na końcu, musi zmierzyć się z bossem, który porwał dziewczynkę.
