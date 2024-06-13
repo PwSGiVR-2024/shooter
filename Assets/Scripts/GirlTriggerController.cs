@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class GirlTriggerController : MonoBehaviour
 {
-    public GirlController girlController;
+    public GirlController girlController1;
+    public GirlController girlController2;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            girlController.StartMoving();
+            girlController1.StartMoving();
+            girlController2.StartMoving();
         }
     }
 }
