@@ -172,12 +172,12 @@ MonoBehaviour:
   key: 102
   actionTemplate: {fileID: 0}
   actions:
-  - rid: 0
-  m_Interruptable: 1
+  - rid: 7602509803299274759
+  m_Interruptable: 0
   references:
     version: 2
     RefIds:
-    - rid: 0
+    - rid: 7602509803299274759
       type: {class: ShowWindow, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.ShowWindow

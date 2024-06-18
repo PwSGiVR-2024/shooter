@@ -387,7 +387,7 @@ MonoBehaviour:
     ignoreTimeScale: 1
   inUse:
     title: 
-    text: My life is already fairly busy.
+    text: Already in use
     color: {r: 1, g: 1, b: 1, a: 1}
     icon: {fileID: 0}
     delay: 2

@@ -161,7 +161,7 @@ MonoBehaviour:
   key: 99
   actionTemplate: {fileID: 0}
   actions:
-  - rid: 7602509565042884616
+  - rid: 7602509803299274752
   m_Interruptable: 0
   m_RequiredIngredientsWindow: Inventory
   m_ResultStorageWindow: Inventory
@@ -169,13 +169,12 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7602509565042884616
-      type: {class: ShowWindow, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
+    - rid: 7602509803299274752
+      type: {class: OnOpenWindowAction, ns: , asm: Assembly-CSharp}
       data:
-        m_Type: DevionGames.InventorySystem.ShowWindow
+        m_Type: OnOpenWindowAction
         m_Enabled: 1
-        m_WindowName: Crafting
-        m_DestroyWhenEmpty: 0
+        _itemContainer: {fileID: 2574866828729063170}
 --- !u!4 &21451980
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,111 +1056,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemContainerTag: Item container
---- !u!1 &1397464514
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1397464515}
-  - component: {fileID: 1397464518}
-  - component: {fileID: 1397464517}
-  - component: {fileID: 1397464516}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1397464515
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397464514}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8634550541229364825}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1397464516
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397464514}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1397464517
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397464514}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1397464518
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1397464514}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!224 &1462960514 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6076886006985249759, guid: c5a989dbac0848641bf83f0a3a2b4c42,
@@ -11082,7 +10976,7 @@ MonoBehaviour:
   m_Focus: 1
   m_DeactivateOnClose: 1
   m_ShowAndHideCursor: 1
-  m_CloseOnMove: 1
+  m_CloseOnMove: 0
   m_Deactivate: 306
   m_FocusPlayer: 0
   useButton: -1
@@ -23345,22 +23239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delegates:
-  - eventID: OnTryUseItem
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: DevionGames.InventorySystem.Trigger, DevionGames.InventorySystem
-          m_MethodName: StartUse
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: OnShow
     callback:
       m_PersistentCalls:
@@ -25330,11 +25208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2692093193382320121, guid: b23b6c221328a3f498cbcc250643a398,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1397464515}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b23b6c221328a3f498cbcc250643a398, type: 3}
 --- !u!114 &7285248094422403303
@@ -29707,12 +29581,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8634550541229364825 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2692093193382320121, guid: b23b6c221328a3f498cbcc250643a398,
-    type: 3}
-  m_PrefabInstance: {fileID: 7280348483762323339}
-  m_PrefabAsset: {fileID: 0}
 --- !u!222 &8636654084055748337
 CanvasRenderer:
   m_ObjectHideFlags: 0
