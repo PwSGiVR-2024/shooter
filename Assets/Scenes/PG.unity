@@ -161,7 +161,7 @@ MonoBehaviour:
   key: 99
   actionTemplate: {fileID: 0}
   actions:
-  - rid: 7602509803299274752
+  - rid: 7602509803299274760
   m_Interruptable: 0
   m_RequiredIngredientsWindow: Inventory
   m_ResultStorageWindow: Inventory
@@ -169,12 +169,13 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7602509803299274752
-      type: {class: OnOpenWindowAction, ns: , asm: Assembly-CSharp}
+    - rid: 7602509803299274760
+      type: {class: ShowWindow, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
-        m_Type: OnOpenWindowAction
+        m_Type: DevionGames.InventorySystem.ShowWindow
         m_Enabled: 1
-        _itemContainer: {fileID: 2574866828729063170}
+        m_WindowName: Crafting
+        m_DestroyWhenEmpty: 0
 --- !u!4 &21451980
 Transform:
   m_ObjectHideFlags: 0
@@ -10976,7 +10977,7 @@ MonoBehaviour:
   m_Focus: 1
   m_DeactivateOnClose: 1
   m_ShowAndHideCursor: 1
-  m_CloseOnMove: 0
+  m_CloseOnMove: 1
   m_Deactivate: 306
   m_FocusPlayer: 0
   useButton: -1
