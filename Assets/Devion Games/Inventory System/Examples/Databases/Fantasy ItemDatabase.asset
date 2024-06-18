@@ -151,14 +151,15 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
-  - id: 0
+  - rid: 0
   m_OverrideEquipPrefab: {fileID: 0}
   m_Region:
   - {fileID: 5658350685615726283}
   - {fileID: 316844889573954113}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: CheckSkill, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.CheckSkill
@@ -396,20 +397,21 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
+  - rid: 0
+  - rid: 1
+  - rid: 2
+  - rid: 3
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: ReduceStack, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.ItemActions.ReduceStack
         m_Enabled: 1
         item: {fileID: -7220855601628582702}
         m_Amount: 1
-    00000001:
+    - rid: 1
       type: {class: CrossFade, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.CrossFade
@@ -417,14 +419,14 @@ MonoBehaviour:
         m_Target: 1
         m_AnimatorState: Eat
         m_TransitionDuration: 0.2
-    00000002:
+    - rid: 2
       type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.ItemActions.Cooldown
         m_Enabled: 1
         item: {fileID: -7220855601628582702}
         m_GlobalCooldown: 0
-    00000003:
+    - rid: 3
       type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.Wait
@@ -571,19 +573,20 @@ MonoBehaviour:
   m_UseCategoryCooldown: 0
   m_Cooldown: 3
   actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
-  - id: 4
-  - id: 5
-  - id: 6
-  - id: 7
-  - id: 8
-  - id: 9
+  - rid: 0
+  - rid: 1
+  - rid: 2
+  - rid: 3
+  - rid: 4
+  - rid: 5
+  - rid: 6
+  - rid: 7
+  - rid: 8
+  - rid: 9
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.SetEnabled
@@ -591,7 +594,7 @@ MonoBehaviour:
         m_Target: 1
         m_ComponentName: ThirdPersonController
         m_Enable: 0
-    00000001:
+    - rid: 1
       type: {class: SetFloat, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.SetFloat
@@ -600,7 +603,7 @@ MonoBehaviour:
         m_ParameterName: Forward Input
         m_Value: 0
         m_DampTime: 0
-    00000002:
+    - rid: 2
       type: {class: CrossFade, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.CrossFade
@@ -608,31 +611,31 @@ MonoBehaviour:
         m_Target: 1
         m_AnimatorState: Precast
         m_TransitionDuration: 0.2
-    00000003:
+    - rid: 3
       type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.ItemActions.Cooldown
         m_Enabled: 1
         item: {fileID: -6266380644497530537}
         m_GlobalCooldown: 3
-    00000004:
+    - rid: 4
       type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.Wait
         m_Enabled: 1
         duration: 3
-    00000005:
+    - rid: 5
       type: {class: Save, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.Save
         m_Enabled: 1
-    00000006:
+    - rid: 6
       type: {class: LoadScene, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.LoadScene
         m_Enabled: 1
         m_Scene: Main Scene
-    00000007:
+    - rid: 7
       type: {class: SetPosition, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.SetPosition
@@ -640,7 +643,7 @@ MonoBehaviour:
         m_Target: 1
         m_Position: {x: 0, y: 0, z: 0}
         m_SetCameraRelative: 1
-    00000008:
+    - rid: 8
       type: {class: CrossFade, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.CrossFade
@@ -648,7 +651,7 @@ MonoBehaviour:
         m_Target: 1
         m_AnimatorState: Empty
         m_TransitionDuration: 0.2
-    00000009:
+    - rid: 9
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.SetEnabled
@@ -772,7 +775,8 @@ MonoBehaviour:
   m_Region:
   - {fileID: 316844889573954113}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &-4242386034172315359
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -909,16 +913,17 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
-  - id: 4
-  - id: 5
-  - id: 6
+  - rid: 0
+  - rid: 1
+  - rid: 2
+  - rid: 3
+  - rid: 4
+  - rid: 5
+  - rid: 6
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -926,31 +931,31 @@ MonoBehaviour:
         m_Target: 1
         m_ComponentName: ThirdPersonController
         m_Enable: 0
-    00000001:
+    - rid: 1
       type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
         item: {fileID: -2839999955813321745}
         m_GlobalCooldown: 1
-    00000002:
+    - rid: 2
       type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
         m_Enabled: 1
         duration: 1
-    00000003:
+    - rid: 3
       type: {class: Save, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
-    00000004:
+    - rid: 4
       type: {class: LoadScene, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
         m_Enabled: 1
         m_Scene: Main Scene
-    00000005:
+    - rid: 5
       type: {class: SetPosition, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -958,7 +963,7 @@ MonoBehaviour:
         m_Target: 1
         m_Position: {x: 20.65, y: 0.018, z: -21.71}
         m_SetCameraRelative: 1
-    00000006:
+    - rid: 6
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -1107,7 +1112,8 @@ MonoBehaviour:
   m_Region:
   - {fileID: 5658350685615726283}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &-1922893622408926672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1268,7 +1274,8 @@ MonoBehaviour:
   m_Region:
   - {fileID: 316844889573954113}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &-327638963660831434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1512,10 +1519,11 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
-  - id: 0
+  - rid: 0
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: ShowWindow, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.ShowWindow
@@ -1574,7 +1582,8 @@ MonoBehaviour:
   - {fileID: 316844889573954113}
   - {fileID: 5658350685615726283}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &960666660569578442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1710,13 +1719,14 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
-  - id: 0
+  - rid: 0
   m_OverrideEquipPrefab: {fileID: 0}
   m_Region:
   - {fileID: 316844889573954113}
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: CheckSkill, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: DevionGames.InventorySystem.CheckSkill
@@ -1851,16 +1861,17 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
-  - id: 4
-  - id: 5
-  - id: 6
+  - rid: 0
+  - rid: 1
+  - rid: 2
+  - rid: 3
+  - rid: 4
+  - rid: 5
+  - rid: 6
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -1868,31 +1879,31 @@ MonoBehaviour:
         m_Target: 1
         m_ComponentName: ThirdPersonController
         m_Enable: 0
-    00000001:
+    - rid: 1
       type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
         item: {fileID: 2033560685258441697}
         m_GlobalCooldown: 1
-    00000002:
+    - rid: 2
       type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
         m_Enabled: 1
         duration: 1
-    00000003:
+    - rid: 3
       type: {class: Save, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
-    00000004:
+    - rid: 4
       type: {class: LoadScene, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
         m_Enabled: 1
         m_Scene: Main Scene
-    00000005:
+    - rid: 5
       type: {class: SetPosition, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -1900,7 +1911,7 @@ MonoBehaviour:
         m_Target: 1
         m_Position: {x: -3.45, y: 0.018, z: 10.92}
         m_SetCameraRelative: 1
-    00000006:
+    - rid: 6
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -1964,7 +1975,8 @@ MonoBehaviour:
   m_Region:
   - {fileID: 316844889573954113}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &3129509250564287029
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2012,26 +2024,27 @@ MonoBehaviour:
   m_UseCategoryCooldown: 0
   m_Cooldown: 5
   actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
+  - rid: 0
+  - rid: 1
+  - rid: 2
+  - rid: 3
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
         item: {fileID: 3129509250564287029}
         m_GlobalCooldown: 5
-    00000001:
+    - rid: 1
       type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
         m_Enabled: 1
         duration: 5
-    00000002:
+    - rid: 2
       type: {class: AddItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
@@ -2040,7 +2053,7 @@ MonoBehaviour:
         m_WindowName: Crafting
         m_Item: {fileID: -8967533827971111582}
         m_Amount: 0
-    00000003:
+    - rid: 3
       type: {class: ReduceStack, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
@@ -2095,7 +2108,8 @@ MonoBehaviour:
   m_Cooldown: 1
   actions: []
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &3254584067454643436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2572,14 +2586,15 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 5
   actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
-  - id: 4
+  - rid: 0
+  - rid: 1
+  - rid: 2
+  - rid: 3
+  - rid: 4
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: Invoke, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -2606,14 +2621,14 @@ MonoBehaviour:
           m_ColorValue: {r: 0, g: 0, b: 0, a: 0}
           m_ObjectValue: {fileID: 0}
           m_ArgumentType: 3
-    00000001:
+    - rid: 1
       type: {class: ReduceStack, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
         item: {fileID: 8429455951140046941}
         m_Amount: 1
-    00000002:
+    - rid: 2
       type: {class: CrossFade, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: DevionGames.CrossFade
@@ -2621,14 +2636,14 @@ MonoBehaviour:
         m_Target: 1
         m_AnimatorState: Drink
         m_TransitionDuration: 0.2
-    00000003:
+    - rid: 3
       type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
         item: {fileID: 8429455951140046941}
         m_GlobalCooldown: 0.5
-    00000004:
+    - rid: 4
       type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -2680,16 +2695,17 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
-  - id: 0
-  - id: 1
-  - id: 2
-  - id: 3
-  - id: 4
-  - id: 5
-  - id: 6
+  - rid: 0
+  - rid: 1
+  - rid: 2
+  - rid: 3
+  - rid: 4
+  - rid: 5
+  - rid: 6
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -2697,31 +2713,31 @@ MonoBehaviour:
         m_Target: 1
         m_ComponentName: ThirdPersonController
         m_Enable: 0
-    00000001:
+    - rid: 1
       type: {class: Cooldown, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
         item: {fileID: 8692695060773013855}
         m_GlobalCooldown: 1
-    00000002:
+    - rid: 2
       type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
         m_Enabled: 1
         duration: 1
-    00000003:
+    - rid: 3
       type: {class: Save, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
       data:
         m_Type: 
         m_Enabled: 1
-    00000004:
+    - rid: 4
       type: {class: LoadScene, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
         m_Enabled: 1
         m_Scene: Map2
-    00000005:
+    - rid: 5
       type: {class: SetPosition, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
@@ -2729,7 +2745,7 @@ MonoBehaviour:
         m_Target: 1
         m_Position: {x: -3.45, y: 0.018, z: 3.96}
         m_SetCameraRelative: 1
-    00000006:
+    - rid: 6
       type: {class: SetEnabled, ns: DevionGames, asm: DevionGames.Triggers}
       data:
         m_Type: 
