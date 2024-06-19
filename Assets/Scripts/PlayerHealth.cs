@@ -9,16 +9,6 @@ public class PlayerHealth : MonoBehaviour
     public Transform Player;
     public AudioSource HitSound;
     private int _currentHealth = 100;
-    public int CurrentHealth
-    {
-        get => _currentHealth;
-        set
-        {
-            _currentHealth = value;
-            CheckHealth();
-            Health.text = "Health: " + _currentHealth;
-        }
-    }
     public int MaxHealth = 100;
     public float InvincibilityTime = 1.0f;
     public bool Invincibility = false;
@@ -51,6 +41,17 @@ public class PlayerHealth : MonoBehaviour
             {
                 Invincibility = false;
             }
+        }
+    }
+
+    public int CurrentHealth
+    {
+        get => _currentHealth;
+        set
+        {
+            _currentHealth = value;
+            CheckHealth();
+            Health.text = "Health: " + _currentHealth;
         }
     }
 

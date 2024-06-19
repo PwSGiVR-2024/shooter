@@ -70,7 +70,7 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-	
+
 #if ENABLE_INPUT_SYSTEM
 		private PlayerInput _playerInput;
 #endif
@@ -81,6 +81,9 @@ namespace StarterAssets
 		private const float _threshold = 0.01f;
         private const float _crouchHeight = 1f;
         private bool _isCrouching = false;
+
+		ItemContainerCallbacks _itemContainerCallbacks;
+		private float _savedRotationSpeed;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -116,6 +119,22 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			_itemContainerCallbacks = GameObject.Find("ItemContainerMethods").GetComponent<ItemContainerCallbacks>();
+			_itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
+		}
+
+		private void UpdateItemContainerCount(int itemContainerCount)
+		{
+			if (itemContainerCount == 1 && _savedRotationSpeed == 0)
+			{
+				_savedRotationSpeed = RotationSpeed;
+				RotationSpeed = 0;
+			}
+			else if (itemContainerCount == 0)
+			{
+				RotationSpeed = _savedRotationSpeed;
+				_savedRotationSpeed = 0;
+			}
 		}
 
 		private void Update()
@@ -145,7 +164,7 @@ namespace StarterAssets
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
+
 				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
 				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
