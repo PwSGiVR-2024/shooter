@@ -7,8 +7,6 @@ using UnityEngine.VFX;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject _weaponsSlot;
-    [SerializeField] ItemContainerCallbacks _itemContainerCallbacks;
-    private int _itemContainerCount;
     private VisualEffect _muzzleFlash;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
@@ -38,7 +36,6 @@ public class Shooting : MonoBehaviour
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
         GetWeaponsData();
-        _itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
     }
 
     private void Update()
@@ -81,7 +78,7 @@ public class Shooting : MonoBehaviour
 
     private void OnFirePressed()
     {
-        if (_itemContainerCount == 0 && _currentWeapon.IsCurrentlyUsed && _shootDelayPassed && _currentAmmo > 0 && !_isReloading)
+        if (_currentWeapon.IsCurrentlyUsed && _shootDelayPassed && _currentAmmo > 0 && !_isReloading)
         {
             _currentAmmo--;
             UpdateAmmo(_currentAmmo, _backpackAmmo);
@@ -180,7 +177,7 @@ public class Shooting : MonoBehaviour
     private IEnumerator StartReloading()
     {
         _isReloading = true;
-        AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfReload, transform.position);
+        AudioSource.PlayClipAtPoint( _currentWeapon.SoundOfReload, transform.position);
         yield return new WaitForSeconds(_reloadTime);
         Reload();
         _isReloading = false;
@@ -214,10 +211,5 @@ public class Shooting : MonoBehaviour
             _currentWeapon.Animator.SetTrigger("TrAimUndo");
             _isAiming = false;
         }
-    }
-
-    private void UpdateItemContainerCount(int itemContainerCount)
-    {
-        _itemContainerCount = itemContainerCount;
     }
 }
