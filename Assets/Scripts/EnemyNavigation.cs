@@ -3,49 +3,44 @@ using UnityEngine.AI;
 
 public class EnemyNavigation : MonoBehaviour
 {
-    Animator anim; // Reference to the Animator component
-    public Transform Player; // Reference to the player's transform
-    private NavMeshAgent _agent; // Reference to the NavMeshAgent component
-    public float DetectionRange = 30.0f; // Detection range for the enemy
-    private Vector3 _lastKnownPlayerPosition; // Last known position of the player
-    public float EnemySpeed = 2.5f; // Speed of the enemy
-    public float AttackRange = 2.0f; // Attack range of the enemy
-    public float Health = 100.0f; // Health of the enemy
-    private bool isDead = false; // Check if the enemy is dead
+    Animator anim;
+    private Transform Player;
+    private NavMeshAgent _agent;
+    public float DetectionRange = 30.0f;
+    private Vector3 _lastKnownPlayerPosition;
+    public float EnemySpeed = 2.5f;
+    public float AttackRange = 1.25f;
+    public float Health = 100.0f;
+    private bool isDead = false;
 
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = EnemySpeed;
         anim = GetComponent<Animator>();
+        Player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
     {
-        // If the enemy is dead, stop updating
         if (isDead)
             return;
 
-        // Temporarily kill the enemy
         if (Input.GetKeyDown(KeyCode.H))
         {
             Die();
             return;
         }
 
-        // Calculate the distance to the player
         float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
 
-        // If the player is within detection range
         if (distanceToPlayer <= DetectionRange)
         {
-            // Update the last known player position and set it as the destination
             _lastKnownPlayerPosition = Player.position;
             _agent.destination = _lastKnownPlayerPosition;
         }
         else
         {
-            // Continue moving towards the last known player position
             _agent.destination = _lastKnownPlayerPosition;
         }
 
@@ -65,7 +60,6 @@ public class EnemyNavigation : MonoBehaviour
 
     }
 
-    // Method to apply damage to the enemy
     public void EnemyTakeDamage(float amount)
     {
         Health -= amount;
@@ -76,7 +70,6 @@ public class EnemyNavigation : MonoBehaviour
         }
     }
 
-    // Method to handle the enemy's death
     void Die()
     {
         isDead = true;
@@ -89,6 +82,6 @@ public class EnemyNavigation : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
 }

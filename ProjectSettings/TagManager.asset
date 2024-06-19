@@ -9,6 +9,8 @@ TagManager:
   - zmianalight
   - rot
   - Ground
+  - Fire
+  - Boss
   layers:
   - Default
   - TransparentFX

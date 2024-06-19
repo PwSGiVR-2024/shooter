@@ -6,6 +6,8 @@ public class CutsceneHandler2 : MonoBehaviour
 {
     public PlayableDirector dir;
     public FirstPersonController fpc;
+    public Boss bossScript;
+    public GameObject enemyHealthBar;
     private bool hasCutscenePlayed = false;
 
     void Start()
@@ -31,5 +33,7 @@ public class CutsceneHandler2 : MonoBehaviour
     private void OnCutsceneEnded(PlayableDirector pd)
     {
         fpc.enabled = true;
+        bossScript.enabled = true;
+        enemyHealthBar.SetActive(true);
     }
 }
