@@ -5,10 +5,14 @@ using UnityEngine;
 public class ForSoundsOnTrig : MonoBehaviour
 {
     public AudioSource sound;
+    private bool hasPlayed = false;
+
     private void OnTriggerEnter(Collider other)
     {
-
-        sound.Play();
-        Destroy(gameObject);
+        if (!hasPlayed)
+        {
+            sound.Play();
+            hasPlayed = true;
+        }
     }
 }

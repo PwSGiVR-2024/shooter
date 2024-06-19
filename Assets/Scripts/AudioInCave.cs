@@ -5,8 +5,14 @@ using UnityEngine;
 public class AudioInCave : MonoBehaviour
 {
     public AudioSource girlsound;
+    private bool hasPlayed = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        girlsound.Play();
+        if (!hasPlayed)
+        {
+            girlsound.Play();
+            hasPlayed = true;
+        }
     }
 }
