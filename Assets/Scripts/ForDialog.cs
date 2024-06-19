@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Fordialog : MonoBehaviour
+public class ForDialog : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
@@ -13,12 +13,6 @@ public class Fordialog : MonoBehaviour
     {
         textComponent.text = string.Empty;
         StartDialogue();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void StartDialogue()
