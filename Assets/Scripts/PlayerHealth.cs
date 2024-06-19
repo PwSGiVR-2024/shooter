@@ -1,6 +1,6 @@
-using UnityEngine;
-using TMPro;
 using StarterAssets;
+using TMPro;
+using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,7 +8,17 @@ public class PlayerHealth : MonoBehaviour
     public TextMeshProUGUI Health;
     public Transform Player;
     public AudioSource HitSound;
-    public int CurrentHealth = 100;
+    private int _currentHealth = 100;
+    public int CurrentHealth
+    {
+        get => _currentHealth;
+        set
+        {
+            _currentHealth = value;
+            CheckHealth();
+            Health.text = "Health: " + _currentHealth;
+        }
+    }
     public int MaxHealth = 100;
     public float InvincibilityTime = 1.0f;
     public bool Invincibility = false;
@@ -26,8 +36,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        CheckHealth();
-
         if (_isDead)
         {
             DeathMenuUI.SetActive(true);
@@ -60,6 +68,10 @@ public class PlayerHealth : MonoBehaviour
         {
             YouDied();
         }
+        else if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
     }
 
     public void TakeDamage(int damage)
@@ -68,7 +80,6 @@ public class PlayerHealth : MonoBehaviour
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
         Invincibility = true;
         InvincibilityTimer = Time.time + InvincibilityTime;
-        Health.text = "Health: " + CurrentHealth;
     }
 
     public void YouDied()
