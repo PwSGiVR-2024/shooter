@@ -82,6 +82,9 @@ namespace StarterAssets
         private const float _crouchHeight = 1f;
         private bool _isCrouching = false;
 
+		[SerializeField] ItemContainerCallbacks _itemContainerCallbacks;
+		private float _savedRotationSpeed;
+
 		private bool IsCurrentDeviceMouse
 		{
 			get
@@ -116,6 +119,22 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			_itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
+		}
+
+		private void UpdateItemContainerCount(int itemContainerCount)
+		{
+			if (itemContainerCount == 1 && _savedRotationSpeed == 0)
+			{
+				_savedRotationSpeed = RotationSpeed;
+				RotationSpeed = 0;
+			}
+			else if (itemContainerCount == 0)
+			{
+				RotationSpeed = _savedRotationSpeed;
+				_savedRotationSpeed = 0;
+			}
 		}
 
 		private void Update()
@@ -145,7 +164,7 @@ namespace StarterAssets
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
+
 				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
 				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
