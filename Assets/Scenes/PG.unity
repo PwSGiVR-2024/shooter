@@ -995,6 +995,80 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7711700c499322241ad0a6161fccb38f, type: 3}
+--- !u!1001 &1096504270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2630711656203466868, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_Amounts.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 388.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 101.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 235.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.55643547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.821703
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.06909189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.102029815
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -111.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -14.156006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514479309508066731, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: m_Name
+      value: ChestBeds
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 2487302061759394014, guid: fdd9999d3a633f242a1214bcf8f6e2ea, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fdd9999d3a633f242a1214bcf8f6e2ea, type: 3}
 --- !u!1 &1349958839
 GameObject:
   m_ObjectHideFlags: 0
@@ -21206,17 +21280,17 @@ PrefabInstance:
     - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 158.883
+      value: 355.77
       objectReference: {fileID: 0}
     - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 107.478
+      value: 102.44
       objectReference: {fileID: 0}
     - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 168.13
+      value: 185.87
       objectReference: {fileID: 0}
     - target: {fileID: 4354813270590170218, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
@@ -21256,10 +21330,11 @@ PrefabInstance:
     - target: {fileID: 7514479309508066731, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
       propertyPath: m_Name
-      value: Chest
+      value: ChestGY
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2487302061759394014, guid: fdd9999d3a633f242a1214bcf8f6e2ea, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd9999d3a633f242a1214bcf8f6e2ea, type: 3}
@@ -25208,7 +25283,8 @@ PrefabInstance:
       value: Vendor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8999866400296281554, guid: b23b6c221328a3f498cbcc250643a398, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b23b6c221328a3f498cbcc250643a398, type: 3}
@@ -31292,5 +31368,6 @@ SceneRoots:
   - {fileID: 1956247795}
   - {fileID: 1894903113}
   - {fileID: 6018649422444894367}
+  - {fileID: 1096504270}
   - {fileID: 7280348483762323339}
   - {fileID: 21451980}

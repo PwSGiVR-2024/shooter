@@ -70,7 +70,7 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-	
+
 #if ENABLE_INPUT_SYSTEM
 		private PlayerInput _playerInput;
 #endif
@@ -82,7 +82,7 @@ namespace StarterAssets
         private const float _crouchHeight = 1f;
         private bool _isCrouching = false;
 
-		[SerializeField] ItemContainerCallbacks _itemContainerCallbacks;
+		ItemContainerCallbacks _itemContainerCallbacks;
 		private float _savedRotationSpeed;
 
 		private bool IsCurrentDeviceMouse
@@ -119,7 +119,7 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
-
+			_itemContainerCallbacks = GameObject.Find("ItemContainerMethods").GetComponent<ItemContainerCallbacks>();
 			_itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
 		}
 
