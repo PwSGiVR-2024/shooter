@@ -34732,7 +34732,6 @@ MonoBehaviour:
   Health: {fileID: 1621151112}
   Player: {fileID: 1453246653}
   HitSound: {fileID: 0}
-  CurrentHealth: 100
   MaxHealth: 100
   InvincibilityTime: 1
   Invincibility: 0
@@ -39166,6 +39165,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1733541279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1734451915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734451917}
+  - component: {fileID: 1734451916}
+  m_Layer: 0
+  m_Name: AdditiveLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1734451916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734451915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376f7d7d1dc40094a9757a6c880bbbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1734451917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734451915}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 335.5, y: 105.6, z: 175.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1741672644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47632,3 +47675,4 @@ SceneRoots:
   - {fileID: 5332998}
   - {fileID: 1917907814}
   - {fileID: 931413601}
+  - {fileID: 1734451917}
