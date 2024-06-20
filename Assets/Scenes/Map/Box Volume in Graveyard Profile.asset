@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   postExposure:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.5
   contrast:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 34.53
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -46,21 +46,21 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 7.14
   intensity:
-    m_OverrideState: 1
-    m_Value: 1.59
+    m_OverrideState: 0
+    m_Value: 0.12
   scatter:
     m_OverrideState: 1
-    m_Value: 0.762
+    m_Value: 0.99
   clamp:
     m_OverrideState: 1
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.6415094, g: 0.3661445, b: 0.3661445, a: 1}
+    m_Value: {r: 0.2743414, g: 0.39564624, b: 0.4245283, a: 1}
   highQualityFiltering:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   downscale:
     m_OverrideState: 0
@@ -111,10 +111,10 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: -16
   tint:
     m_OverrideState: 0
-    m_Value: -42
+    m_Value: -100
 --- !u!114 &654818097351473842
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -150,7 +150,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.5471698, g: 0.43102527, b: 0.43102527, a: 1}
+    m_Value: {r: 0.20745817, g: 0.34903434, b: 0.3962264, a: 1}
   highlights:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -318,8 +318,8 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.034883723
-          value: 0.85093164
+          time: 0.5423729
+          value: 0.86915886
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -327,8 +327,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.84011626
-          value: 0.621118
+          time: 0.62711865
+          value: 0.5794393
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   shadows:
     m_OverrideState: 0
     m_Value: {x: 1, y: 0.97744846, z: 0.9816987, w: -0.041194644}
@@ -413,7 +413,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   highlights:
     m_OverrideState: 0
-    m_Value: {x: 0.9812355, y: 0.98592675, z: 1, w: -0.123583965}
+    m_Value: {x: 0.9812355, y: 0.98592675, z: 1, w: -0.72179294}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0

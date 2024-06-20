@@ -9,7 +9,7 @@ public class CutsceneHandler1 : MonoBehaviour
     public PlayableDirector dir;
     public FirstPersonController fpc;
     private bool hasCutscenePlayed = false;
-
+    public Light spotlight;
     void Start()
     {
         dir.played += OnCutsceneStarted;
@@ -20,6 +20,7 @@ public class CutsceneHandler1 : MonoBehaviour
     {
         if (!hasCutscenePlayed && other.CompareTag("Player"))
         {
+            
             dir.Play();
             hasCutscenePlayed = true;
         }
@@ -27,6 +28,7 @@ public class CutsceneHandler1 : MonoBehaviour
 
     private void OnCutsceneStarted(PlayableDirector dir)
     {
+        spotlight.enabled = true;
         anim.SetBool("Talking", true);
         dziad.position = new Vector3(334.365f, 102.0025f, 173.702f);
         fpc.enabled = false;
@@ -34,6 +36,7 @@ public class CutsceneHandler1 : MonoBehaviour
 
     private void OnCutsceneEnded(PlayableDirector pd)
     {
+        spotlight.enabled = false;
         anim.SetBool("Talking", false);
         dziad.position = new Vector3(334.5662f, 101.975f, 173.6883f);
         fpc.enabled = true;
