@@ -9,6 +9,7 @@ public class CutsceneHandler2 : MonoBehaviour
     public Boss bossScript;
     public GameObject enemyHealthBar;
     private bool hasCutscenePlayed = false;
+    public AudioSource sound;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class CutsceneHandler2 : MonoBehaviour
     {
         if (!hasCutscenePlayed && other.CompareTag("Player"))
         {
+            sound.Play();
             dir.Play();
             hasCutscenePlayed = true;
         }
