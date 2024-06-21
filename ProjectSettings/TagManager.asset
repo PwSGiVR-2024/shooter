@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Fire
   - Boss
+  - Girl
   layers:
   - Default
   - TransparentFX
