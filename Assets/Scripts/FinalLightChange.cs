@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.Playables;
 
 public class FinalLightChange : MonoBehaviour
@@ -10,9 +7,11 @@ public class FinalLightChange : MonoBehaviour
     public Volume postProcessingVolume;
     public int newPriority = 1;
     public PlayableDirector dir;
+    public GameObject dad;
+    public Transform targetPoint;
+
     void Start()
     {
-        
         if (postProcessingVolume == null)
         {
             postProcessingVolume = GetComponent<Volume>();
@@ -25,7 +24,13 @@ public class FinalLightChange : MonoBehaviour
         {
             dir.Play();
             postProcessingVolume.priority = newPriority;
-            Debug.LogWarning("Post-Processing ");
+            Debug.LogWarning("Post-Processing Activated");
+
+            DadControllerEnd dadControllerEnd = dad.GetComponent<DadControllerEnd>();
+            if (dadControllerEnd != null)
+            {
+                dadControllerEnd.MoveToPoint(targetPoint.position);
+            }
         }
     }
 }

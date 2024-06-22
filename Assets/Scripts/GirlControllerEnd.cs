@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class GirlControllerEnd : MonoBehaviour
 {
     public Transform target;
+    public Transform player;
     private NavMeshAgent agent;
     private Animator animator;
 
@@ -26,6 +27,7 @@ public class GirlControllerEnd : MonoBehaviour
             {
                 animator.SetBool("Run", false);
                 animator.SetBool("Idle", true);
+                RotateToFacePlayer();
             }
         }
     }
@@ -35,6 +37,16 @@ public class GirlControllerEnd : MonoBehaviour
         if (agent != null && target != null)
         {
             agent.SetDestination(target.position);
+        }
+    }
+
+    private void RotateToFacePlayer()
+    {
+        if (player != null)
+        {
+            Vector3 direction = (player.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         }
     }
 }
