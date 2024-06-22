@@ -37,12 +37,13 @@ public class Boss : MonoBehaviour
         CheckMinions();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (!canTakeDamage)
             return;
 
-        currentHealth -= damage;
+        int damageInt = (int)damage;
+        currentHealth -= damageInt;
 
         OnHealthChanged?.Invoke(currentHealth);
 

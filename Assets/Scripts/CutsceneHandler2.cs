@@ -1,3 +1,4 @@
+using System.Collections;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -10,6 +11,8 @@ public class CutsceneHandler2 : MonoBehaviour
     public GameObject enemyHealthBar;
     private bool hasCutscenePlayed = false;
     public AudioSource sound;
+    public Camera WeaponCamera;
+    public float WeaponTurnOnDelay;
 
     void Start()
     {
@@ -30,6 +33,7 @@ public class CutsceneHandler2 : MonoBehaviour
     private void OnCutsceneStarted(PlayableDirector dir)
     {
         fpc.enabled = false;
+        WeaponCamera.enabled = false;
     }
 
     private void OnCutsceneEnded(PlayableDirector pd)
@@ -37,5 +41,13 @@ public class CutsceneHandler2 : MonoBehaviour
         fpc.enabled = true;
         bossScript.enabled = true;
         enemyHealthBar.SetActive(true);
+        StartCoroutine(EnableWeaponWithDelay());
+    }
+
+    private IEnumerator EnableWeaponWithDelay()
+    {
+        yield return new WaitForSeconds(WeaponTurnOnDelay);
+
+        WeaponCamera.enabled = true;
     }
 }

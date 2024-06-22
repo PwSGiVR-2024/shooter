@@ -27,10 +27,14 @@ public class Bullet : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        EnemyTest enemy = collision.gameObject.GetComponent<EnemyTest>();
+        EnemyNavigation enemy = collision.gameObject.GetComponent<EnemyNavigation>();
+        Boss boss = collision.gameObject.GetComponent<Boss>();
         if (enemy)
         {
-            enemy.TakeDamage(_bulletDamage);
+            enemy.EnemyTakeDamage(_bulletDamage);
+        } else if (boss)
+        {
+            boss.TakeDamage(_bulletDamage);
         }
 
         DestroyBullet();

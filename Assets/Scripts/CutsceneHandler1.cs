@@ -1,3 +1,4 @@
+using System.Collections;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -10,6 +11,9 @@ public class CutsceneHandler1 : MonoBehaviour
     public FirstPersonController fpc;
     private bool hasCutscenePlayed = false;
     public Light spotlight;
+    public Camera WeaponCamera;
+    public float WeaponTurnOnDelay;
+
     void Start()
     {
         dir.played += OnCutsceneStarted;
@@ -32,6 +36,7 @@ public class CutsceneHandler1 : MonoBehaviour
         anim.SetBool("Talking", true);
         dziad.position = new Vector3(334.365f, 102.0025f, 173.702f);
         fpc.enabled = false;
+        WeaponCamera.enabled = false;
     }
 
     private void OnCutsceneEnded(PlayableDirector pd)
@@ -40,5 +45,13 @@ public class CutsceneHandler1 : MonoBehaviour
         anim.SetBool("Talking", false);
         dziad.position = new Vector3(334.5662f, 101.975f, 173.6883f);
         fpc.enabled = true;
+        StartCoroutine(EnableWeaponWithDelay());
+    }
+
+    private IEnumerator EnableWeaponWithDelay()
+    {
+        yield return new WaitForSeconds(WeaponTurnOnDelay);
+
+        WeaponCamera.enabled = true;
     }
 }

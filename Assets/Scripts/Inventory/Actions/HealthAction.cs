@@ -15,7 +15,7 @@ public class HealthAction : Action
 
     public override void OnStart()
     {
-        _target = GameObject.Find("Capsule");
+        _target = GameObject.Find("PlayerBody");
         _playerHealth = _target.GetComponent<PlayerHealth>();
     }
 
