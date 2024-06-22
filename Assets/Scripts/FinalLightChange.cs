@@ -75,7 +75,8 @@ public class FinalLightChange : MonoBehaviour
     private IEnumerator EnableWeaponWithDelay()
     {
         yield return new WaitForSeconds(WeaponTurnOnDelay);
-
         WeaponCamera.enabled = true;
+
+        SceneController.instance.NextLevel();
     }
 }
