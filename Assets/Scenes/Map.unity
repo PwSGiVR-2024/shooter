@@ -6549,6 +6549,7 @@ MonoBehaviour:
   spotlight: {fileID: 604510591}
   WeaponCamera: {fileID: 775313935}
   WeaponTurnOnDelay: 0.4
+  shootingManager: {fileID: 1467510330}
 --- !u!65 &215212796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7306,6 +7307,10 @@ MonoBehaviour:
   dir: {fileID: 2075317045}
   dad: {fileID: 2139223569}
   targetPoint: {fileID: 1399813301}
+  fpc: {fileID: 1136103481}
+  WeaponCamera: {fileID: 775313935}
+  WeaponTurnOnDelay: 0.6
+  shootingManager: {fileID: 1467510330}
 --- !u!65 &256473549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15313,6 +15318,7 @@ MonoBehaviour:
   sound: {fileID: 1561620209}
   WeaponCamera: {fileID: 775313935}
   WeaponTurnOnDelay: 1.9
+  shootingManager: {fileID: 1467510330}
 --- !u!320 &592283603
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -46578,11 +46584,11 @@ Transform:
   - {fileID: 937933980}
   - {fileID: 2139223568}
   - {fileID: 1399813301}
+  - {fileID: 1294927016}
   - {fileID: 2075317046}
   - {fileID: 563001357}
   - {fileID: 1603103165}
   - {fileID: 256473552}
-  - {fileID: 1294927016}
   - {fileID: 77896204}
   - {fileID: 8591984}
   - {fileID: 1225139173}

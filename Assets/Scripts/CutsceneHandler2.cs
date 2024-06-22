@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -13,11 +14,18 @@ public class CutsceneHandler2 : MonoBehaviour
     public AudioSource sound;
     public Camera WeaponCamera;
     public float WeaponTurnOnDelay;
+    public GameObject shootingManager;
+    private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
     void Start()
     {
         dir.played += OnCutsceneStarted;
         dir.stopped += OnCutsceneEnded;
+
+        foreach (MonoBehaviour script in shootingManager.GetComponents<MonoBehaviour>())
+        {
+            shootingScripts.Add(script);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,6 +42,11 @@ public class CutsceneHandler2 : MonoBehaviour
     {
         fpc.enabled = false;
         WeaponCamera.enabled = false;
+
+        foreach (MonoBehaviour script in shootingScripts)
+        {
+            script.enabled = false;
+        }
     }
 
     private void OnCutsceneEnded(PlayableDirector pd)
@@ -42,6 +55,11 @@ public class CutsceneHandler2 : MonoBehaviour
         bossScript.enabled = true;
         enemyHealthBar.SetActive(true);
         StartCoroutine(EnableWeaponWithDelay());
+
+        foreach (MonoBehaviour script in shootingScripts)
+        {
+            script.enabled = true;
+        }
     }
 
     private IEnumerator EnableWeaponWithDelay()

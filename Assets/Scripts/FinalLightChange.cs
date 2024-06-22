@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Playables;
+using StarterAssets;
+using System.Collections;
+using System.Collections.Generic;
 
 public class FinalLightChange : MonoBehaviour
 {
@@ -9,12 +12,25 @@ public class FinalLightChange : MonoBehaviour
     public PlayableDirector dir;
     public GameObject dad;
     public Transform targetPoint;
+    public FirstPersonController fpc;
+    public Camera WeaponCamera;
+    public float WeaponTurnOnDelay;
+    public GameObject shootingManager;
+    private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
     void Start()
     {
+        dir.played += OnCutsceneStarted;
+        dir.stopped += OnCutsceneEnded;
+
         if (postProcessingVolume == null)
         {
             postProcessingVolume = GetComponent<Volume>();
+        }
+
+        foreach (MonoBehaviour script in shootingManager.GetComponents<MonoBehaviour>())
+        {
+            shootingScripts.Add(script);
         }
     }
 
@@ -32,5 +48,34 @@ public class FinalLightChange : MonoBehaviour
                 dadControllerEnd.MoveToPoint(targetPoint.position);
             }
         }
+    }
+
+    private void OnCutsceneStarted(PlayableDirector dir)
+    {
+        fpc.enabled = false;
+        WeaponCamera.enabled = false;
+
+        foreach (MonoBehaviour script in shootingScripts)
+        {
+            script.enabled = false;
+        }
+    }
+
+    private void OnCutsceneEnded(PlayableDirector pd)
+    {
+        fpc.enabled = true;
+        StartCoroutine(EnableWeaponWithDelay());
+
+        foreach (MonoBehaviour script in shootingScripts)
+        {
+            script.enabled = true;
+        }
+    }
+
+    private IEnumerator EnableWeaponWithDelay()
+    {
+        yield return new WaitForSeconds(WeaponTurnOnDelay);
+
+        WeaponCamera.enabled = true;
     }
 }
