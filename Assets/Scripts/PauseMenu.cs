@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using StarterAssets;
+using System.Collections.Generic;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,10 +11,17 @@ public class PauseMenu : MonoBehaviour
     public GameObject DeathMenuUI;
     public FirstPersonController FirstPersonController;
     private bool _canTogglePause = true;
+    public GameObject shootingManager;
+    private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
     private void Awake()
     {
         Instance = this;
+
+        foreach (MonoBehaviour script in shootingManager.GetComponents<MonoBehaviour>())
+        {
+            shootingScripts.Add(script);
+        }
     }
 
     void Update()
@@ -37,6 +45,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
         FirstPersonController.enabled = true;
+
+        foreach (MonoBehaviour script in shootingScripts)
+        {
+            script.enabled = true;
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -47,6 +61,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         FirstPersonController.enabled = false;
+
+        foreach (MonoBehaviour script in shootingScripts)
+        {
+            script.enabled = false;
+        }
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -55,7 +75,6 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
-        //GameManager.instance.ResetScore();
     }
 
     public void QuitGame()

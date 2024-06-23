@@ -1,6 +1,7 @@
 using StarterAssets;
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
     public float InvincibilityTimer;
     public GameObject DeathMenuUI;
     public FirstPersonController FirstPersonController;
+    public GameObject shootingManager;
+    private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
     private bool _isDead = false;
     [HideInInspector]
     public bool Dead;
@@ -22,6 +25,11 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        foreach (MonoBehaviour script in shootingManager.GetComponents<MonoBehaviour>())
+        {
+            shootingScripts.Add(script);
+        }
     }
 
     void Update()
@@ -30,6 +38,12 @@ public class PlayerHealth : MonoBehaviour
         {
             DeathMenuUI.SetActive(true);
             FirstPersonController.enabled = false;
+
+            foreach (MonoBehaviour script in shootingScripts)
+            {
+                script.enabled = false;
+            }
+
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             _isDead = false;
