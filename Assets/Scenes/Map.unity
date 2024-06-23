@@ -21478,7 +21478,7 @@ GameObject:
   - component: {fileID: 728741069}
   - component: {fileID: 728741068}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21550,7 +21550,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1956247796}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30779,7 +30779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -53104,7 +53104,7 @@ GameObject:
   - component: {fileID: 2041019626}
   - component: {fileID: 2041019625}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53176,7 +53176,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1956247796}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55574,7 +55574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
