@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class ChestAnimation : MonoBehaviour
 {
@@ -9,11 +8,20 @@ public class ChestAnimation : MonoBehaviour
     {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            anim.SetTrigger("ChestOpen");
+            anim.SetBool("Opened", true);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            anim.SetBool("Opened", false);
         }
     }
 }
