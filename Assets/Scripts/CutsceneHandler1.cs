@@ -14,6 +14,7 @@ public class CutsceneHandler1 : MonoBehaviour
     public Light spotlight;
     public Camera WeaponCamera;
     public float WeaponTurnOnDelay;
+    public Canvas crosshairCanvas;
     public GameObject shootingManager;
     private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
@@ -45,6 +46,7 @@ public class CutsceneHandler1 : MonoBehaviour
         dziad.position = new Vector3(334.365f, 102.0025f, 173.702f);
         fpc.enabled = false;
         WeaponCamera.enabled = false;
+        crosshairCanvas.enabled = false;
 
         foreach (MonoBehaviour script in shootingScripts)
         {
@@ -71,5 +73,6 @@ public class CutsceneHandler1 : MonoBehaviour
         yield return new WaitForSeconds(WeaponTurnOnDelay);
 
         WeaponCamera.enabled = true;
+        crosshairCanvas.enabled = true;
     }
 }

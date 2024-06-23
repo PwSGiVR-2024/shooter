@@ -15,6 +15,7 @@ public class FinalLightChange : MonoBehaviour
     public FirstPersonController fpc;
     public Camera WeaponCamera;
     public float WeaponTurnOnDelay;
+    public Canvas crosshairCanvas;
     public GameObject shootingManager;
     private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
@@ -54,6 +55,7 @@ public class FinalLightChange : MonoBehaviour
     {
         fpc.enabled = false;
         WeaponCamera.enabled = false;
+        crosshairCanvas.enabled = false;
 
         foreach (MonoBehaviour script in shootingScripts)
         {
@@ -76,6 +78,7 @@ public class FinalLightChange : MonoBehaviour
     {
         yield return new WaitForSeconds(WeaponTurnOnDelay);
         WeaponCamera.enabled = true;
+        crosshairCanvas.enabled = true;
 
         SceneController.instance.NextLevel();
     }

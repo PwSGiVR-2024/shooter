@@ -14,6 +14,7 @@ public class CutsceneHandler2 : MonoBehaviour
     public AudioSource sound;
     public Camera WeaponCamera;
     public float WeaponTurnOnDelay;
+    public Canvas crosshairCanvas;
     public GameObject shootingManager;
     private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
@@ -42,6 +43,7 @@ public class CutsceneHandler2 : MonoBehaviour
     {
         fpc.enabled = false;
         WeaponCamera.enabled = false;
+        crosshairCanvas.enabled = false;
 
         foreach (MonoBehaviour script in shootingScripts)
         {
@@ -67,5 +69,6 @@ public class CutsceneHandler2 : MonoBehaviour
         yield return new WaitForSeconds(WeaponTurnOnDelay);
 
         WeaponCamera.enabled = true;
+        crosshairCanvas.enabled = true;
     }
 }
