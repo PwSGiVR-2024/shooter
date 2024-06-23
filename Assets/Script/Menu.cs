@@ -21,6 +21,12 @@ public class Menu : MonoBehaviour
     private List<GameObject> _views;
     private readonly API _api = new("http://localhost:5000/");
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     void Start()
     {
         _views = new List<GameObject> { _mainMenuView, _loginView, _registerView, _userListView, _optionsView, _videoOptionsView };

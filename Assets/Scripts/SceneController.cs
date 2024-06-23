@@ -9,7 +9,10 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -19,7 +22,7 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-  
+
     public void NextLevel()
     {
         StartCoroutine(LoadLevel());
