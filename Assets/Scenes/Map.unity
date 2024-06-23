@@ -34281,6 +34281,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
+      propertyPath: SprintSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
       propertyPath: GroundLayers.m_Bits
       value: 9
       objectReference: {fileID: 0}
@@ -51144,6 +51149,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 1125475109}
   DeathMenuUI: {fileID: 1174909937}
   FirstPersonController: {fileID: 1136103481}
+  shootingManager: {fileID: 1467510330}
 --- !u!1001 &1957165377
 PrefabInstance:
   m_ObjectHideFlags: 0
