@@ -19,6 +19,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _videoOptionsView;
     [SerializeField] private GameObject _audioOptionsView;
     [SerializeField] private GameObject _controllsOptionsView;
+    [SerializeField] private GameObject _networkOptionsView;
     [SerializeField] private GameObject _loadingView;
     private List<GameObject> _views;
     private readonly API _api = new("http://localhost:5000/");
@@ -31,7 +32,7 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        _views = new List<GameObject> { _mainMenuView, _loginView, _registerView, _userListView, _optionsView, _videoOptionsView, _audioOptionsView, _controllsOptionsView };
+        _views = new List<GameObject> { _mainMenuView, _loginView, _registerView, _userListView, _optionsView, _videoOptionsView, _audioOptionsView, _controllsOptionsView, _networkOptionsView };
         Debug.Log(PlayerPrefs.GetString("cookies"));
     }
 
@@ -90,6 +91,12 @@ public class Menu : MonoBehaviour
     public void Fullscreen()
     {
         Screen.fullScreen = !Screen.fullScreen;
+    }
+
+    public void SetIP(TMP_InputField ip)
+    {
+        PlayerPrefs.SetString("ip", ip.text);
+        SetActiveView(_optionsView);
     }
 
     public async void Login()

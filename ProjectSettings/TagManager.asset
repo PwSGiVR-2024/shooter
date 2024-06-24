@@ -12,6 +12,12 @@ TagManager:
   - Fire
   - Boss
   - Girl
+  - Item container
+  - login
+  - password
+  - regpassword
+  - reglogin
+  - networkip
   layers:
   - Default
   - TransparentFX
