@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -22,10 +23,19 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _networkOptionsView;
     [SerializeField] private GameObject _loadingView;
     private List<GameObject> _views;
-    private readonly API _api = new("http://localhost:5000/");
+    private API _api;
 
     private void Awake()
     {
+        try
+        {
+            string ip = PlayerPrefs.GetString("ip", "localhost");
+            _api = new API(ip);
+        }
+        catch (Exception)
+        {
+            _api = new API("localhost");
+        }
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -96,6 +106,7 @@ public class Menu : MonoBehaviour
     public void SetIP(TMP_InputField ip)
     {
         PlayerPrefs.SetString("ip", ip.text);
+        _api = new(ip.text);
         SetActiveView(_optionsView);
     }
 

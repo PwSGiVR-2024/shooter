@@ -13,7 +13,7 @@ internal class API
 
     internal API(string baseAddress)
     {
-        _baseAddress = baseAddress;
+        _baseAddress = "http://" + baseAddress + ":5000/";
         _client = new HttpClient { BaseAddress = new Uri(_baseAddress) };
     }
 
