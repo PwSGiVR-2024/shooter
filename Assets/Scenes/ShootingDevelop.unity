@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f88e84b14c1134ead4ef44898d5437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fireaxe: {fileID: 1458202583}
+  _meleeWeapon: {fileID: 1458202583}
 --- !u!1 &664632893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a5fb3a6accab044a7fc4c5ffbbe43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dmg: 10
+  _range: 3
 --- !u!95 &1458202584
 Animator:
   serializedVersion: 5

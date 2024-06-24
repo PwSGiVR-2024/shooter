@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour
 {
-    private Animator _animator;
-    private float _dmg;
-    private float _range;
+    [SerializeField] private float _dmg;
+    [SerializeField] private float _range;
 
+    private Animator _animator;
     private bool _isAttacking = false;
     private bool _isChainAttack = false;
 
@@ -32,6 +32,8 @@ public class MeleeWeapon : MonoBehaviour
         }
     }
 
+
+    // Those events are called at the end of the attack animation in animation clip
     public void OnAttack1End()
     {
         IsAttacking = false;
