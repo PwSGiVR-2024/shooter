@@ -11226,7 +11226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c50b0226a78ada48ac94cd2a9100571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioMixer: {fileID: 24100000, guid: 0b8041958f2a6ca45811bde009b200d7, type: 2}
+  AudioMixer1: {fileID: 24100000, guid: 0b8041958f2a6ca45811bde009b200d7, type: 2}
+  AudioMixer2: {fileID: 24100000, guid: 08813bea6fa2f304d8179aec903c1bd9, type: 2}
   ResolutionDropdown: {fileID: 1949155159}
   QualityDropdown: {fileID: 290834240}
   SensitivitySlider: {fileID: 124003464}
