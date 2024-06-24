@@ -3,10 +3,12 @@ using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
+using UnityEngine.Audio;
 
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject _weaponsSlot;
+    [SerializeField] private AudioMixerGroup _shootingMixerGroup;
     private VisualEffect _muzzleFlash;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
@@ -26,7 +28,7 @@ public class Shooting : MonoBehaviour
     private bool _isReloading = false;
     private bool _isAiming = false;
     private RecoilShooting _recoilShooting;
-
+    private AudioSource _audioSource;
 
     private void Start()
     {
@@ -35,6 +37,11 @@ public class Shooting : MonoBehaviour
         _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
+
+        // Initialize AudioSource
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.outputAudioMixerGroup = _shootingMixerGroup;
+
         GetWeaponsData();
     }
 
@@ -128,7 +135,7 @@ public class Shooting : MonoBehaviour
             CreateBulletWithForce(targetDirection);
         }
 
-        ShootEfects();
+        ShootEffects();
         ShootAnimWhenAiming();
     }
 
@@ -143,10 +150,10 @@ public class Shooting : MonoBehaviour
         bulletRigidbody.AddForce(targetDirection * _bulletForce, ForceMode.Impulse);
     }
 
-    private void ShootEfects()
+    private void ShootEffects()
     {
         // Sound
-        AudioSource.PlayClipAtPoint(_currentWeapon.SoundOfShoot, _gunEnd.transform.position);
+        _audioSource.PlayOneShot(_currentWeapon.SoundOfShoot);
 
         // Visual Effect
         _recoilShooting.RecoilFire();
@@ -177,7 +184,7 @@ public class Shooting : MonoBehaviour
     private IEnumerator StartReloading()
     {
         _isReloading = true;
-        AudioSource.PlayClipAtPoint( _currentWeapon.SoundOfReload, transform.position);
+        _audioSource.PlayOneShot(_currentWeapon.SoundOfReload); // Use AudioSource for reload sound
         yield return new WaitForSeconds(_reloadTime);
         Reload();
         _isReloading = false;
@@ -186,12 +193,12 @@ public class Shooting : MonoBehaviour
     private void Reload()
     {
         int neededAmmo = _magazineCapacity - _currentAmmo; // How many bullets we need
-        if (neededAmmo < _backpackAmmo) // If we need less then we have
+        if (neededAmmo < _backpackAmmo) // If we need less than we have
         {
             _currentAmmo = _magazineCapacity;
             _backpackAmmo -= neededAmmo;
         }
-        else if (neededAmmo > _backpackAmmo) // If we need more then we have
+        else if (neededAmmo > _backpackAmmo) // If we need more than we have
         {
             _currentAmmo += _backpackAmmo;
             _backpackAmmo = 0;

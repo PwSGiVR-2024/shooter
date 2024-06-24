@@ -6,41 +6,50 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    public TMP_Dropdown resolutionDropdown;
-    public TMP_Dropdown qualityDropdown;
-    public Slider sensitivitySlider;
-    Resolution[] resolutions;
+    public AudioMixer AudioMixer1;
+    public AudioMixer AudioMixer2;
+    public TMP_Dropdown ResolutionDropdown;
+    public TMP_Dropdown QualityDropdown;
+    public Slider SensitivitySlider;
+    public AudioSource ButtonClickSource;
+    public AudioClip ButtonClickClip;
+    public AudioSource BackgroundMusicSource;
+    public AudioClip BackgroundMusicClip;
+    Resolution[] _resolutions;
 
     private void Start()
     {
         LoadQualityLevel();
         LoadSensitivity();
 
-        resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
+        _resolutions = Screen.resolutions;
+        ResolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
 
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < _resolutions.Length; i++)
         {
-            string option = resolutions[i].width + "x" + resolutions[i].height + " " + resolutions[i].refreshRateRatio.numerator / resolutions[i].refreshRateRatio.denominator + "Hz";
+            string option = _resolutions[i].width + "x" + _resolutions[i].height + " " + _resolutions[i].refreshRateRatio.numerator / _resolutions[i].refreshRateRatio.denominator + "Hz";
             options.Add(option);
 
-            if (resolutions[i].width == Screen.currentResolution.width
-                && resolutions[i].height == Screen.currentResolution.height
-                && resolutions[i].refreshRateRatio.Equals(Screen.currentResolution.refreshRateRatio))
+            if (_resolutions[i].width == Screen.currentResolution.width
+                && _resolutions[i].height == Screen.currentResolution.height
+                && _resolutions[i].refreshRateRatio.Equals(Screen.currentResolution.refreshRateRatio))
             {
                 currentResolutionIndex = i;
             }
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        ResolutionDropdown.AddOptions(options);
+        ResolutionDropdown.value = currentResolutionIndex;
+        ResolutionDropdown.RefreshShownValue();
 
         SetQualityDropdownOptions();
+
+        PlayBackgroundMusic();
+
+        AddButtonClickSoundEventsToAllCanvases();
     }
 
     private void SetQualityDropdownOptions()
@@ -54,21 +63,22 @@ public class SettingsMenu : MonoBehaviour
             options.Add(name);
         }
 
-        qualityDropdown.ClearOptions();
-        qualityDropdown.AddOptions(options);
-        qualityDropdown.value = currentQualityLevel;
-        qualityDropdown.RefreshShownValue();
+        QualityDropdown.ClearOptions();
+        QualityDropdown.AddOptions(options);
+        QualityDropdown.value = currentQualityLevel;
+        QualityDropdown.RefreshShownValue();
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        Resolution resolution = _resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRateRatio);
     }
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        AudioMixer1.SetFloat("Volume", volume);
+        AudioMixer2.SetFloat("SideVolume", volume);
     }
 
     public void SetQuality(int qualityIndex)
@@ -112,12 +122,53 @@ public class SettingsMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("Sensitivity"))
         {
             float sensitivity = PlayerPrefs.GetFloat("Sensitivity");
-            sensitivitySlider.value = sensitivity;
+            SensitivitySlider.value = sensitivity;
         }
         else
         {
-            sensitivitySlider.value = 1f;
+            SensitivitySlider.value = 1f;
         }
-        sensitivitySlider.onValueChanged.AddListener(SetSensitivity);
+        SensitivitySlider.onValueChanged.AddListener(SetSensitivity);
+    }
+
+    private void PlayBackgroundMusic()
+    {
+        if (BackgroundMusicSource != null && BackgroundMusicClip != null)
+        {
+            BackgroundMusicSource.clip = BackgroundMusicClip;
+            BackgroundMusicSource.loop = true;
+            BackgroundMusicSource.Play();
+        }
+    }
+
+    private void AddButtonClickSoundEventsToAllCanvases()
+    {
+        Canvas[] canvases = FindObjectsOfType<Canvas>(true);
+        foreach (Canvas canvas in canvases)
+        {
+            AddButtonClickSoundEvents(canvas.gameObject);
+        }
+    }
+
+    public void AddButtonClickSoundEvents(GameObject canvas)
+    {
+        Button[] buttons = canvas.GetComponentsInChildren<Button>(true);
+        foreach (Button button in buttons)
+        {
+            button.onClick.AddListener(PlayButtonClickSound);
+        }
+    }
+
+    public void PlayButtonClickSound()
+    {
+        if (ButtonClickSource != null && ButtonClickClip != null)
+        {
+            ButtonClickSource.PlayOneShot(ButtonClickClip);
+        }
+    }
+
+    private void OnEnable()
+    {
+        AddButtonClickSoundEvents(gameObject);
     }
 }
