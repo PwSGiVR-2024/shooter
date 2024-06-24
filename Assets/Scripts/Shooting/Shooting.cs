@@ -129,7 +129,7 @@ public class Shooting : MonoBehaviour
         }
 
         ShootEfects();
-        ShootAnimWhenAiming();
+        ShootAnimation();
     }
 
     private void CreateBulletWithForce(Vector3 targetDirection)
@@ -150,20 +150,13 @@ public class Shooting : MonoBehaviour
 
         // Visual Effect
         _recoilShooting.RecoilFire();
-        _muzzleFlash.Play();
-        _currentWeapon.FireLight.SetActive(true);
+        _muzzleFlash.Play(); // Fire effect from the gun
+        _currentWeapon.FireLight.SetActive(true); // Dynamic light fron fire effect
     }
 
-    private void ShootAnimWhenAiming()
+    private void ShootAnimation()
     {
-        if (!_isAiming)
-        {
-            _currentWeapon.Animator.SetTrigger("TrRecoil");
-        }
-        else
-        {
-            _currentWeapon.Animator.SetTrigger("TrRecoilAim");
-        }
+            _currentWeapon.Animator.SetTrigger("TrShoot");
     }
 
     private void OnReloadClick(InputAction.CallbackContext context)
@@ -201,15 +194,13 @@ public class Shooting : MonoBehaviour
 
     private void HandleAim()
     {
-        if (_input.aim && !_isAiming)
+        if (_input.aim)
         {
-            _currentWeapon.Animator.SetTrigger("TrAim");
-            _isAiming = true;
+            _currentWeapon.Animator.SetBool("isAiming", true);
         }
-        else if (!_input.aim && _isAiming)
+        else
         {
-            _currentWeapon.Animator.SetTrigger("TrAimUndo");
-            _isAiming = false;
+            _currentWeapon.Animator.SetBool("isAiming", false);
         }
     }
 }

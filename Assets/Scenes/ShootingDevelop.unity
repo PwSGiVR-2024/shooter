@@ -527,7 +527,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563402386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
   m_Name: 
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key1: {fileID: 7521539084878739923}
   Key2: {fileID: 1179081633}
-  Key3: {fileID: 521340937}
+  Key3: {fileID: 7521539084878739923}
 --- !u!114 &563402393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563402386}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31f88e84b14c1134ead4ef44898d5437, type: 3}
   m_Name: 
@@ -2637,7 +2637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1879752325540284, guid: c574fbbe0eae5c14a94bc3bd50a12d50, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4877361720334718, guid: c574fbbe0eae5c14a94bc3bd50a12d50, type: 3}
       propertyPath: m_LocalScale.x
