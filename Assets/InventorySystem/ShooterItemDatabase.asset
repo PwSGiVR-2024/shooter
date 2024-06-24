@@ -45,7 +45,7 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 8883075558970539077}
   m_Stack: 1
   m_MaxStack: 64
-  m_IsDroppable: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 8883075558970539077}
   m_Stack: 1
   m_MaxStack: 1
-  m_IsDroppable: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 1
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_SellCurrency: {fileID: 8883075558970539077}
   m_Stack: 1
   m_MaxStack: 64
-  m_IsDroppable: 1
+  m_IsDroppable: 0
   m_DropSound: {fileID: 0}
   m_OverridePrefab: {fileID: 0}
   m_IsCraftable: 0
