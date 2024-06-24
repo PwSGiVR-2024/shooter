@@ -9210,7 +9210,8 @@ AudioSource:
   m_GameObject: {fileID: 331617207}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 590e417df063fda45ace3428898cda2f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.221
@@ -20081,7 +20082,8 @@ AudioSource:
   m_GameObject: {fileID: 682155105}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 6221c9d8d186ed24c80818921ebf8540, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -22454,7 +22456,8 @@ AudioSource:
   m_GameObject: {fileID: 741063009}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: d585357cc2b558845ae72a313c80b2c3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.23
@@ -23310,13 +23313,6 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    Iso: 200
-    ShutterSpeed: 0.005
-    Aperture: 16
-    BladeCount: 5
-    Curvature: {x: 2, y: 11}
-    BarrelClipping: 0.25
-    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -27681,7 +27677,8 @@ AudioSource:
   m_GameObject: {fileID: 987598562}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 94f7156e3f62c064eb9c7e6f9d39d9db, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.025
@@ -28017,7 +28014,8 @@ AudioSource:
   m_GameObject: {fileID: 989074750}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 00b584e33b6d4be4a8498b95ac486468, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -29701,13 +29699,6 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    Iso: 200
-    ShutterSpeed: 0.005
-    Aperture: 16
-    BladeCount: 5
-    Curvature: {x: 2, y: 11}
-    BarrelClipping: 0.25
-    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -30963,7 +30954,8 @@ AudioSource:
   m_GameObject: {fileID: 1100317838}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 50fcfd726e14b304698dec36e67a1b3f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -37503,13 +37495,6 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    Iso: 200
-    ShutterSpeed: 0.005
-    Aperture: 16
-    BladeCount: 5
-    Curvature: {x: 2, y: 11}
-    BarrelClipping: 0.25
-    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -38028,13 +38013,6 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    Iso: 200
-    ShutterSpeed: 0.005
-    Aperture: 16
-    BladeCount: 5
-    Curvature: {x: 2, y: 11}
-    BarrelClipping: 0.25
-    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -38716,7 +38694,8 @@ AudioSource:
   m_GameObject: {fileID: 1370553615}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a9e80072817ed304382af9cc11b54a90, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -41740,7 +41719,8 @@ AudioSource:
   m_GameObject: {fileID: 1487638395}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 335ea6dfc2a50314cb2b986165e760fe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -43181,7 +43161,8 @@ AudioSource:
   m_GameObject: {fileID: 1561620208}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 3a72ad9465e0852429c8d42529d70ff2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -43376,7 +43357,8 @@ AudioSource:
   m_GameObject: {fileID: 1603103163}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 0e66f42a5b67e2047aab1a4c56489580, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.252
@@ -44883,7 +44865,8 @@ AudioSource:
   m_GameObject: {fileID: 1664615817}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 0f83a2ab0910d064fbcddbbb109b900e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -45094,7 +45077,8 @@ AudioSource:
   m_GameObject: {fileID: 1670011350}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 273fc722cf167154e8ed9e918106926e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -48066,13 +48050,6 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    Iso: 200
-    ShutterSpeed: 0.005
-    Aperture: 16
-    BladeCount: 5
-    Curvature: {x: 2, y: 11}
-    BarrelClipping: 0.25
-    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -53765,13 +53742,6 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
-    Iso: 200
-    ShutterSpeed: 0.005
-    Aperture: 16
-    BladeCount: 5
-    Curvature: {x: 2, y: 11}
-    BarrelClipping: 0.25
-    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

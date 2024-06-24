@@ -17,7 +17,9 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _userNamePrefab;
     [SerializeField] private GameObject _optionsView;
     [SerializeField] private GameObject _videoOptionsView;
-
+    [SerializeField] private GameObject _audioOptionsView;
+    [SerializeField] private GameObject _controllsOptionsView;
+    [SerializeField] private GameObject _loadingView;
     private List<GameObject> _views;
     private readonly API _api = new("http://localhost:5000/");
 
@@ -29,12 +31,14 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        _views = new List<GameObject> { _mainMenuView, _loginView, _registerView, _userListView, _optionsView, _videoOptionsView };
+        _views = new List<GameObject> { _mainMenuView, _loginView, _registerView, _userListView, _optionsView, _videoOptionsView, _audioOptionsView, _controllsOptionsView};
         Debug.Log(PlayerPrefs.GetString("cookies"));
     }
 
     public void NewGame()
     {
+        _loadingView.SetActive(true);
+        _mainMenuView.SetActive(false);
         SceneManager.LoadScene("Map");
     }
 
