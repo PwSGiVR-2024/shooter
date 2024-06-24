@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.VFX;
 
 public class Weapon : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject _fireLight;
     [SerializeField] private AudioClip _soundOfShoot;
     [SerializeField] private AudioClip _soundOfReload;
+    [SerializeField] private VisualEffect _muzzleFlash;
     [SerializeField] private float _bulletForce = 10f;
     [SerializeField] private float _dmg = 5f;
     [SerializeField] private float _shootRate = 0.5f; // interval between shots in seconds
@@ -25,6 +27,7 @@ public class Weapon : MonoBehaviour
     public GameObject FireLight => _fireLight;
     public AudioClip SoundOfShoot => _soundOfShoot;
     public AudioClip SoundOfReload => _soundOfReload;
+    public VisualEffect MuzzleFlash { get => _muzzleFlash; set => _muzzleFlash = value; }
     public float BulletForce { get => _bulletForce; set => _bulletForce = value; }
     public float Dmg { get => _dmg; set => _dmg = value; }
     public float ShootRate { get => _shootRate; set => _shootRate = value; }

@@ -24,7 +24,6 @@ public class Shooting : MonoBehaviour
     private int _backpackAmmo = 0;
     private float _reloadTime = 2;
     private bool _isReloading = false;
-    private bool _isAiming = false;
     private RecoilShooting _recoilShooting;
 
 
@@ -73,7 +72,7 @@ public class Shooting : MonoBehaviour
         _backpackAmmo = weapon.BackpackAmmo;
         _currentAmmo = weapon.CurrentAmmo;
         _reloadTime = weapon.ReloadTime;
-        _muzzleFlash = _gunEnd.GetComponent<VisualEffect>();
+        _muzzleFlash = weapon.MuzzleFlash;
     }
 
     private void OnFirePressed()
