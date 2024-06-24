@@ -169,7 +169,7 @@ MonoBehaviour:
   playerTag: Player
   maxDropDistance: 3
   queriesHitTriggers: 0
-  debugMessages: 1
+  debugMessages: 0
   showAllComponents: 0
 --- !u!114 &-4106047930263944871
 MonoBehaviour:
