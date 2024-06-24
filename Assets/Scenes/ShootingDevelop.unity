@@ -513,12 +513,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563402386}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 854712833558113575}
+  m_Father: {fileID: 7264612845111715955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &563402388
 MonoBehaviour:
@@ -1623,18 +1623,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1458202585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521340937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a5fb3a6accab044a7fc4c5ffbbe43d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1514334420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2713,10 +2701,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1458202584}
-    - targetCorrespondingSourceObject: {fileID: 1879752325540284, guid: c574fbbe0eae5c14a94bc3bd50a12d50,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1458202585}
   m_SourcePrefab: {fileID: 100100000, guid: c574fbbe0eae5c14a94bc3bd50a12d50, type: 3}
 --- !u!114 &176111348254960332
 MonoBehaviour:
@@ -2914,7 +2898,6 @@ Transform:
   m_Children:
   - {fileID: 7264612845111715955}
   - {fileID: 2781215035280299131}
-  - {fileID: 563402387}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1293732365533673980
@@ -3787,6 +3770,7 @@ Transform:
   m_Children:
   - {fileID: 1295270308733266614}
   - {fileID: 2026073201403734484}
+  - {fileID: 563402387}
   m_Father: {fileID: 854712833558113575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7272911968495186550

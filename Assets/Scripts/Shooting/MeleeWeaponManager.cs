@@ -7,15 +7,21 @@ public class MeleeWeaponManager : MonoBehaviour
     private PlayerInput _playerInput;
     private StarterAssetsInputs _input;
     [SerializeField] private MeleeWeapon _fireaxe;
+
     void Start()
     {
         _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+        _playerInput.actions["Fire"].started += OnAttackTap;
     }
 
-    void Update()
+    private void OnAttackTap(InputAction.CallbackContext context)
     {
-        if (_input.fire)
+        if (_fireaxe.IsAttacking)
+        {
+            _fireaxe.IsChainAttack = true;
+        }
+        else
         {
             MeleeAttack();
         }
@@ -23,6 +29,7 @@ public class MeleeWeaponManager : MonoBehaviour
 
     void MeleeAttack()
     {
+        _fireaxe.IsAttacking = true;
         _fireaxe.Animator.SetTrigger("Attack");
     }
 }
