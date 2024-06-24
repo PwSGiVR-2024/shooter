@@ -31,7 +31,7 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        _views = new List<GameObject> { _mainMenuView, _loginView, _registerView, _userListView, _optionsView, _videoOptionsView, _audioOptionsView, _controllsOptionsView};
+        _views = new List<GameObject> { _mainMenuView, _loginView, _registerView, _userListView, _optionsView, _videoOptionsView, _audioOptionsView, _controllsOptionsView };
         Debug.Log(PlayerPrefs.GetString("cookies"));
     }
 
@@ -161,7 +161,6 @@ public class Menu : MonoBehaviour
                 return;
             }
             await _api.Register(login, password);
-            ShowMessage("User registered");
             SetActiveView(_loginView);
         }
         catch (APIException ex)
