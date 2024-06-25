@@ -1,11 +1,8 @@
 using UnityEngine;
-using System;
 using UnityEngine.VFX;
 
 public class RangeWeapon : Weapon
 {
-    public event Action<RangeWeapon> OnWeaponEnable;
-
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private GameObject _gunEnd;
     [SerializeField] private GameObject _fireLight;
@@ -33,15 +30,4 @@ public class RangeWeapon : Weapon
     public int CurrentAmmo { get => _currentAmmo; set => _currentAmmo = value; }
     public int BackpackAmmo { get => _backpackAmmo; set => _backpackAmmo = value; }
     public bool IsFullauto { get => _isFullauto; set => _isFullauto = value; }
-
-    private void OnEnable()
-    {
-        OnWeaponEnable?.Invoke(this);
-        IsCurrentlyUsed = true;
-    }
-
-    private void OnDisable()
-    {
-        IsCurrentlyUsed = false;
-    }
 }

@@ -5,36 +5,55 @@ using UnityEngine;
 // Delete this class after implementing the eq system
 public class TempWeaponSwitcher : MonoBehaviour
 {
-    public GameObject Key1;
-    public GameObject Key2;
-    public GameObject Key3;
+    public Weapon Key1;
+    public Weapon Key2;
+    public Weapon Key3;
+
+    private Weapon[] _keys;
 
     private void Start()
     {
-        Key1.SetActive(true);
-        Key2.SetActive(false);
-        Key3.SetActive(false);
+        _keys = new Weapon[] { Key1, Key2, Key3 };
+        SetWeaponActive(Key1);
     }
 
+    public void SetWeaponActive(Weapon weapon)
+    {
+        foreach (var key in _keys)
+        {
+            if (key == weapon)
+            {
+                key.gameObject.SetActive(true);
+                if (weapon is RangeWeapon)
+                {
+                    WeaponManager.Instance.SetAttackStrategy(GetComponent<RangeAttack>());
+                }
+                else if (weapon is MeleeWeapon){
+                    WeaponManager.Instance.SetAttackStrategy(GetComponent<MeleeAttack>());
+                }
+            }
+            else
+            {
+                key.gameObject.SetActive(false);
+            }
+        }
+        
+    }
+
+    // Changing the weapons
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Key1.SetActive(true);
-            Key2.SetActive(false);
-            Key3.SetActive(false);
+            SetWeaponActive(Key1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Key1.SetActive(false);
-            Key2.SetActive(true);
-            Key3.SetActive(false);
+            SetWeaponActive(Key2);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Key1.SetActive(false);
-            Key2.SetActive(false);
-            Key3.SetActive(true);
+            SetWeaponActive(Key3);
         }
     }
 }

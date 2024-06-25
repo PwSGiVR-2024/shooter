@@ -53,7 +53,7 @@ public class RangeAttack : MonoBehaviour, IAttackStrategy
         _weapons = _weaponsSlot.GetComponentsInChildren<RangeWeapon>(true); // true argument to include inactive objects
         foreach (RangeWeapon weapon in _weapons)
         {
-            weapon.OnWeaponEnable += GetCurrentWeaponData; // Subscribe to weapon changed event
+            weapon.OnWeaponChange += GetCurrentWeaponData; // Subscribe to weapon changed event
             if (weapon.gameObject.activeSelf)
             {
                 GetCurrentWeaponData(weapon);
@@ -62,20 +62,23 @@ public class RangeAttack : MonoBehaviour, IAttackStrategy
     }
 
     // Function activates on weapon enable (weapon changed)
-    private void GetCurrentWeaponData(RangeWeapon weapon)
+    private void GetCurrentWeaponData(Weapon weapon)
     {
-        _currentWeapon = weapon;
-        _bulletPrefab = weapon.BulletPrefab;
-        _gunEnd = weapon.GunEnd;
-        _bulletForce = weapon.BulletForce;
-        _dmg = weapon.Dmg;
-        _shootRate = weapon.ShootRate;
-        _magazineCapacity = weapon.MagazineCapacity;
-        _backpackAmmo = weapon.BackpackAmmo;
-        _currentAmmo = weapon.CurrentAmmo;
-        _reloadTime = weapon.ReloadTime;
-        _muzzleFlash = weapon.MuzzleFlash;
-        _isFullauto = weapon.IsFullauto;
+        if (weapon is RangeWeapon rangeWeapon)
+        {
+            _currentWeapon = rangeWeapon;
+            _bulletPrefab = rangeWeapon.BulletPrefab;
+            _gunEnd = rangeWeapon.GunEnd;
+            _bulletForce = rangeWeapon.BulletForce;
+            _dmg = rangeWeapon.Dmg;
+            _shootRate = rangeWeapon.ShootRate;
+            _magazineCapacity = rangeWeapon.MagazineCapacity;
+            _backpackAmmo = rangeWeapon.BackpackAmmo;
+            _currentAmmo = rangeWeapon.CurrentAmmo;
+            _reloadTime = rangeWeapon.ReloadTime;
+            _muzzleFlash = rangeWeapon.MuzzleFlash;
+            _isFullauto = rangeWeapon.IsFullauto;
+        }
     }
 
     private void OnFirePressed()

@@ -2,14 +2,17 @@ using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AttackManager : MonoBehaviour
+public class WeaponManager : MonoBehaviour
 {
+    [SerializeField] GameObject _weaponsSlot;
     private PlayerInput _playerInput;
     private StarterAssetsInputs _input;
     private IAttackStrategy _currentAttackStrategy;
 
+    private Weapon _currentWeapon;
+
     // Singleton pattern
-    public static AttackManager Instance { get; private set; }
+    public static WeaponManager Instance { get; private set; }
 
     private void Awake()
     {
@@ -27,22 +30,41 @@ public class AttackManager : MonoBehaviour
     {
         HandleAttackPressed();
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetAttackStrategy(GetComponent<RangeAttack>());
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetAttackStrategy(GetComponent<MeleeAttack>());
-        }
+        //if(Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    SetAttackStrategy(GetComponent<RangeAttack>());
+        //}
+        //else if(Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    SetAttackStrategy(GetComponent<MeleeAttack>());
+        //}
+
+        // Example how to controll active weapon
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    _currentWeapon.gameObject.SetActive(!_currentWeapon.gameObject.activeSelf);
+        //}
     }
 
     private void Start()
     {
         _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
+
+        Weapon[] weapons = _weaponsSlot.GetComponentsInChildren<Weapon>(true);
+        foreach (var weapon in weapons)
+        {
+            weapon.OnWeaponChange += GetCurrentWeaponData;
+        }
+
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Fire"].started += AttackSingleClick;
         SetAttackStrategy(GetComponent<RangeAttack>());
+    }
+
+    private void GetCurrentWeaponData(Weapon weapon)
+    {
+        _currentWeapon = weapon;
+        print(_currentWeapon.GetType());
     }
 
     private void HandleAttackPressed()

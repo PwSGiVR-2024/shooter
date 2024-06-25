@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    public event Action<Weapon> OnWeaponChange;
+
     [SerializeField] private float _dmg;
 
     private Animator _animator;
@@ -14,5 +17,16 @@ public abstract class Weapon : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        OnWeaponChange?.Invoke(this);
+        IsCurrentlyUsed = true;
+    }
+
+    private void OnDisable()
+    {
+        IsCurrentlyUsed = false;
     }
 }
