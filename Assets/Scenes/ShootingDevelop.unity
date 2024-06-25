@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key1: {fileID: 1700189100}
-  Key2: {fileID: 7521539084878739923}
+  Key2: {fileID: 286675334044388049}
   Key3: {fileID: 4043241439103138769}
 --- !u!114 &563402393
 MonoBehaviour:
@@ -756,8 +756,8 @@ MonoBehaviour:
     type: 3}
   _gunEnd: {fileID: 1677238732}
   _fireLight: {fileID: 767776435}
-  _soundOfShoot: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
-  _soundOfReload: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
+  _soundOfShoot: {fileID: 8300000, guid: 7128b6e0da404f849b2d0aedbe2de66f, type: 3}
+  _soundOfReload: {fileID: 8300000, guid: 92c20e824356f714ba5529a3614cab98, type: 3}
   _muzzleFlash: {fileID: 767776440}
   _bulletForce: 2.5
   _dmg: 5
@@ -1336,8 +1336,8 @@ MonoBehaviour:
     type: 3}
   _gunEnd: {fileID: 694952708}
   _fireLight: {fileID: 1979417097}
-  _soundOfShoot: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
-  _soundOfReload: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
+  _soundOfShoot: {fileID: 8300000, guid: d9d6710dbbefbb646876684570c257c0, type: 3}
+  _soundOfReload: {fileID: 8300000, guid: 6c5d72de0aca36d429aebda05641db71, type: 3}
   _muzzleFlash: {fileID: 1979417102}
   _bulletForce: 4
   _dmg: 10
@@ -5947,7 +5947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &4160061889909090441
 MeshRenderer:
   m_ObjectHideFlags: 0
