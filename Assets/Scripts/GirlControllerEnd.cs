@@ -1,52 +1,75 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class GirlControllerEnd : MonoBehaviour
 {
-    public Transform target;
-    public Transform player;
-    private NavMeshAgent agent;
-    private Animator animator;
+    public Transform GirlRunTarget;
+    public Transform LookPoint;
+    public float TalkingDelay = 8f;
+    private NavMeshAgent _agent;
+    private Animator _animator;
+    private bool _hasReachedDestination = false;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (agent != null && animator != null)
+        if (_agent != null && _animator != null)
         {
-            if (agent.remainingDistance > agent.stoppingDistance)
+            if (_agent.remainingDistance > _agent.stoppingDistance)
             {
-                animator.SetBool("Idle", false);
-                animator.SetBool("Run", true);
+                _animator.SetBool("Idle", false);
+                _animator.SetBool("Run", true);
+                _hasReachedDestination = false;
             }
             else
             {
-                animator.SetBool("Run", false);
-                animator.SetBool("Idle", true);
-                RotateToFacePlayer();
+                _animator.SetBool("Run", false);
+                _animator.SetBool("Idle", true);
+                RotateToFaceLookPoint();
+
+                if (!_hasReachedDestination)
+                {
+                    _hasReachedDestination = true;
+                    StartCoroutine(StartTalkingAfterDelay(TalkingDelay));
+                }
             }
         }
     }
 
     public void MoveToTarget()
     {
-        if (agent != null && target != null)
+        if (_agent != null && GirlRunTarget != null)
         {
-            agent.SetDestination(target.position);
+            _agent.SetDestination(GirlRunTarget.position);
         }
     }
 
-    private void RotateToFacePlayer()
+    private void RotateToFaceLookPoint()
     {
-        if (player != null)
+        if (LookPoint != null)
         {
-            Vector3 direction = (player.position - transform.position).normalized;
+            Vector3 direction = (LookPoint.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         }
+    }
+
+    private IEnumerator StartTalkingAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _animator.SetBool("Idle", false);
+        _animator.SetBool("Talking", true);
+    }
+
+    public void EndTalking()
+    {
+        _animator.SetBool("Idle", true);
+        _animator.SetBool("Talking", false);
     }
 }

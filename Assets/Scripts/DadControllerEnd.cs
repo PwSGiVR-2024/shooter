@@ -1,48 +1,67 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class DadControllerEnd : MonoBehaviour
 {
-    private NavMeshAgent navMeshAgent;
-    private Animator animator;
-    public Transform player;
+    private NavMeshAgent _navMeshAgent;
+    private Animator _animator;
+    public Transform LookPoint;
+    public float TalkingDuration = 5.5f;
+    private bool _isRotating = false;
 
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (navMeshAgent.velocity.magnitude > 0.1f)
+        if (_navMeshAgent.velocity.magnitude > 0.1f)
         {
-            animator.SetBool("isRunning", true);
+            _animator.SetBool("isRunning", true);
+            _isRotating = false;
         }
         else
         {
-            animator.SetBool("isRunning", false);
-            RotateToFacePlayer();
+            if (_animator.GetBool("isRunning"))
+            {
+                _animator.SetBool("isRunning", false);
+                _isRotating = true;
+                StartCoroutine(TalkForDuration(TalkingDuration));
+            }
+
+            if (_isRotating)
+            {
+                RotateToFaceLookPoint();
+            }
         }
     }
 
     public void MoveToPoint(Vector3 point)
     {
-        if (navMeshAgent != null)
+        if (_navMeshAgent != null)
         {
-            navMeshAgent.SetDestination(point);
+            _navMeshAgent.SetDestination(point);
         }
     }
 
-    private void RotateToFacePlayer()
+    private void RotateToFaceLookPoint()
     {
-        if (player != null)
+        if (LookPoint != null)
         {
-            Vector3 direction = (player.position - transform.position).normalized;
+            Vector3 direction = (LookPoint.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+            float rotationSpeed = 5f * Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed);
         }
+    }
+
+    private IEnumerator TalkForDuration(float duration)
+    {
+        _animator.SetBool("Talking", true);
+        yield return new WaitForSeconds(duration);
+        _animator.SetBool("Talking", false);
     }
 }

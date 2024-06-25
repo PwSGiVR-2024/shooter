@@ -7,29 +7,30 @@ using System.Collections.Generic;
 
 public class FinalLightChange : MonoBehaviour
 {
-    public Volume postProcessingVolume;
-    public int newPriority = 1;
-    public PlayableDirector dir;
-    public GameObject dad;
-    public Transform targetPoint;
-    public FirstPersonController fpc;
+    public Volume PostProcessingVolume;
+    public int NewPriority = 1;
+    public PlayableDirector Dir;
+    public GameObject Dad;
+    public GameObject Girl;
+    public Transform TargetPoint;
+    public FirstPersonController Fpc;
     public Camera WeaponCamera;
     public float WeaponTurnOnDelay;
-    public Canvas crosshairCanvas;
-    public GameObject shootingManager;
-    private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
+    public Canvas CrosshairCanvas;
+    public GameObject ShootingManager;
+    private readonly List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
     void Start()
     {
-        dir.played += OnCutsceneStarted;
-        dir.stopped += OnCutsceneEnded;
+        Dir.played += OnCutsceneStarted;
+        Dir.stopped += OnCutsceneEnded;
 
-        if (postProcessingVolume == null)
+        if (PostProcessingVolume == null)
         {
-            postProcessingVolume = GetComponent<Volume>();
+            PostProcessingVolume = GetComponent<Volume>();
         }
 
-        foreach (MonoBehaviour script in shootingManager.GetComponents<MonoBehaviour>())
+        foreach (MonoBehaviour script in ShootingManager.GetComponents<MonoBehaviour>())
         {
             shootingScripts.Add(script);
         }
@@ -39,23 +40,23 @@ public class FinalLightChange : MonoBehaviour
     {
         if (other.CompareTag("Girl"))
         {
-            dir.Play();
-            postProcessingVolume.priority = newPriority;
+            Dir.Play();
+            PostProcessingVolume.priority = NewPriority;
             Debug.LogWarning("Post-Processing Activated");
 
-            DadControllerEnd dadControllerEnd = dad.GetComponent<DadControllerEnd>();
+            DadControllerEnd dadControllerEnd = Dad.GetComponent<DadControllerEnd>();
             if (dadControllerEnd != null)
             {
-                dadControllerEnd.MoveToPoint(targetPoint.position);
+                dadControllerEnd.MoveToPoint(TargetPoint.position);
             }
         }
     }
 
     private void OnCutsceneStarted(PlayableDirector dir)
     {
-        fpc.enabled = false;
+        Fpc.enabled = false;
         WeaponCamera.enabled = false;
-        crosshairCanvas.enabled = false;
+        CrosshairCanvas.enabled = false;
 
         foreach (MonoBehaviour script in shootingScripts)
         {
@@ -65,12 +66,18 @@ public class FinalLightChange : MonoBehaviour
 
     private void OnCutsceneEnded(PlayableDirector pd)
     {
-        fpc.enabled = true;
+        Fpc.enabled = true;
         StartCoroutine(EnableWeaponWithDelay());
 
         foreach (MonoBehaviour script in shootingScripts)
         {
             script.enabled = true;
+        }
+
+        GirlControllerEnd girlControllerEnd = Girl.GetComponent<GirlControllerEnd>();
+        if (girlControllerEnd != null)
+        {
+            girlControllerEnd.EndTalking();
         }
     }
 
@@ -78,7 +85,7 @@ public class FinalLightChange : MonoBehaviour
     {
         yield return new WaitForSeconds(WeaponTurnOnDelay);
         WeaponCamera.enabled = true;
-        crosshairCanvas.enabled = true;
+        CrosshairCanvas.enabled = true;
 
         SceneController.instance.NextLevel();
     }

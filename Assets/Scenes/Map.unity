@@ -556,7 +556,7 @@ Transform:
   m_GameObject: {fileID: 23992332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 396.331, y: 101.25, z: 258.758}
+  m_LocalPosition: {x: 396.32, y: 101.25, z: 258.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3588,7 +3588,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 552145758}
+    m_TransformParent: {fileID: 585775576}
     m_Modifications:
     - target: {fileID: 68101165843742383, guid: 00735cd7a4de4054c960c1e508755f64,
         type: 3}
@@ -5448,7 +5448,7 @@ PrefabInstance:
     - target: {fileID: 7207726507544474470, guid: 00735cd7a4de4054c960c1e508755f64,
         type: 3}
       propertyPath: m_Name
-      value: Scavenger Variant (1)
+      value: Vendor1
       objectReference: {fileID: 0}
     - target: {fileID: 7207726507544474470, guid: 00735cd7a4de4054c960c1e508755f64,
         type: 3}
@@ -7255,16 +7255,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5653c39d1390af459bc9dd77a7d6ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postProcessingVolume: {fileID: 1240874698}
-  newPriority: 2
-  dir: {fileID: 2075317045}
-  dad: {fileID: 2139223569}
-  targetPoint: {fileID: 1399813301}
-  fpc: {fileID: 1136103481}
+  PostProcessingVolume: {fileID: 563001355}
+  NewPriority: 1
+  Dir: {fileID: 2075317045}
+  Dad: {fileID: 2139223569}
+  Girl: {fileID: 937933977}
+  TargetPoint: {fileID: 1399813301}
+  Fpc: {fileID: 1136103481}
   WeaponCamera: {fileID: 775313935}
   WeaponTurnOnDelay: 0.6
-  crosshairCanvas: {fileID: 955975973}
-  shootingManager: {fileID: 1467510330}
+  CrosshairCanvas: {fileID: 955975973}
+  ShootingManager: {fileID: 1467510330}
 --- !u!65 &256473549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14734,8 +14735,6 @@ Transform:
   - {fileID: 965552228}
   - {fileID: 2037599}
   - {fileID: 1109257317}
-  - {fileID: 174172109}
-  - {fileID: 639739465}
   - {fileID: 853767226}
   - {fileID: 1892404432}
   - {fileID: 469390631}
@@ -15275,6 +15274,8 @@ Transform:
   - {fileID: 552145758}
   - {fileID: 284296850}
   - {fileID: 2144093287}
+  - {fileID: 174172109}
+  - {fileID: 639739465}
   - {fileID: 1391332063}
   - {fileID: 316637120}
   - {fileID: 1119749866}
@@ -16833,7 +16834,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 552145758}
+    m_TransformParent: {fileID: 585775576}
     m_Modifications:
     - target: {fileID: 68101165843742383, guid: 00735cd7a4de4054c960c1e508755f64,
         type: 3}
@@ -18693,7 +18694,7 @@ PrefabInstance:
     - target: {fileID: 7207726507544474470, guid: 00735cd7a4de4054c960c1e508755f64,
         type: 3}
       propertyPath: m_Name
-      value: Scavenger Variant (2)
+      value: Vendor2
       objectReference: {fileID: 0}
     - target: {fileID: 7207726507544474470, guid: 00735cd7a4de4054c960c1e508755f64,
         type: 3}
@@ -24593,17 +24594,17 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 171.57
+      value: 383.3
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 107.215
+      value: 102.515
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 165.82
+      value: 248.37
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
@@ -26644,8 +26645,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a57312f912db04782d5e43b2c6a636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 907775296}
-  player: {fileID: 23992333}
+  GirlRunTarget: {fileID: 907775296}
+  LookPoint: {fileID: 23992333}
+  TalkingDelay: 8
 --- !u!195 &937933982
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -34389,17 +34391,17 @@ PrefabInstance:
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 171.57
+      value: 383.3
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 105.84
+      value: 101.14
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 165.82
+      value: 248.37
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -42950,17 +42952,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1c9cc51681eb84aba3b522cdcf8245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  currentHealth: 0
-  minionPrefab: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
+  MaxHealth: 1000
+  CurrentHealth: 0
+  MinionPrefab: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
     type: 3}
-  spawnPoints:
+  SpawnPoints:
   - {fileID: 556834483}
   - {fileID: 1130486402}
   - {fileID: 907775296}
   - {fileID: 1805084735}
-  fence: {fileID: 1147298925}
-  girl: {fileID: 937933981}
+  Fence: {fileID: 1147298925}
+  Girl: {fileID: 937933981}
 --- !u!114 &1539673684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59419,7 +59421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78ffd2be4be1a846bd9cf431f8c1e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 23992333}
+  LookPoint: {fileID: 23992333}
+  TalkingDuration: 5.5
 --- !u!1001 &2140312885
 PrefabInstance:
   m_ObjectHideFlags: 0

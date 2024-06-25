@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public int maxHealth = 1000;
-    public int currentHealth;
-    public GameObject minionPrefab;
-    public Transform[] spawnPoints;
-    private bool canTakeDamage = true;
-    private List<GameObject> spawnedMinions = new List<GameObject>();
-    private Animator anim;
-    private bool isDead = false;
+    public int MaxHealth = 1000;
+    public int CurrentHealth;
+    public GameObject MinionPrefab;
+    public Transform[] SpawnPoints;
+    private bool _canTakeDamage = true;
+    private readonly List<GameObject> spawnedMinions = new List<GameObject>();
+    private Animator _anim;
+    private bool _isDead = false;
     public event Action<int> OnHealthChanged;
     public event Action OnBossDeath;
-    public GameObject fence;
-    public GirlControllerEnd girl;
+    public GameObject Fence;
+    public GirlControllerEnd Girl;
 
     void Start()
     {
-        currentHealth = maxHealth;
-        anim = GetComponent<Animator>();
-        OnHealthChanged?.Invoke(currentHealth);
+        CurrentHealth = MaxHealth;
+        _anim = GetComponent<Animator>();
+        OnHealthChanged?.Invoke(CurrentHealth);
     }
 
     void Update()
     {
-        if (isDead)
+        if (_isDead)
             return;
 
         if (Input.GetKeyDown(KeyCode.J))
@@ -39,21 +39,21 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (!canTakeDamage)
+        if (!_canTakeDamage)
             return;
 
         int damageInt = (int)damage;
-        currentHealth -= damageInt;
+        CurrentHealth -= damageInt;
 
-        OnHealthChanged?.Invoke(currentHealth);
+        OnHealthChanged?.Invoke(CurrentHealth);
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Die();
             return;
         }
 
-        if (currentHealth % 250 == 0)
+        if (CurrentHealth % 250 == 0)
         {
             SpawnMinions();
         }
@@ -61,40 +61,40 @@ public class Boss : MonoBehaviour
 
     void SpawnMinions()
     {
-        canTakeDamage = false;
+        _canTakeDamage = false;
 
         for (int i = 0; i < 4; i++)
         {
-            GameObject minion = Instantiate(minionPrefab, spawnPoints[i].position, spawnPoints[i].rotation);
+            GameObject minion = Instantiate(MinionPrefab, SpawnPoints[i].position, SpawnPoints[i].rotation);
             spawnedMinions.Add(minion);
         }
     }
 
     void CheckMinions()
     {
-        if (!canTakeDamage && spawnedMinions.Count > 0)
+        if (!_canTakeDamage && spawnedMinions.Count > 0)
         {
             spawnedMinions.RemoveAll(minion => minion == null);
             if (spawnedMinions.Count == 0)
             {
-                canTakeDamage = true;
+                _canTakeDamage = true;
             }
         }
     }
 
     void Die()
     {
-        isDead = true;
-        anim.SetTrigger("Die");
+        _isDead = true;
+        _anim.SetTrigger("Die");
 
         Collider collider = GetComponent<Collider>();
         collider.enabled = false;
 
         OnBossDeath?.Invoke();
 
-        fence.GetComponent<FenceController>().Sink();
+        Fence.GetComponent<FenceController>().Sink();
 
-        girl.MoveToTarget();
+        Girl.MoveToTarget();
 
         Invoke(nameof(HideHealthBar), 2f);
     }

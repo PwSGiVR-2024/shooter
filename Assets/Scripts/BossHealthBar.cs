@@ -10,8 +10,8 @@ public class BossHealthBar : MonoBehaviour
     {
         boss = FindObjectOfType<Boss>();
 
-        healthSlider.maxValue = boss.maxHealth;
-        healthSlider.value = boss.currentHealth;
+        healthSlider.maxValue = boss.MaxHealth;
+        healthSlider.value = boss.CurrentHealth;
 
         boss.OnHealthChanged += UpdateHealthBar;
     }
