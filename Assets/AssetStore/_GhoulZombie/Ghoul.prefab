@@ -1036,7 +1036,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!195 &2758668758618688138
 NavMeshAgent:
@@ -1072,7 +1072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aeed8565d35d6c4a8eeac9f423716b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   DetectionRange: 30
   EnemySpeed: 2.5
   AttackRange: 1.25

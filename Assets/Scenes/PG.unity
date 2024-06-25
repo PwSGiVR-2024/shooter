@@ -21756,6 +21756,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8931238350582437525, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
+      propertyPath: delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ChestGY
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931238350582437525, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
+      propertyPath: delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: ChestGY
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931238350582437525, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
       propertyPath: delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 
       objectReference: {fileID: 0}
