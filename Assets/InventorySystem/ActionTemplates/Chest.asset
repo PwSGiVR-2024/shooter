@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79656a93035dc85429f6ab28c75c181b, type: 3}
+  m_Name: Chest
+  m_EditorClassIdentifier: 
+  actions:
+  - rid: 7602509963275010057
+  - rid: 7602509963275010054
+  - rid: 7602509963275010055
+  - rid: 7602509963275010056
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509963275010054
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 8d52772b0fb25044e9640e3bced2f0d4, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 0.4
+    - rid: 7602509963275010055
+      type: {class: ShowWindow, ns: DevionGames.InventorySystem, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ShowWindow
+        m_Enabled: 1
+        m_WindowName: Chest
+        m_DestroyWhenEmpty: 0
+    - rid: 7602509963275010056
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 230b6549e02e66d47b5bdbd37551fc5c, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 0.4
+    - rid: 7602509963275010057
+      type: {class: Wait, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Wait
+        m_Enabled: 1
+        duration: 0.5
