@@ -26,10 +26,10 @@ public class TempWeaponSwitcher : MonoBehaviour
                 key.gameObject.SetActive(true);
                 if (weapon is RangeWeapon)
                 {
-                    WeaponManager.Instance.SetAttackStrategy(GetComponent<RangeAttack>());
+                    WeaponManager.Instance.SetAttackStrategy(GetComponent<RangeWeaponController>());
                 }
                 else if (weapon is MeleeWeapon){
-                    WeaponManager.Instance.SetAttackStrategy(GetComponent<MeleeAttack>());
+                    WeaponManager.Instance.SetAttackStrategy(GetComponent<MeleeWeaponController>());
                 }
             }
             else

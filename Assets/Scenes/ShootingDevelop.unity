@@ -402,12 +402,12 @@ GameObject:
   m_Component:
   - component: {fileID: 563402387}
   - component: {fileID: 563402389}
-  - component: {fileID: 563402388}
   - component: {fileID: 563402394}
   - component: {fileID: 563402390}
   - component: {fileID: 563402391}
   - component: {fileID: 563402392}
-  - component: {fileID: 563402393}
+  - component: {fileID: 563402396}
+  - component: {fileID: 563402395}
   m_Layer: 8
   m_Name: ShootingManager
   m_TagString: Untagged
@@ -430,20 +430,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7264612845111715955}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &563402388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563402386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aee8e1a9b18aaa546a9964ab1ad06e1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponsSlot: {fileID: 399091955}
-  _recoilShooting: {fileID: 563402389}
 --- !u!114 &563402389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,22 +562,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7b24883e445794aa520616cb864921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key1: {fileID: 4043241439103138769}
-  Key2: {fileID: 1879750661713481}
-  Key3: {fileID: 286675334044388049}
---- !u!114 &563402393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563402386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f88e84b14c1134ead4ef44898d5437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meleeWeapon: {fileID: 1458202583}
+  Key1: {fileID: 1168457287}
+  Key2: {fileID: 1458202583}
+  Key3: {fileID: 1179081635}
 --- !u!114 &563402394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,6 +578,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponsSlot: {fileID: 399091955}
+--- !u!114 &563402395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563402386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183ad08dee16a824cbc2c7b8fd509819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meleeWeapon: {fileID: 1458202583}
+--- !u!114 &563402396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563402386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919934a6f900e244dbae3d2194610a8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponsSlot: {fileID: 399091955}
+  _recoilShooting: {fileID: 563402389}
 --- !u!1 &664632893
 GameObject:
   m_ObjectHideFlags: 0

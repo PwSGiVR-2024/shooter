@@ -29,21 +29,6 @@ public class WeaponManager : MonoBehaviour
     public void Update()
     {
         HandleAttackPressed();
-
-        //if(Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    SetAttackStrategy(GetComponent<RangeAttack>());
-        //}
-        //else if(Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    SetAttackStrategy(GetComponent<MeleeAttack>());
-        //}
-
-        // Example how to controll active weapon
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    _currentWeapon.gameObject.SetActive(!_currentWeapon.gameObject.activeSelf);
-        //}
     }
 
     private void Start()
@@ -58,13 +43,12 @@ public class WeaponManager : MonoBehaviour
 
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Fire"].started += AttackSingleClick;
-        SetAttackStrategy(GetComponent<RangeAttack>());
+        SetAttackStrategy(GetComponent<RangeWeaponController>());
     }
 
-    private void GetCurrentWeaponData(Weapon weapon)
+    public void GetCurrentWeaponData(Weapon weapon)
     {
         _currentWeapon = weapon;
-        print(_currentWeapon.GetType());
     }
 
     private void HandleAttackPressed()
@@ -78,11 +62,11 @@ public class WeaponManager : MonoBehaviour
     // Handle single tap for melee weapons and not fullauto range weapons
     private void AttackSingleClick(InputAction.CallbackContext context)
     {
-        if (_currentAttackStrategy is RangeAttack rangeAttack && !rangeAttack.IsFullauto)
+        if (_currentAttackStrategy is RangeWeaponController rangeAttack && !rangeAttack.IsFullauto)
         {
             _currentAttackStrategy?.Attack();
         }
-        else if (_currentAttackStrategy is MeleeAttack)
+        else if (_currentAttackStrategy is MeleeWeaponController)
         {
             _currentAttackStrategy?.Attack();
         }
@@ -91,7 +75,7 @@ public class WeaponManager : MonoBehaviour
     // Pressed attack for fullauto weapons
     private void AttackPressed()
     {
-        if (_currentAttackStrategy is RangeAttack rangeAttack && rangeAttack.IsFullauto)
+        if (_currentAttackStrategy is RangeWeaponController rangeAttack && rangeAttack.IsFullauto)
         {
             _currentAttackStrategy?.Attack();
         }

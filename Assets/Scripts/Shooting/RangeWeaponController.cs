@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 
-public class RangeAttack : MonoBehaviour, IAttackStrategy
+public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 {
     [SerializeField] private GameObject _weaponsSlot;
     [SerializeField] private RecoilShooting _recoilShooting;

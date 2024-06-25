@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MeleeAttack : MonoBehaviour, IAttackStrategy
+public class MeleeWeaponController : MonoBehaviour, IAttackStrategy
 {
     [SerializeField] private MeleeWeapon _meleeWeapon;
 
