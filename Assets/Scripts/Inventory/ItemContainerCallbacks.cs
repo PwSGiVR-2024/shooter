@@ -20,4 +20,14 @@ public class ItemContainerCallbacks : MonoBehaviour
             OnItemContainerCountChanged?.Invoke(_itemContainerCount);
         }
     }
+
+    public void OpenChestAnimate(string gameObjectName)
+    {
+        GameObject.Find(gameObjectName).GetComponent<Animator>().SetBool("Opened", true);
+    }
+
+    public void CloseChestAnimate(string gameObjectName)
+    {
+        GameObject.Find(gameObjectName).GetComponent<Animator>().SetBool("Opened", false);
+    }
 }
