@@ -11,9 +11,9 @@ public class TempWeaponSwitcher : MonoBehaviour
 
     private void Start()
     {
-        Key1.SetActive(false);
+        Key1.SetActive(true);
         Key2.SetActive(false);
-        Key3.SetActive(true);
+        Key3.SetActive(false);
     }
 
     private void Update()

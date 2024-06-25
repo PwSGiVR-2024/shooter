@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 
-public class Shooting : MonoBehaviour
+public class RangeAttack : MonoBehaviour, IAttackStrategy
 {
     [SerializeField] private GameObject _weaponsSlot;
+    [SerializeField] private RecoilShooting _recoilShooting;
     private VisualEffect _muzzleFlash;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
     private GameObject _gunEnd;
-    private Weapon[] _weapons;
-    private Weapon _currentWeapon;
+    private RangeWeapon[] _weapons;
+    private RangeWeapon _currentWeapon;
     private PlayerInput _playerInput;
     private StarterAssetsInputs _input;
     private float _bulletForce = 10f;
@@ -24,32 +25,33 @@ public class Shooting : MonoBehaviour
     private int _backpackAmmo = 0;
     private float _reloadTime = 2;
     private bool _isReloading = false;
-    private RecoilShooting _recoilShooting;
+    private bool _isFullauto = false;
 
+    public bool IsFullauto { get => _isFullauto; set => _isFullauto = value; }
 
     private void Start()
     {
         _mainCamera = Camera.main;
-        _recoilShooting = GetComponentInParent<RecoilShooting>();
         _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
         GetWeaponsData();
     }
 
+    public void Attack()
+    {
+        OnFirePressed();
+    }
+
     private void Update()
     {
-        if (_input.fire)
-        {
-            OnFirePressed();
-        }
         HandleAim();
     }
 
     private void GetWeaponsData()
     {
-        _weapons = _weaponsSlot.GetComponentsInChildren<Weapon>(true); // true argument to include inactive objects
-        foreach (Weapon weapon in _weapons)
+        _weapons = _weaponsSlot.GetComponentsInChildren<RangeWeapon>(true); // true argument to include inactive objects
+        foreach (RangeWeapon weapon in _weapons)
         {
             weapon.OnWeaponEnable += GetCurrentWeaponData; // Subscribe to weapon changed event
             if (weapon.gameObject.activeSelf)
@@ -60,7 +62,7 @@ public class Shooting : MonoBehaviour
     }
 
     // Function activates on weapon enable (weapon changed)
-    private void GetCurrentWeaponData(Weapon weapon)
+    private void GetCurrentWeaponData(RangeWeapon weapon)
     {
         _currentWeapon = weapon;
         _bulletPrefab = weapon.BulletPrefab;
@@ -73,6 +75,7 @@ public class Shooting : MonoBehaviour
         _currentAmmo = weapon.CurrentAmmo;
         _reloadTime = weapon.ReloadTime;
         _muzzleFlash = weapon.MuzzleFlash;
+        _isFullauto = weapon.IsFullauto;
     }
 
     private void OnFirePressed()

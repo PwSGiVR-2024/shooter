@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class MeleeWeapon : MonoBehaviour
+public class MeleeWeapon : Weapon
 {
-    [SerializeField] private float _dmg;
     [SerializeField] private float _range;
 
-    private Animator _animator;
     private bool _isAttacking = false;
     private bool _isChainAttack = false;
 
-    public Animator Animator => _animator;
-    public float Dmg { get => _dmg; set => _dmg = value; }
     public float Range { get => _range; set => _range = value; }
 
     public bool IsAttacking
@@ -19,7 +15,7 @@ public class MeleeWeapon : MonoBehaviour
         set
         {
             _isAttacking = value;
-            _animator.SetBool("isAttacking", value);
+            Animator.SetBool("isAttacking", value);
         }
     }
     public bool IsChainAttack
@@ -28,7 +24,7 @@ public class MeleeWeapon : MonoBehaviour
         set
         {
             _isChainAttack = value;
-            _animator.SetBool("isChainAttack", value);
+            Animator.SetBool("isChainAttack", value);
         }
     }
 
@@ -45,9 +41,4 @@ public class MeleeWeapon : MonoBehaviour
         IsChainAttack = false;
     }
 
-
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
 }
