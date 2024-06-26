@@ -266,6 +266,7 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
+  - rid: 7602509968429023244
   - rid: 7602509565042884617
   - rid: 7602509968429023238
   references:
@@ -289,6 +290,13 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+    - rid: 7602509968429023244
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _changePercentage: 25
+        _actionType: 2
 --- !u!114 &-6726322294913613531
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -717,7 +725,7 @@ MonoBehaviour:
     grave cost.
 
 
-    Effect: Increases speed and damage by 75% for 2 minutes, then
+    Effect: Increases speed and damage by 75% for 1 minute, then
     reduces health to 1 HP.'
   m_Category: {fileID: 5840860836026957122}
   m_IsSellable: 1
@@ -922,6 +930,7 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
+  - rid: 7602509968429023246
   - rid: 7602509565042884617
   - rid: 7602509968429023238
   references:
@@ -945,6 +954,13 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+    - rid: 7602509968429023246
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _changePercentage: 50
+        _actionType: 5
 --- !u!114 &1235675407137278491
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1497,6 +1513,7 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
+  - rid: 7602509968429023245
   - rid: 7602509565042884617
   - rid: 7602509968429023238
   references:
@@ -1520,3 +1537,10 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+    - rid: 7602509968429023245
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _changePercentage: 25
+        _actionType: 5

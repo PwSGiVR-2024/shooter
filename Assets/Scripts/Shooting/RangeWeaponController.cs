@@ -1,9 +1,9 @@
 using System.Collections;
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
-using UnityEngine.Audio;
 
 public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 {
@@ -70,7 +70,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     }
 
     // Function activates on weapon enable (weapon changed)
-    private void GetCurrentWeaponData(Weapon weapon)
+    public void GetCurrentWeaponData(Weapon weapon)
     {
         if (weapon is RangeWeapon rangeWeapon)
         {
@@ -169,7 +169,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 
     private void ShootAnimation()
     {
-            _currentWeapon.Animator.SetTrigger("TrShoot");
+        _currentWeapon.Animator.SetTrigger("TrShoot");
     }
 
     private void OnReloadClick(InputAction.CallbackContext context)

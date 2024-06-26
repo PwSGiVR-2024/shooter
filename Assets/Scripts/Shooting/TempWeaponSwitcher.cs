@@ -9,7 +9,7 @@ public class TempWeaponSwitcher : MonoBehaviour
     public Weapon Key2;
     public Weapon Key3;
 
-    private Weapon[] _keys;
+    public Weapon[] _keys;
 
     private void Start()
     {
@@ -28,7 +28,8 @@ public class TempWeaponSwitcher : MonoBehaviour
                 {
                     WeaponManager.Instance.SetAttackStrategy(GetComponent<RangeWeaponController>());
                 }
-                else if (weapon is MeleeWeapon){
+                else if (weapon is MeleeWeapon)
+                {
                     WeaponManager.Instance.SetAttackStrategy(GetComponent<MeleeWeaponController>());
                 }
             }
@@ -37,7 +38,7 @@ public class TempWeaponSwitcher : MonoBehaviour
                 key.gameObject.SetActive(false);
             }
         }
-        
+
     }
 
     // Changing the weapons

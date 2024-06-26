@@ -12,7 +12,7 @@ public class RangeWeapon : Weapon
     [SerializeField] private float _bulletForce = 10f;
     [SerializeField] private float _shootRate = 0.5f; // interval between shots in seconds
     [SerializeField] private float _reloadTime = 2f;
-    [SerializeField] private int _magazineCapacity = 30; // max ammo in magazine after reload
+    [SerializeField] public int _magazineCapacity = 30; // max ammo in magazine after reload
     [SerializeField] private int _currentAmmo; // current ammo in magazine
     [SerializeField] private int _backpackAmmo;
     [SerializeField] private bool _isFullauto = false;

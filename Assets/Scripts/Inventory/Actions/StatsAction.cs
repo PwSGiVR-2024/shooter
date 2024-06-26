@@ -17,6 +17,8 @@ public class StatsAction : Action
     private GameObject _target;
     private PlayerHealth _playerHealth;
     private FirstPersonController _playerController;
+    private RangeWeaponController _rangeWeaponController;
+    private Weapon[] _weapons;
 
     public override void OnStart()
     {
@@ -24,6 +26,9 @@ public class StatsAction : Action
         _playerHealth = _target.GetComponent<PlayerHealth>();
         _target = GameObject.Find("PlayerCapsule");
         _playerController = _target.GetComponent<FirstPersonController>();
+        _target = GameObject.Find("ShootingManager");
+        _rangeWeaponController = _target.GetComponent<RangeWeaponController>();
+        _weapons = _target.GetComponent<TempWeaponSwitcher>()._keys;
     }
 
     public override ActionStatus OnUpdate()
@@ -40,7 +45,11 @@ public class StatsAction : Action
         }
         else if (_actionType == ActionType.Power)
         {
-            //after merge
+            foreach (var weapon in _weapons)
+            {
+                weapon.Dmg += weapon.Dmg * _changePercentage / 100;
+                TryRefresh(weapon);
+            }
         }
         else if (_actionType == ActionType.Protection)
         {
@@ -65,7 +74,11 @@ public class StatsAction : Action
                     _playerController.JumpHeight *= changeFactor;
                     break;
                 case 2:
-                    //after merge
+                    foreach (var weapon in _weapons)
+                    {
+                        weapon.Dmg *= changeFactor;
+                        TryRefresh(weapon);
+                    }
                     break;
                 case 3:
                     _playerHealth.ProtectionPercentage = increase ? _playerHealth.ProtectionPercentage + _changePercentage : _playerHealth.ProtectionPercentage - _changePercentage;
@@ -74,13 +87,29 @@ public class StatsAction : Action
         }
         else if (_actionType == ActionType.Magazine)
         {
-            //after marge
+            foreach (var weapon in _weapons)
+            {
+                if (weapon is RangeWeapon rangeWeapon)
+                {
+                    rangeWeapon.MagazineCapacity += rangeWeapon.MagazineCapacity * _changePercentage / 100;
+                }
+                TryRefresh(weapon);
+            }
+
         }
         else if (_actionType == ActionType.FuriousGhoul)
         {
             FuriousGhoulCoroutine furiousGhoulCoroutine = gameObject.AddComponent<FuriousGhoulCoroutine>();
-            furiousGhoulCoroutine.StartTheCoroutine(_changePercentage, _playerController, _playerHealth);
+            furiousGhoulCoroutine.StartTheCoroutine(_changePercentage, _playerController, _playerHealth, _weapons, _rangeWeaponController);
         }
         return ActionStatus.Success;
+    }
+
+    private void TryRefresh(Weapon weapon)
+    {
+        if (weapon.gameObject.activeSelf)
+        {
+            _rangeWeaponController.GetCurrentWeaponData(weapon);
+        }
     }
 }
