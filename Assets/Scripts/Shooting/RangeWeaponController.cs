@@ -29,6 +29,8 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     private float _reloadTime = 2;
     private bool _isReloading = false;
     private bool _isFullauto = false;
+    private ItemContainerCallbacks _itemContainerCallbacks;
+    private int _itemContainerCount;
 
     public bool IsFullauto { get => _isFullauto; set => _isFullauto = value; }
 
@@ -44,6 +46,9 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
         _audioSource.outputAudioMixerGroup = _shootingMixerGroup;
 
         GetWeaponsData();
+
+        _itemContainerCallbacks = GameObject.Find("ItemContainerMethods").GetComponent<ItemContainerCallbacks>();
+        _itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
     }
 
     public void Attack()
@@ -207,7 +212,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 
     private void HandleAim()
     {
-        if (_input.aim)
+        if (_itemContainerCount == 0 && _input.aim)
         {
             _currentWeapon.Animator.SetBool("isAiming", true);
         }
@@ -215,5 +220,10 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
         {
             _currentWeapon.Animator.SetBool("isAiming", false);
         }
+    }
+
+    private void UpdateItemContainerCount(int itemContainerCount)
+    {
+        _itemContainerCount = itemContainerCount;
     }
 }

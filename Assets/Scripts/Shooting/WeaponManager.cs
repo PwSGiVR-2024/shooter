@@ -11,6 +11,9 @@ public class WeaponManager : MonoBehaviour
 
     private Weapon _currentWeapon;
 
+    private ItemContainerCallbacks _itemContainerCallbacks;
+    private int _itemContainerCount;
+
     // Singleton pattern
     public static WeaponManager Instance { get; private set; }
 
@@ -44,6 +47,9 @@ public class WeaponManager : MonoBehaviour
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Fire"].started += AttackSingleClick;
         SetAttackStrategy(GetComponent<RangeWeaponController>());
+
+        _itemContainerCallbacks = GameObject.Find("ItemContainerMethods").GetComponent<ItemContainerCallbacks>();
+        _itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
     }
 
     public void GetCurrentWeaponData(Weapon weapon)
@@ -53,7 +59,7 @@ public class WeaponManager : MonoBehaviour
 
     private void HandleAttackPressed()
     {
-        if (_input.fire)
+        if (_itemContainerCount == 0 && _input.fire)
         {
             AttackPressed();
         }
@@ -62,13 +68,16 @@ public class WeaponManager : MonoBehaviour
     // Handle single tap for melee weapons and not fullauto range weapons
     private void AttackSingleClick(InputAction.CallbackContext context)
     {
-        if (_currentAttackStrategy is RangeWeaponController rangeAttack && !rangeAttack.IsFullauto)
+        if (_itemContainerCount == 0)
         {
-            _currentAttackStrategy?.Attack();
-        }
-        else if (_currentAttackStrategy is MeleeWeaponController)
-        {
-            _currentAttackStrategy?.Attack();
+            if (_currentAttackStrategy is RangeWeaponController rangeAttack && !rangeAttack.IsFullauto)
+            {
+                _currentAttackStrategy?.Attack();
+            }
+            else if (_currentAttackStrategy is MeleeWeaponController)
+            {
+                _currentAttackStrategy?.Attack();
+            }
         }
     }
 
@@ -84,5 +93,10 @@ public class WeaponManager : MonoBehaviour
     public void SetAttackStrategy(IAttackStrategy attackStrategy)
     {
         _currentAttackStrategy = attackStrategy;
+    }
+
+    private void UpdateItemContainerCount(int itemContainerCount)
+    {
+        _itemContainerCount = itemContainerCount;
     }
 }
