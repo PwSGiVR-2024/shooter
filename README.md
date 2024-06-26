@@ -2,11 +2,11 @@
 
 ### PL
 
-Nasza gra to shooter z elementami fabularnymi osadzonymi w otwartym świecie. Gracz pojawia się na mapie, podziwiając widoki i grafikę przyrody. Podczas eksploracji zauważa dziewczynę i jej ojca spacerujących. Kiedy dziewczyna gubi się w jaskini, gracz rusza, by odkryć, co się stało. Jednakże, wkraczając do jaskini, świat zmienia się z jasnych kolorów na ciemne, wskazując na zło. Gracz zdaje sobie sprawę, że musi uratować dziewczynkę z tego złego świata. Ojciec dziewczyny będzie udzielał mu wskazówek, a broń będzie dostępna w skrzynkach. Podczas podróży gracz będzie walczył z różnymi potworami, zbierając monety i ulepszając broń. Na końcu, musi zmierzyć się z bossem, który porwał dziewczynkę.
+Shadowlands: The Rescue to shooter z elementami fabularnymi osadzonymi w otwartym świecie. Gracz pojawia się na mapie, podziwiając widoki i grafikę przyrody. Podczas eksploracji zauważa dziewczynę i jej ojca spacerujących. Kiedy dziewczyna gubi się w jaskini, gracz rusza, by odkryć, co się stało. Jednakże, wkraczając do jaskini, świat zmienia się z jasnych kolorów na ciemne, wskazując na zło. Gracz zdaje sobie sprawę, że musi uratować dziewczynkę z tego złego świata. Ojciec dziewczyny będzie udzielał mu wskazówek, a broń będzie dostępna w skrzynkach. Podczas podróży gracz będzie walczył z różnymi potworami, zbierając monety i ulepszając broń. Na końcu, musi zmierzyć się z bossem, który porwał dziewczynkę.
 
 ### ENG
 
-Our game is a shooter with narrative elements set in an open world. The player appears on the map, admiring the views and natural graphics. While exploring, they notice a girl and her father taking a walk. When the girl gets lost in a cave, the player sets out to discover what happened. However, upon entering the cave, the world changes from bright colors to dark, indicating evil. The player realizes they must rescue the girl from this wicked world. The girl's father will provide hints, and weapons will be available in crates. During the journey, the player will battle various monsters, collect coins, and upgrade weapons. In the end, they must face the boss who kidnapped the girl.
+Shadowlands: The Rescue is a shooter with narrative elements set in an open world. The player appears on the map, admiring the views and natural graphics. While exploring, they notice a girl and her father taking a walk. When the girl gets lost in a cave, the player sets out to discover what happened. However, upon entering the cave, the world changes from bright colors to dark, indicating evil. The player realizes they must rescue the girl from this wicked world. The girl's father will provide hints, and weapons will be available in crates. During the journey, the player will battle various monsters, collect coins, and upgrade weapons. In the end, they must face the boss who kidnapped the girl.
 
 # External assets and resources
 
@@ -14,7 +14,7 @@ Our game is a shooter with narrative elements set in an open world. The player a
 
 - [Modern Weapons Pack](https://assetstore.unity.com/packages/3d/props/guns/modern-weapons-pack-14233) some of weapons models and textures.
 
-- [Shooter API](https://github.com/piotr-grzegorzek/shooter_api) used for players authentication
+- [Shadowlands: The Rescue API](https://github.com/piotr-grzegorzek/shadowlands-the-rescue-api) used for players authentication
 
 - [Json & MessagePack Serialization](https://assetstore.unity.com/packages/p/json-messagepack-serialization-59918) for json array serialization (built in library does not provide that)
 

@@ -15766,7 +15766,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 337}
-  m_SizeDelta: {x: 499.0875, y: 259.1613}
+  m_SizeDelta: {x: 700, y: 259.1613}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990066120
 MonoBehaviour:
@@ -15788,7 +15788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Survival Shooter
+  m_text: ShadowlandsThe Rescue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
