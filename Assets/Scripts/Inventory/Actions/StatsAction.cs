@@ -48,7 +48,29 @@ public class StatsAction : Action
         }
         else if (_actionType == ActionType.Ghoul)
         {
-            //_playerController.Ghoul = true;
+            System.Random random = new System.Random();
+            int effectType = random.Next(4);
+            bool increase = random.Next(2) == 0;
+
+            float changeFactor = increase ? (1 + _changePercentage / 100f) : (1 - _changePercentage / 100f);
+
+            switch (effectType)
+            {
+                case 0:
+                    _playerController.MoveSpeed *= changeFactor;
+                    _playerController.SprintSpeed *= changeFactor;
+                    _playerController.CrouchSpeed *= changeFactor;
+                    break;
+                case 1:
+                    _playerController.JumpHeight *= changeFactor;
+                    break;
+                case 2:
+                    //after merge
+                    break;
+                case 3:
+                    _playerHealth.ProtectionPercentage = increase ? _playerHealth.ProtectionPercentage + _changePercentage : _playerHealth.ProtectionPercentage - _changePercentage;
+                    break;
+            }
         }
         else if (_actionType == ActionType.Magazine)
         {
