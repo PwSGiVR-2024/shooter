@@ -22,13 +22,15 @@ public class FuriousGhoulCoroutine : MonoBehaviour
         //after merge
 
         yield return new WaitForSeconds(120);
-
-        _playerController.MoveSpeed = originalMoveSpeed;
-        _playerController.SprintSpeed = originalSprintSpeed;
-        //after merge
-        int protectionPercentage = _playerHealth.ProtectionPercentage;
-        _playerHealth.ProtectionPercentage = 0;
-        _playerHealth.CurrentHealth = 1;
-        _playerHealth.ProtectionPercentage = protectionPercentage;
+        if (_playerHealth.CurrentHealth >= 1)
+        {
+            _playerController.MoveSpeed = originalMoveSpeed;
+            _playerController.SprintSpeed = originalSprintSpeed;
+            //after merge
+            int protectionPercentage = _playerHealth.ProtectionPercentage;
+            _playerHealth.ProtectionPercentage = 0;
+            _playerHealth.CurrentHealth = 1;
+            _playerHealth.ProtectionPercentage = protectionPercentage;
+        }
     }
 }
