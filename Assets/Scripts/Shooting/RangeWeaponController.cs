@@ -10,6 +10,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     [SerializeField] private GameObject _weaponsSlot;
     [SerializeField] private RecoilShooting _recoilShooting;
     [SerializeField] private AudioMixerGroup _shootingMixerGroup;
+    private AudioSource _audioSource;
     private VisualEffect _muzzleFlash;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
