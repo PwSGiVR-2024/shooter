@@ -78,7 +78,8 @@ public class StatsAction : Action
         }
         else if (_actionType == ActionType.FuriousGhoul)
         {
-            //_playerController.FuriousGhoul = true;
+            FuriousGhoulCoroutine furiousGhoulCoroutine = gameObject.AddComponent<FuriousGhoulCoroutine>();
+            furiousGhoulCoroutine.StartTheCoroutine(_changePercentage, _playerController, _playerHealth);
         }
         return ActionStatus.Success;
     }

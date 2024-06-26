@@ -18,7 +18,6 @@ public class Tooltip : MonoBehaviour
     private void UpdateItemContainerCount(int itemContainerCount)
     {
         _itemContainerCount = itemContainerCount;
-        Debug.Log(_itemContainerCount);
     }
 
     void Update()

@@ -715,6 +715,7 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
+  - rid: 7602509968429023243
   - rid: 7602509565042884617
   - rid: 7602509968429023238
   references:
@@ -738,6 +739,13 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+    - rid: 7602509968429023243
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _changePercentage: 75
+        _actionType: 6
 --- !u!114 &699154121686944933
 MonoBehaviour:
   m_ObjectHideFlags: 1
