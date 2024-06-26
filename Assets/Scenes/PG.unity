@@ -1401,67 +1401,67 @@ MonoBehaviour:
   - item: {fileID: -8413918418521982596, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 7
-    chance: 0.5
+    chance: 0.6
     modifiers:
       modifiers: []
   - item: {fileID: 6847829911516276468, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 5
-    chance: 0.5
+    chance: 0.6
     modifiers:
       modifiers: []
   - item: {fileID: -4730761301371283280, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 3
-    chance: 0.25
+    chance: 0.4
     modifiers:
       modifiers: []
   - item: {fileID: 7412821362038872476, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.1
+    chance: 0.4
     modifiers:
       modifiers: []
   - item: {fileID: 699154121686944933, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.05
+    chance: 0.2
     modifiers:
       modifiers: []
   - item: {fileID: 5893682275855013920, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.05
+    chance: 0.2
     modifiers:
       modifiers: []
   - item: {fileID: -6765540527067700291, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.05
+    chance: 0.2
     modifiers:
       modifiers: []
   - item: {fileID: 3729242472080980421, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.05
+    chance: 0.2
     modifiers:
       modifiers: []
   - item: {fileID: 9017250990669595880, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.05
+    chance: 0.2
     modifiers:
       modifiers: []
   - item: {fileID: 807157276921112907, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.05
+    chance: 0.2
     modifiers:
       modifiers: []
   - item: {fileID: 658975925613817371, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.05
+    chance: 0.2
     modifiers:
       modifiers: []
   m_MaxAmount: 11
@@ -22457,25 +22457,25 @@ MonoBehaviour:
   - item: {fileID: -8413918418521982596, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 7
-    chance: 0.5
+    chance: 0.6
     modifiers:
       modifiers: []
   - item: {fileID: 6847829911516276468, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 5
-    chance: 0.5
+    chance: 0.6
     modifiers:
       modifiers: []
   - item: {fileID: -4730761301371283280, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 3
-    chance: 0.25
+    chance: 0.4
     modifiers:
       modifiers: []
   - item: {fileID: 7412821362038872476, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
     minStack: 1
     maxStack: 1
-    chance: 0.1
+    chance: 0.4
     modifiers:
       modifiers: []
   m_MaxAmount: 4
