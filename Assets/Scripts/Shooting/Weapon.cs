@@ -1,50 +1,32 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    public event Action<Weapon> OnWeaponEnable;
+    public event Action<Weapon> OnWeaponChange;
 
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private GameObject _gunEnd;
-    [SerializeField] private GameObject _fireLight;
-    [SerializeField] private AudioClip _soundOfShoot;
-    [SerializeField] private AudioClip _soundOfReload;
-    [SerializeField] private float _bulletForce = 10f;
-    [SerializeField] private float _dmg = 5f;
-    [SerializeField] private float _shootRate = 0.5f; // interval between shots in seconds
-    [SerializeField] private float _reloadTime = 2f;
-    [SerializeField] private int _magazineCapacity = 30;
-    [SerializeField] private int _currentAmmo; // current ammo in magazine
-    [SerializeField] private int _backpackAmmo;
-    private bool _isCurrentlyUsed = false;
+    [SerializeField] private float _dmg;
+
     private Animator _animator;
+    private bool _isCurrentlyUsed = false;
 
-    public GameObject BulletPrefab { get => _bulletPrefab; set => _bulletPrefab = value; }
-    public GameObject GunEnd { get => _gunEnd; set => _gunEnd = value; }
-    public GameObject FireLight => _fireLight;
-    public AudioClip SoundOfShoot => _soundOfShoot;
-    public AudioClip SoundOfReload => _soundOfReload;
-    public float BulletForce { get => _bulletForce; set => _bulletForce = value; }
+    public Animator Animator => _animator;
     public float Dmg { get => _dmg; set => _dmg = value; }
-    public float ShootRate { get => _shootRate; set => _shootRate = value; }
-    public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
-    public int MagazineCapacity { get => _magazineCapacity; set => _magazineCapacity = value; }
-    public int CurrentAmmo { get => _currentAmmo; set => _currentAmmo = value; }
-    public bool IsCurrentlyUsed => _isCurrentlyUsed;
-    public int BackpackAmmo { get => _backpackAmmo; set => _backpackAmmo = value; }
-    public Animator Animator { get => _animator; set => _animator = value; }
+    public bool IsCurrentlyUsed { get => _isCurrentlyUsed; set => _isCurrentlyUsed = value; }
+
+    void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     private void OnEnable()
     {
-        OnWeaponEnable?.Invoke(this);
-        _isCurrentlyUsed = true;
-        _animator = GetComponent<Animator>();
+        OnWeaponChange?.Invoke(this);
+        IsCurrentlyUsed = true;
     }
 
     private void OnDisable()
     {
-        _isCurrentlyUsed = false;
+        IsCurrentlyUsed = false;
     }
-
 }

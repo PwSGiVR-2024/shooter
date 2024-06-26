@@ -5,16 +5,17 @@ using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 using UnityEngine.Audio;
 
-public class Shooting : MonoBehaviour
+public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 {
     [SerializeField] private GameObject _weaponsSlot;
+    [SerializeField] private RecoilShooting _recoilShooting;
     [SerializeField] private AudioMixerGroup _shootingMixerGroup;
     private VisualEffect _muzzleFlash;
     private Camera _mainCamera;
     private GameObject _bulletPrefab;
     private GameObject _gunEnd;
-    private Weapon[] _weapons;
-    private Weapon _currentWeapon;
+    private RangeWeapon[] _weapons;
+    private RangeWeapon _currentWeapon;
     private PlayerInput _playerInput;
     private StarterAssetsInputs _input;
     private float _bulletForce = 10f;
@@ -26,14 +27,13 @@ public class Shooting : MonoBehaviour
     private int _backpackAmmo = 0;
     private float _reloadTime = 2;
     private bool _isReloading = false;
-    private bool _isAiming = false;
-    private RecoilShooting _recoilShooting;
-    private AudioSource _audioSource;
+    private bool _isFullauto = false;
+
+    public bool IsFullauto { get => _isFullauto; set => _isFullauto = value; }
 
     private void Start()
     {
         _mainCamera = Camera.main;
-        _recoilShooting = GetComponentInParent<RecoilShooting>();
         _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Reload"].started += OnReloadClick;
@@ -45,21 +45,22 @@ public class Shooting : MonoBehaviour
         GetWeaponsData();
     }
 
+    public void Attack()
+    {
+        OnFirePressed();
+    }
+
     private void Update()
     {
-        if (_input.fire)
-        {
-            OnFirePressed();
-        }
         HandleAim();
     }
 
     private void GetWeaponsData()
     {
-        _weapons = _weaponsSlot.GetComponentsInChildren<Weapon>(true); // true argument to include inactive objects
-        foreach (Weapon weapon in _weapons)
+        _weapons = _weaponsSlot.GetComponentsInChildren<RangeWeapon>(true); // true argument to include inactive objects
+        foreach (RangeWeapon weapon in _weapons)
         {
-            weapon.OnWeaponEnable += GetCurrentWeaponData; // Subscribe to weapon changed event
+            weapon.OnWeaponChange += GetCurrentWeaponData; // Subscribe to weapon changed event
             if (weapon.gameObject.activeSelf)
             {
                 GetCurrentWeaponData(weapon);
@@ -70,17 +71,21 @@ public class Shooting : MonoBehaviour
     // Function activates on weapon enable (weapon changed)
     private void GetCurrentWeaponData(Weapon weapon)
     {
-        _currentWeapon = weapon;
-        _bulletPrefab = weapon.BulletPrefab;
-        _gunEnd = weapon.GunEnd;
-        _bulletForce = weapon.BulletForce;
-        _dmg = weapon.Dmg;
-        _shootRate = weapon.ShootRate;
-        _magazineCapacity = weapon.MagazineCapacity;
-        _backpackAmmo = weapon.BackpackAmmo;
-        _currentAmmo = weapon.CurrentAmmo;
-        _reloadTime = weapon.ReloadTime;
-        _muzzleFlash = _gunEnd.GetComponent<VisualEffect>();
+        if (weapon is RangeWeapon rangeWeapon)
+        {
+            _currentWeapon = rangeWeapon;
+            _bulletPrefab = rangeWeapon.BulletPrefab;
+            _gunEnd = rangeWeapon.GunEnd;
+            _bulletForce = rangeWeapon.BulletForce;
+            _dmg = rangeWeapon.Dmg;
+            _shootRate = rangeWeapon.ShootRate;
+            _magazineCapacity = rangeWeapon.MagazineCapacity;
+            _backpackAmmo = rangeWeapon.BackpackAmmo;
+            _currentAmmo = rangeWeapon.CurrentAmmo;
+            _reloadTime = rangeWeapon.ReloadTime;
+            _muzzleFlash = rangeWeapon.MuzzleFlash;
+            _isFullauto = rangeWeapon.IsFullauto;
+        }
     }
 
     private void OnFirePressed()
@@ -136,7 +141,7 @@ public class Shooting : MonoBehaviour
         }
 
         ShootEffects();
-        ShootAnimWhenAiming();
+        ShootAnimation();
     }
 
     private void CreateBulletWithForce(Vector3 targetDirection)
@@ -157,20 +162,13 @@ public class Shooting : MonoBehaviour
 
         // Visual Effect
         _recoilShooting.RecoilFire();
-        _muzzleFlash.Play();
-        _currentWeapon.FireLight.SetActive(true);
+        _muzzleFlash.Play(); // Fire effect from the gun
+        _currentWeapon.FireLight.SetActive(true); // Dynamic light fron fire effect
     }
 
-    private void ShootAnimWhenAiming()
+    private void ShootAnimation()
     {
-        if (!_isAiming)
-        {
-            _currentWeapon.Animator.SetTrigger("TrRecoil");
-        }
-        else
-        {
-            _currentWeapon.Animator.SetTrigger("TrRecoilAim");
-        }
+            _currentWeapon.Animator.SetTrigger("TrShoot");
     }
 
     private void OnReloadClick(InputAction.CallbackContext context)
@@ -208,15 +206,13 @@ public class Shooting : MonoBehaviour
 
     private void HandleAim()
     {
-        if (_input.aim && !_isAiming)
+        if (_input.aim)
         {
-            _currentWeapon.Animator.SetTrigger("TrAim");
-            _isAiming = true;
+            _currentWeapon.Animator.SetBool("isAiming", true);
         }
-        else if (!_input.aim && _isAiming)
+        else
         {
-            _currentWeapon.Animator.SetTrigger("TrAimUndo");
-            _isAiming = false;
+            _currentWeapon.Animator.SetBool("isAiming", false);
         }
     }
 }

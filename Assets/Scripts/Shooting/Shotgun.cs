@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shotgun : Weapon
+public class Shotgun : RangeWeapon
 {
     [SerializeField] private int _pellets = 10;
     [SerializeField] private float _splashX = 0.2f;
