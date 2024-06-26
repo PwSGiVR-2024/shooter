@@ -368,7 +368,7 @@ MonoBehaviour:
   m_ItemName: Ghoul's Remains
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: 9a60adb89cfb44b40a5848ffb9c08e69, type: 3}
   m_Prefab: {fileID: 4163940541035698142, guid: 11d93107b12d1084e9b0e494297293a4,
     type: 3}
   m_Description: Remnants from a defeated ghoul, imbued with dark energy.
