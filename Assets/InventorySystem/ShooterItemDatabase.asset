@@ -228,7 +228,7 @@ MonoBehaviour:
   m_ItemName: Power Serum
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: 599ffa7b324076a468778dcbe8a3e548, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'A serum that enhances the player''s damage output.
 
@@ -310,31 +310,9 @@ MonoBehaviour:
   m_Name: Starter items
   m_EditorClassIdentifier: 
   m_GroupName: Starter items
-  m_Items:
-  - {fileID: -8413918418521982596}
-  - {fileID: 6847829911516276468}
-  - {fileID: -7745811722786590564}
-  - {fileID: 699154121686944933}
-  - {fileID: 5893682275855013920}
-  - {fileID: -6765540527067700291}
-  - {fileID: 3729242472080980421}
-  - {fileID: 7412821362038872476}
-  - {fileID: 9017250990669595880}
-  - {fileID: 807157276921112907}
-  - {fileID: 658975925613817371}
-  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-  m_Modifiers:
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
+  m_Items: []
+  m_Amounts: 
+  m_Modifiers: []
 --- !u!114 &-5876170768647668609
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -720,7 +698,7 @@ MonoBehaviour:
   m_ItemName: Furious Ghoul's Serum
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: e18d57642b943584dbcd439d36bf7c9e, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'A powerful serum giving extraordinary speed and power but at a
     grave cost.
@@ -808,7 +786,7 @@ MonoBehaviour:
   m_ItemName: Speed Serum
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: 6f30dbe20816b6140a90eea33757132c, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'A serum that enhances the player''s speed.
 
@@ -893,7 +871,7 @@ MonoBehaviour:
   m_ItemName: Heavy Magazine
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: 82b339e2ff595664495d7d51ebaf8454, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'An upgrade that significantly increases ammunition capacity.
 
@@ -994,7 +972,7 @@ MonoBehaviour:
   m_ItemName: Ghoul's Blood
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: 1393adc5f00468d4780f108f7152e4c4, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: Dark and viscous blood extracted from ghouls, used in various sinister
     concoctions.
@@ -1064,7 +1042,7 @@ MonoBehaviour:
   m_ItemName: Protection Serum
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: 72781f76ce90d974888e7aca82505ca0, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'A serum that enhances the player''s damage resistance.
 
@@ -1165,7 +1143,7 @@ MonoBehaviour:
   m_ItemName: Jump Serum
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: e0f2d6bdb57dbca4b8510dbda760d3a2, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'A serum that enhances the player''s jump height.
 
@@ -1346,7 +1324,7 @@ MonoBehaviour:
   m_ItemName: Ghoul's Serum
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: 205b48a8211e0a843a7be66dc4cdf90c, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'A potent serum crafted from Ghoul''s Blood, used by ghouls to sustain
     their cursed life.
@@ -1476,7 +1454,7 @@ MonoBehaviour:
   m_ItemName: Light Magazine
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 21300000, guid: bef69dcdee04429448bef10d03674676, type: 3}
   m_Prefab: {fileID: 0}
   m_Description: 'An upgrade that allows for more ammunition in each magazine.
 
