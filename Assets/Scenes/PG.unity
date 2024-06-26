@@ -29960,7 +29960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Vendor
+  m_Text: Trade
 --- !u!224 &8307661263644679084
 RectTransform:
   m_ObjectHideFlags: 0
