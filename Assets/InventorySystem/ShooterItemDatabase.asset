@@ -98,6 +98,36 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+--- !u!114 &-7774872582519584064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28fccac83a2fa2245991bffe45a6cdd1, type: 3}
+  m_Name: Vendor2
+  m_EditorClassIdentifier: 
+  m_GroupName: Vendor2
+  m_Items:
+  - {fileID: 699154121686944933}
+  - {fileID: 5893682275855013920}
+  - {fileID: -6765540527067700291}
+  - {fileID: 3729242472080980421}
+  - {fileID: 9017250990669595880}
+  - {fileID: 807157276921112907}
+  - {fileID: 658975925613817371}
+  m_Amounts: 01000000010000000100000001000000010000000100000001000000
+  m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
 --- !u!114 &-7745811722786590564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -416,13 +446,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28fccac83a2fa2245991bffe45a6cdd1, type: 3}
-  m_Name: Vendor
+  m_Name: Vendor1
   m_EditorClassIdentifier: 
-  m_GroupName: Vendor
+  m_GroupName: Vendor1
   m_Items:
   - {fileID: -8413918418521982596}
-  m_Amounts: 01000000
+  - {fileID: 6847829911516276468}
+  - {fileID: -4730761301371283280}
+  - {fileID: 7412821362038872476}
+  m_Amounts: 01000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
 --- !u!114 &-1598139546261364652
 MonoBehaviour:
@@ -477,9 +513,10 @@ MonoBehaviour:
   - {fileID: -4591142104480814045}
   equipments: []
   itemGroups:
-  - {fileID: -1968310391980588537}
-  - {fileID: 3625471696320115051}
   - {fileID: -6726322294913613531}
+  - {fileID: -1968310391980588537}
+  - {fileID: -7774872582519584064}
+  - {fileID: 3625471696320115051}
   settings:
   - {fileID: 6737240886870754698}
   - {fileID: -5876170768647668609}
@@ -985,8 +1022,14 @@ MonoBehaviour:
   m_GroupName: Craftable always
   m_Items:
   - {fileID: -7745811722786590564}
-  m_Amounts: 01000000
+  - {fileID: 1853004012934154525}
+  - {fileID: 7412821362038872476}
+  - {fileID: 658975925613817371}
+  m_Amounts: 01000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
 --- !u!114 &3729242472080980421
 MonoBehaviour:
