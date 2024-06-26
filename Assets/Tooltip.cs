@@ -43,7 +43,7 @@ public class Tooltip : MonoBehaviour
     private void SelectGameObjectBeingLookedAt()
     {
         Ray ray = Camera.main.ViewportPointToRay(Vector3.one / 2f);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, 2f, _layerMask))
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 3f, _layerMask))
         {
             if (!hitInfo.collider.TryGetComponent<TooltipText>(out var hitObject))
             {

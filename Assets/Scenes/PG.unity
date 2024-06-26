@@ -1231,6 +1231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8931238350582437525, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
+      propertyPath: useDistance
+      value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931238350582437525, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
       propertyPath: actionTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 2cfdf688446c5db4e8ff2a9e6c3c1066,
@@ -1645,6 +1650,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952994078043265617, guid: b23b6c221328a3f498cbcc250643a398,
+        type: 3}
+      propertyPath: useDistance
+      value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 952994078043265617, guid: b23b6c221328a3f498cbcc250643a398,
+        type: 3}
+      propertyPath: actionTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a87e881c3d0f14478888042fef6267c,
+        type: 2}
     - target: {fileID: 952994078043265617, guid: b23b6c221328a3f498cbcc250643a398,
         type: 3}
       propertyPath: delegates.Array.size
@@ -22142,6 +22158,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8931238350582437525, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
         type: 3}
+      propertyPath: useDistance
+      value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931238350582437525, guid: fdd9999d3a633f242a1214bcf8f6e2ea,
+        type: 3}
       propertyPath: actionTemplate
       value: 
       objectReference: {fileID: 11400000, guid: 2cfdf688446c5db4e8ff2a9e6c3c1066,
@@ -26165,6 +26186,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 952994078043265617, guid: b23b6c221328a3f498cbcc250643a398,
+        type: 3}
+      propertyPath: useDistance
+      value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 952994078043265617, guid: b23b6c221328a3f498cbcc250643a398,
+        type: 3}
+      propertyPath: actionTemplate
+      value: 
+      objectReference: {fileID: 11400000, guid: ce8587c1e72b0b349a3b093ce5f25f8e,
+        type: 2}
     - target: {fileID: 952994078043265617, guid: b23b6c221328a3f498cbcc250643a398,
         type: 3}
       propertyPath: delegates.Array.size
