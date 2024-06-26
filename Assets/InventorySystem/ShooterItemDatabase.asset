@@ -369,7 +369,8 @@ MonoBehaviour:
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
   m_Icon: {fileID: 0}
-  m_Prefab: {fileID: 0}
+  m_Prefab: {fileID: 4163940541035698142, guid: 11d93107b12d1084e9b0e494297293a4,
+    type: 3}
   m_Description: Remnants from a defeated ghoul, imbued with dark energy.
   m_Category: {fileID: -2780984881116590516}
   m_IsSellable: 1
