@@ -204,7 +204,7 @@ MonoBehaviour:
 
 
     Effect:
-    Increases damage by 10%.'
+    Increases damage by 25%.'
   m_Category: {fileID: 5840860836026957122}
   m_IsSellable: 1
   m_BuyPrice: 110
@@ -276,8 +276,24 @@ MonoBehaviour:
   - {fileID: -8413918418521982596}
   - {fileID: 6847829911516276468}
   - {fileID: -7745811722786590564}
-  m_Amounts: 010000000100000001000000
+  - {fileID: 699154121686944933}
+  - {fileID: 5893682275855013920}
+  - {fileID: -6765540527067700291}
+  - {fileID: 3729242472080980421}
+  - {fileID: 7412821362038872476}
+  - {fileID: 9017250990669595880}
+  - {fileID: 807157276921112907}
+  - {fileID: 658975925613817371}
+  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
   - modifiers: []
   - modifiers: []
@@ -664,7 +680,7 @@ MonoBehaviour:
     grave cost.
 
 
-    Effect: Increases speed and damage by 50% for 2 minutes, then
+    Effect: Increases speed and damage by 75% for 2 minutes, then
     reduces health to 1 HP.'
   m_Category: {fileID: 5840860836026957122}
   m_IsSellable: 1
@@ -744,7 +760,7 @@ MonoBehaviour:
 
 
     Effect: Increases
-    speed by 10%.'
+    speed by 25%.'
   m_Category: {fileID: 5840860836026957122}
   m_IsSellable: 1
   m_BuyPrice: 100
@@ -776,6 +792,7 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
+  - rid: 7602509968429023239
   - rid: 7602509565042884617
   - rid: 7602509968429023238
   references:
@@ -799,6 +816,13 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+    - rid: 7602509968429023239
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _changePercentage: 25
+        _actionType: 0
 --- !u!114 &807157276921112907
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -809,7 +833,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
-  m_Name: Light Magazine(Clone)
+  m_Name: Heavy Magazine
   m_EditorClassIdentifier: 
   m_Id: 7675d95e-219e-4c29-a330-39859679edab
   m_ItemName: Heavy Magazine
@@ -821,7 +845,7 @@ MonoBehaviour:
 
 
     Effect:
-    Increases max ammo before reload by 25%.'
+    Increases max ammo before reload by 50%.'
   m_Category: {fileID: -4591142104480814045}
   m_IsSellable: 1
   m_BuyPrice: 120
@@ -978,7 +1002,7 @@ MonoBehaviour:
 
 
     Effect:
-    Increases damage resistance by 10%.'
+    Increases damage resistance by 25%.'
   m_Category: {fileID: 5840860836026957122}
   m_IsSellable: 1
   m_BuyPrice: 110
@@ -1010,6 +1034,7 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
+  - rid: 7602509968429023241
   - rid: 7602509565042884617
   - rid: 7602509968429023238
   references:
@@ -1033,6 +1058,13 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+    - rid: 7602509968429023241
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _changePercentage: 25
+        _actionType: 3
 --- !u!114 &5840860836026957122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1071,7 +1103,7 @@ MonoBehaviour:
 
 
     Effect:
-    Increases jump height by 10%.'
+    Increases jump height by 50%.'
   m_Category: {fileID: 5840860836026957122}
   m_IsSellable: 1
   m_BuyPrice: 95
@@ -1103,6 +1135,7 @@ MonoBehaviour:
   m_UseCategoryCooldown: 1
   m_Cooldown: 1
   actions:
+  - rid: 7602509968429023240
   - rid: 7602509565042884617
   - rid: 7602509968429023238
   references:
@@ -1126,6 +1159,13 @@ MonoBehaviour:
         m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
           type: 2}
         m_Volume: 1
+    - rid: 7602509968429023240
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _changePercentage: 50
+        _actionType: 1
 --- !u!114 &6737240886870754698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1245,7 +1285,7 @@ MonoBehaviour:
 
 
     Effect: Randomly increases or decreases one of the following
-    by 10%: speed, jump height, damage, or damage resistance.'
+    by 25%: speed, jump height, damage, or damage resistance.'
   m_Category: {fileID: 5840860836026957122}
   m_IsSellable: 1
   m_BuyPrice: 80
@@ -1366,7 +1406,7 @@ MonoBehaviour:
 
 
     Effect:
-    Increases max ammo before reload by 10%.'
+    Increases max ammo before reload by 25%.'
   m_Category: {fileID: -4591142104480814045}
   m_IsSellable: 1
   m_BuyPrice: 60

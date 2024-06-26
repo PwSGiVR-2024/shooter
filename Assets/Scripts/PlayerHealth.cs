@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using StarterAssets;
 using TMPro;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
     private bool _isDead = false;
     [HideInInspector]
     public bool Dead;
+    [HideInInspector]
+    public int ProtectionPercentage = 0;
 
     private void Awake()
     {
@@ -63,7 +65,18 @@ public class PlayerHealth : MonoBehaviour
         get => _currentHealth;
         set
         {
-            _currentHealth = value;
+            int damage = _currentHealth - value; // Calculate the incoming damage
+            if (damage > 0)
+            {
+                // Apply protection to reduce the damage
+                int effectiveDamage = damage - (damage * ProtectionPercentage / 100);
+                _currentHealth -= effectiveDamage; // Subtract the reduced damage from current health
+            }
+            else
+            {
+                // If it's not damage (e.g., healing), just update the health directly
+                _currentHealth = value;
+            }
             CheckHealth();
             Health.text = "Health: " + _currentHealth;
         }
