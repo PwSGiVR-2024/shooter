@@ -10274,8 +10274,9 @@ GameObject:
   - component: {fileID: 2218232508759693522}
   - component: {fileID: 2218232508759693524}
   - component: {fileID: 2218232508759693523}
-  - component: {fileID: 2218232508759693525}
   - component: {fileID: 7300881417747912181}
+  - component: {fileID: 7300881417747912183}
+  - component: {fileID: 7300881417747912182}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Item container
@@ -10436,39 +10437,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &2218232508759693525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2218232508759693521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68165cdf1896c89479a91b2478670c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveable: 1
-  m_Items:
-  - {fileID: -8413918418521982596, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
-  - {fileID: 6847829911516276468, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
-  - {fileID: 8883075558970539077, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
-  m_Amounts: 010000000100000032000000
-  m_Modifiers:
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers:
-    - {fileID: 11400000, guid: 3451d08e25b81ff4eb586aa4fb61a191, type: 2}
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  onChange:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2218232508868092730
 GameObject:
   m_ObjectHideFlags: 0
@@ -26558,6 +26526,39 @@ MonoBehaviour:
   - {fileID: -3989543302354102894, guid: 0049234d696d6d54cbdfa5d0775e5081, type: 2}
   - {fileID: 164684216256526245, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
   invert: 1
+--- !u!114 &7300881417747912182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218232508759693521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29feedc1ae74594585d58b82bbc4bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ItemGroup: {fileID: -6726322294913613531, guid: d62e9ba76a758b64098058b70df3b092,
+    type: 2}
+--- !u!114 &7300881417747912183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218232508759693521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68165cdf1896c89479a91b2478670c0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveable: 1
+  m_Items: []
+  m_Amounts: 
+  m_Modifiers: []
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7308126821240279164
 MonoBehaviour:
   m_ObjectHideFlags: 0

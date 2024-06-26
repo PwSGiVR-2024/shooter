@@ -35,8 +35,12 @@ MonoBehaviour:
   m_Icon: {fileID: 21300000, guid: 0f2e40773bf2d2d4b8b617411ca15ff2, type: 3}
   m_Prefab: {fileID: 5206032586291781621, guid: 2f1ad8f646d693349bbb7ea05ed0b06f,
     type: 3}
-  m_Description: Tasty fruit
-  m_Category: {fileID: -8448528318726398373}
+  m_Description: 'A fresh, crisp fruit that rejuvenates the spirit.
+
+
+    Effect:
+    Heals 10 HP.'
+  m_Category: {fileID: -1598139546261364652}
   m_IsSellable: 1
   m_BuyPrice: 10
   m_CanBuyBack: 0
@@ -65,6 +69,7 @@ MonoBehaviour:
   actions:
   - rid: 7602509556594245644
   - rid: 7602509556594245643
+  - rid: 7602509968429023236
   references:
     version: 2
     RefIds:
@@ -84,6 +89,15 @@ MonoBehaviour:
         m_Enabled: 1
         _changeAmount: 10
         _healType: 0
+    - rid: 7602509968429023236
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: cd44b2cb1261d2d42bc33e904f536692, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
 --- !u!114 &-7745811722786590564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,11 +117,15 @@ MonoBehaviour:
   m_Icon: {fileID: 21300000, guid: da9c20c6fe919ae489c0ff2b801a18e6, type: 3}
   m_Prefab: {fileID: 4930256075512665249, guid: 17e62f13ffe78224abb4fb0b9c273ad7,
     type: 3}
-  m_Description: More tasty than normal apple
-  m_Category: {fileID: -8448528318726398373}
+  m_Description: 'Delicious drink brewed from apples, offering enhanced healing.
+
+
+    Effect:
+    Heals 40 HP.'
+  m_Category: {fileID: -1598139546261364652}
   m_IsSellable: 1
-  m_BuyPrice: 30
-  m_CanBuyBack: 1
+  m_BuyPrice: 40
+  m_CanBuyBack: 0
   m_BuyCurrency: {fileID: 8883075558970539077}
   m_SellPrice: 15
   m_SellCurrency: {fileID: 8883075558970539077}
@@ -135,6 +153,7 @@ MonoBehaviour:
   actions:
   - rid: 7602509565042884618
   - rid: 7602509565042884617
+  - rid: 7602509968429023238
   references:
     version: 2
     RefIds:
@@ -152,8 +171,116 @@ MonoBehaviour:
       data:
         m_Type: HealthAction
         m_Enabled: 1
-        _changeAmount: 30
+        _changeAmount: 40
         _healType: 0
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 7ec6ba4061547e24994f36737a76abd9, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
+--- !u!114 &-6765540527067700291
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Power Serum
+  m_EditorClassIdentifier: 
+  m_Id: 98694e2c-93f0-44ad-bbbd-6b93bde1e2e6
+  m_ItemName: Power Serum
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'A serum that enhances the player''s damage output.
+
+
+    Effect:
+    Increases damage by 10%.'
+  m_Category: {fileID: 5840860836026957122}
+  m_IsSellable: 1
+  m_BuyPrice: 110
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 60
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: -6765540527067700291}
+        m_WindowName: Inventory
+        m_Item: {fileID: -6765540527067700291}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
+--- !u!114 &-6726322294913613531
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28fccac83a2fa2245991bffe45a6cdd1, type: 3}
+  m_Name: Starter items
+  m_EditorClassIdentifier: 
+  m_GroupName: Starter items
+  m_Items:
+  - {fileID: -8413918418521982596}
+  - {fileID: 6847829911516276468}
+  - {fileID: -7745811722786590564}
+  m_Amounts: 010000000100000001000000
+  m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
 --- !u!114 &-5876170768647668609
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,6 +298,65 @@ MonoBehaviour:
   queriesHitTriggers: 0
   debugMessages: 0
   showAllComponents: 0
+--- !u!114 &-4730761301371283280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14be5e3e6cf2204293682bf65bce5dc, type: 3}
+  m_Name: Ghoul's Remains
+  m_EditorClassIdentifier: 
+  m_Id: 70ba2dd8-b72f-45e0-ac14-1e19096da011
+  m_ItemName: Ghoul's Remains
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: Remnants from a defeated ghoul, imbued with dark energy.
+  m_Category: {fileID: -2780984881116590516}
+  m_IsSellable: 1
+  m_BuyPrice: 15
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 8
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 64
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 2
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: Blacksmithy
+  m_CraftingModifier:
+    modifiers: []
+  ingredients: []
+  properties: []
+--- !u!114 &-4591142104480814045
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4abab319188bac4a8515c585b13ba9d, type: 3}
+  m_Name: Weapon upgrades
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  name: Weapon upgrades
+  m_EditorColor: {r: 0.85882354, g: 0.22924897, b: 0.09411765, a: 0}
+  m_Cooldown: 1
 --- !u!114 &-4106047930263944871
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,6 +374,22 @@ MonoBehaviour:
   sellPriceTooltipName: Sell Price Tooltip
   stackName: Stack
   notificationName: Notification
+--- !u!114 &-2780984881116590516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4abab319188bac4a8515c585b13ba9d, type: 3}
+  m_Name: Crafting ingredients
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: -8448528318726398373}
+  name: Crafting ingredients
+  m_EditorColor: {r: 0.6683923, g: 0.6792453, b: 0.11854753, a: 0}
+  m_Cooldown: 1
 --- !u!114 &-1968310391980588537
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,6 +408,22 @@ MonoBehaviour:
   m_Amounts: 01000000
   m_Modifiers:
   - modifiers: []
+--- !u!114 &-1598139546261364652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4abab319188bac4a8515c585b13ba9d, type: 3}
+  m_Name: Food
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: -8448528318726398373}
+  name: Food
+  m_EditorColor: {r: 0.45705712, g: 1, b: 0, a: 0}
+  m_Cooldown: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,17 +438,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: -8413918418521982596}
-  - {fileID: 6847829911516276468}
   - {fileID: -7745811722786590564}
+  - {fileID: 6847829911516276468}
+  - {fileID: -4730761301371283280}
+  - {fileID: 1853004012934154525}
+  - {fileID: 7412821362038872476}
+  - {fileID: 699154121686944933}
+  - {fileID: 5893682275855013920}
+  - {fileID: -6765540527067700291}
+  - {fileID: 3729242472080980421}
+  - {fileID: 9017250990669595880}
+  - {fileID: 807157276921112907}
+  - {fileID: 658975925613817371}
   currencies:
   - {fileID: 8883075558970539077}
   raritys: []
   categories:
   - {fileID: -8448528318726398373}
+  - {fileID: -1598139546261364652}
+  - {fileID: -2780984881116590516}
+  - {fileID: 5840860836026957122}
+  - {fileID: -4591142104480814045}
   equipments: []
   itemGroups:
   - {fileID: -1968310391980588537}
   - {fileID: 3625471696320115051}
+  - {fileID: -6726322294913613531}
   settings:
   - {fileID: 6737240886870754698}
   - {fileID: -5876170768647668609}
@@ -409,6 +642,240 @@ MonoBehaviour:
     delay: 2
     duration: 2
     ignoreTimeScale: 1
+--- !u!114 &658975925613817371
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Furious Ghoul's Serum
+  m_EditorClassIdentifier: 
+  m_Id: f0dc84aa-a0ff-4803-bd7e-38fb865c5303
+  m_ItemName: Furious Ghoul's Serum
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'A powerful serum giving extraordinary speed and power but at a
+    grave cost.
+
+
+    Effect: Increases speed and damage by 50% for 2 minutes, then
+    reduces health to 1 HP.'
+  m_Category: {fileID: 5840860836026957122}
+  m_IsSellable: 1
+  m_BuyPrice: 200
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 100
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 1
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 4
+  - item: {fileID: 6847829911516276468}
+    amount: 2
+  - item: {fileID: -7745811722786590564}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 658975925613817371}
+        m_WindowName: Inventory
+        m_Item: {fileID: 658975925613817371}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 508d684dd5fbfd4428c948e3db758fb1, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
+--- !u!114 &699154121686944933
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Speed Serum
+  m_EditorClassIdentifier: 
+  m_Id: 1f24a315-acd2-45b6-ab51-7682010ecd51
+  m_ItemName: Speed Serum
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'A serum that enhances the player''s speed.
+
+
+    Effect: Increases
+    speed by 10%.'
+  m_Category: {fileID: 5840860836026957122}
+  m_IsSellable: 1
+  m_BuyPrice: 100
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 50
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 699154121686944933}
+        m_WindowName: Inventory
+        m_Item: {fileID: 699154121686944933}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
+--- !u!114 &807157276921112907
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Light Magazine(Clone)
+  m_EditorClassIdentifier: 
+  m_Id: 7675d95e-219e-4c29-a330-39859679edab
+  m_ItemName: Heavy Magazine
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'An upgrade that significantly increases ammunition capacity.
+
+
+    Effect:
+    Increases max ammo before reload by 25%.'
+  m_Category: {fileID: -4591142104480814045}
+  m_IsSellable: 1
+  m_BuyPrice: 120
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 60
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 807157276921112907}
+        m_WindowName: Inventory
+        m_Item: {fileID: 807157276921112907}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: c3e9b83a19dc2764dad4c17923f0e8fe, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
 --- !u!114 &1235675407137278491
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -425,6 +892,52 @@ MonoBehaviour:
   savingKey: Player
   savingRate: 60
   provider: 0
+--- !u!114 &1853004012934154525
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14be5e3e6cf2204293682bf65bce5dc, type: 3}
+  m_Name: Ghoul's Blood
+  m_EditorClassIdentifier: 
+  m_Id: c6ba14a0-accd-4a9e-9902-fe2c9f49adab
+  m_ItemName: Ghoul's Blood
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: Dark and viscous blood extracted from ghouls, used in various sinister
+    concoctions.
+  m_Category: {fileID: -2780984881116590516}
+  m_IsSellable: 1
+  m_BuyPrice: 35
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 12
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 64
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 1
+  m_CraftingDuration: 4
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: -4730761301371283280}
+    amount: 2
+  properties: []
 --- !u!114 &3625471696320115051
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -443,6 +956,176 @@ MonoBehaviour:
   m_Amounts: 01000000
   m_Modifiers:
   - modifiers: []
+--- !u!114 &3729242472080980421
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Protection Serum
+  m_EditorClassIdentifier: 
+  m_Id: 2f639ea9-7244-4956-92c3-78d18d7d7209
+  m_ItemName: Protection Serum
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'A serum that enhances the player''s damage resistance.
+
+
+    Effect:
+    Increases damage resistance by 10%.'
+  m_Category: {fileID: 5840860836026957122}
+  m_IsSellable: 1
+  m_BuyPrice: 110
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 60
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 3729242472080980421}
+        m_WindowName: Inventory
+        m_Item: {fileID: 3729242472080980421}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
+--- !u!114 &5840860836026957122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4abab319188bac4a8515c585b13ba9d, type: 3}
+  m_Name: Serums
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  name: Serums
+  m_EditorColor: {r: 0.8584906, g: 0.58851457, b: 0.09313814, a: 0}
+  m_Cooldown: 1
+--- !u!114 &5893682275855013920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Jump Serum
+  m_EditorClassIdentifier: 
+  m_Id: 801d0859-991b-444c-b3bd-33a69172e6f7
+  m_ItemName: Jump Serum
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'A serum that enhances the player''s jump height.
+
+
+    Effect:
+    Increases jump height by 10%.'
+  m_Category: {fileID: 5840860836026957122}
+  m_IsSellable: 1
+  m_BuyPrice: 95
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 45
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 5893682275855013920}
+        m_WindowName: Inventory
+        m_Item: {fileID: 5893682275855013920}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
 --- !u!114 &6737240886870754698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -476,13 +1159,17 @@ MonoBehaviour:
   m_Icon: {fileID: 21300000, guid: ca1f032870c4f6243a0c1f12ae4f3fdd, type: 3}
   m_Prefab: {fileID: 7376372120281525656, guid: fe2ab05f4af9f1449b8138c667c325ca,
     type: 3}
-  m_Description: Bad smelly apple
-  m_Category: {fileID: -8448528318726398373}
+  m_Description: 'A tainted fruit that saps the consumer''s vitality.
+
+
+    Effect:
+    Reduces current health by 10 HP.'
+  m_Category: {fileID: -1598139546261364652}
   m_IsSellable: 1
-  m_BuyPrice: 0
-  m_CanBuyBack: 1
+  m_BuyPrice: 5
+  m_CanBuyBack: 0
   m_BuyCurrency: {fileID: 8883075558970539077}
-  m_SellPrice: 0
+  m_SellPrice: 2
   m_SellCurrency: {fileID: 8883075558970539077}
   m_Stack: 1
   m_MaxStack: 64
@@ -506,6 +1193,7 @@ MonoBehaviour:
   actions:
   - rid: 7602509556594245644
   - rid: 7602509556594245643
+  - rid: 7602509968429023237
   references:
     version: 2
     RefIds:
@@ -525,6 +1213,93 @@ MonoBehaviour:
         m_Enabled: 1
         _changeAmount: 10
         _healType: 1
+    - rid: 7602509968429023237
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: cd44b2cb1261d2d42bc33e904f536692, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
+--- !u!114 &7412821362038872476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Ghoul's Serum
+  m_EditorClassIdentifier: 
+  m_Id: 6fbcbeff-2c9b-4c90-9fa7-bd1736b8ef8a
+  m_ItemName: Ghoul's Serum
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'A potent serum crafted from Ghoul''s Blood, used by ghouls to sustain
+    their cursed life.
+
+
+    Effect: Randomly increases or decreases one of the following
+    by 10%: speed, jump height, damage, or damage resistance.'
+  m_Category: {fileID: 5840860836026957122}
+  m_IsSellable: 1
+  m_BuyPrice: 80
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 30
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 1
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 7412821362038872476}
+        m_WindowName: Inventory
+        m_Item: {fileID: 7412821362038872476}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 00188f33be3476344a178564a0b0ed48, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1
 --- !u!114 &8883075558970539077
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -569,3 +1344,80 @@ MonoBehaviour:
   ingredients: []
   properties: []
   currencyConversions: []
+--- !u!114 &9017250990669595880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Light Magazine
+  m_EditorClassIdentifier: 
+  m_Id: 30ba7894-14b4-46c4-96fd-ae98fef7f96a
+  m_ItemName: Light Magazine
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 0}
+  m_Prefab: {fileID: 0}
+  m_Description: 'An upgrade that allows for more ammunition in each magazine.
+
+
+    Effect:
+    Increases max ammo before reload by 10%.'
+  m_Category: {fileID: -4591142104480814045}
+  m_IsSellable: 1
+  m_BuyPrice: 60
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 30
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 9017250990669595880}
+        m_WindowName: Inventory
+        m_Item: {fileID: 9017250990669595880}
+        m_Amount: 1
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: c3e9b83a19dc2764dad4c17923f0e8fe, type: 3}
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1

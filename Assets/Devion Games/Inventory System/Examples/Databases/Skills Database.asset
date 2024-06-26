@@ -51,7 +51,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: 469cf9288efaed44a9d0eb78c6b58840, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &-7544555359425583367
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,7 +177,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: 3ce0320ba5183f345b5a8aa837f67700, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &-1426487474185108636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,7 +401,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: c1992775e12652140b4d346619cbf34f, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &-904524929377059290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,7 +453,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: fe54ba700fcd2c148920b5d08884dab8, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,7 +570,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: 469cf9288efaed44a9d0eb78c6b58840, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &5770177478895120047
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -617,7 +622,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: 46f3d22ada8c5dc44ada009bcf58c573, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &6305893422732665131
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -669,7 +675,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: ab8c15d98d0de6d448b589d24bbb0eef, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &7032449652308580212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -720,7 +727,8 @@ MonoBehaviour:
   m_FixedSuccessChance: 50
   m_GainModifier: {fileID: 11400000, guid: 4b4c88aca3f41b5428addc167494186f, type: 2}
   references:
-    version: 1
+    version: 2
+    RefIds: []
 --- !u!114 &7814454700255973630
 MonoBehaviour:
   m_ObjectHideFlags: 1
