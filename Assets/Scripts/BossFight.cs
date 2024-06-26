@@ -16,12 +16,14 @@ public class Boss : MonoBehaviour
     public event Action OnBossDeath;
     public GameObject Fence;
     public GirlControllerEnd Girl;
+    public int _lastHealthThreshold;
 
     void Start()
     {
         CurrentHealth = MaxHealth;
         _anim = GetComponent<Animator>();
         OnHealthChanged?.Invoke(CurrentHealth);
+        _lastHealthThreshold = CurrentHealth / 250;
     }
 
     void Update()
@@ -53,8 +55,10 @@ public class Boss : MonoBehaviour
             return;
         }
 
-        if (CurrentHealth % 250 == 0)
+        int newHealthThreshold = (CurrentHealth / 250);
+        if (newHealthThreshold < _lastHealthThreshold)
         {
+            _lastHealthThreshold = newHealthThreshold;
             SpawnMinions();
         }
     }

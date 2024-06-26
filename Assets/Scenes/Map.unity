@@ -43134,6 +43134,7 @@ MonoBehaviour:
   Key1: {fileID: 1215857295}
   Key2: {fileID: 2065751642}
   Key3: {fileID: 2009165667}
+  _keys: []
 --- !u!114 &1467510333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44946,7 +44947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 1000
-  CurrentHealth: 0
+  CurrentHealth: 1000
   MinionPrefab: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
     type: 3}
   SpawnPoints:
@@ -44956,6 +44957,7 @@ MonoBehaviour:
   - {fileID: 1805084735}
   Fence: {fileID: 1147298925}
   Girl: {fileID: 937933981}
+  _lastHealthThreshold: 0
 --- !u!114 &1539673684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53067,7 +53069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.35663, y: 435.6858}
+  m_AnchoredPosition: {x: -37.35669, y: 435.6858}
   m_SizeDelta: {x: -925.2867, y: -928.6284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886642272
@@ -62944,7 +62946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 4
-  SprintSpeed: 25
+  SprintSpeed: 6
   CrouchSpeed: 2
   AimSpeed: 1
   RotationSpeed: 1
