@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3357468}
   - component: {fileID: 2361322}
   - component: {fileID: 6587490}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lo_Prop_Lamp_A_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
