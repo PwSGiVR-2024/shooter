@@ -179,7 +179,13 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 
     private void OnReloadClick(InputAction.CallbackContext context)
     {
-        if (_backpackAmmo > 0 && _magazineCapacity != _currentAmmo)
+        // Do not allow to reaload when using melee weapon
+        if (WeaponManager.Instance.CurrentWeapon is MeleeWeapon)
+        {
+            return;
+        }
+
+        if (_backpackAmmo > 0 && _magazineCapacity != _currentAmmo && !_isReloading)
         {
             StartCoroutine(StartReloading());
         }

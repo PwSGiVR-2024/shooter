@@ -16,6 +16,7 @@ public class WeaponManager : MonoBehaviour
 
     // Singleton pattern
     public static WeaponManager Instance { get; private set; }
+    public Weapon CurrentWeapon { get => _currentWeapon; set => _currentWeapon = value; }
 
     private void Awake()
     {
