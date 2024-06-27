@@ -56,7 +56,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
         OnFirePressed();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         HandleAim();
     }
@@ -96,7 +96,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 
     private void OnFirePressed()
     {
-        if (_currentWeapon.IsCurrentlyUsed && _shootDelayPassed && _currentAmmo > 0 && !_isReloading)
+        if (_currentWeapon != null && _currentWeapon.IsCurrentlyUsed && _shootDelayPassed && _currentAmmo > 0 && !_isReloading)
         {
             _currentAmmo--;
             UpdateAmmo(_currentAmmo, _backpackAmmo);
@@ -218,6 +218,16 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
 
     private void HandleAim()
     {
+        if (WeaponManager.Instance == null || WeaponManager.Instance.CurrentWeapon == null)
+        {
+            return;
+        }
+
+        if (WeaponManager.Instance.CurrentWeapon is MeleeWeapon)
+        {
+            return;
+        }
+
         if (_itemContainerCount == 0 && _input.aim)
         {
             _currentWeapon.Animator.SetBool("isAiming", true);

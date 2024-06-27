@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] GameObject _weaponsSlot;
+    [SerializeField] Weapon _startWeapon;
     private PlayerInput _playerInput;
     private StarterAssetsInputs _input;
     private IAttackStrategy _currentAttackStrategy;
@@ -13,10 +14,11 @@ public class WeaponManager : MonoBehaviour
 
     private ItemContainerCallbacks _itemContainerCallbacks;
     private int _itemContainerCount;
+    public Weapon CurrentWeapon { get => _currentWeapon; set => _currentWeapon = value; }
+
 
     // Singleton pattern
     public static WeaponManager Instance { get; private set; }
-    public Weapon CurrentWeapon { get => _currentWeapon; set => _currentWeapon = value; }
 
     private void Awake()
     {
@@ -37,18 +39,26 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
-
+        // Subscribe to weapon change event
         Weapon[] weapons = _weaponsSlot.GetComponentsInChildren<Weapon>(true);
         foreach (var weapon in weapons)
         {
             weapon.OnWeaponChange += GetCurrentWeaponData;
         }
 
+        // Setting start weapon
+        if (_startWeapon != null)
+        {
+            _currentWeapon = _startWeapon;
+            WeaponSwitcher.Instance.SetWeaponActive(_currentWeapon);
+        }
+
+        // Handle input
+        _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
         _playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
         _playerInput.actions["Fire"].started += AttackSingleClick;
-        SetAttackStrategy(GetComponent<RangeWeaponController>());
 
+        // Handle container count
         _itemContainerCallbacks = GameObject.Find("ItemContainerMethods").GetComponent<ItemContainerCallbacks>();
         _itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
     }
@@ -60,6 +70,7 @@ public class WeaponManager : MonoBehaviour
 
     private void HandleAttackPressed()
     {
+        // If there is no item container and fire button is pressed (e.g. crafting, inventory, menu)
         if (_itemContainerCount == 0 && _input.fire)
         {
             AttackPressed();
@@ -69,16 +80,17 @@ public class WeaponManager : MonoBehaviour
     // Handle single tap for melee weapons and not fullauto range weapons
     private void AttackSingleClick(InputAction.CallbackContext context)
     {
-        if (_itemContainerCount == 0)
+        if (_itemContainerCount != 0)
         {
-            if (_currentAttackStrategy is RangeWeaponController rangeAttack && !rangeAttack.IsFullauto)
-            {
-                _currentAttackStrategy?.Attack();
-            }
-            else if (_currentAttackStrategy is MeleeWeaponController)
-            {
-                _currentAttackStrategy?.Attack();
-            }
+            return; 
+        }
+        if (_currentAttackStrategy is RangeWeaponController rangeAttack && !rangeAttack.IsFullauto)
+        {
+            _currentAttackStrategy?.Attack();
+        }
+        else if (_currentAttackStrategy is MeleeWeaponController)
+        {
+            _currentAttackStrategy?.Attack();
         }
     }
 
