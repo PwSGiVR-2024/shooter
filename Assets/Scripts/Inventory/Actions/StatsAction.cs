@@ -28,7 +28,7 @@ public class StatsAction : Action
         _playerController = _target.GetComponent<FirstPersonController>();
         _target = GameObject.Find("ShootingManager");
         _rangeWeaponController = _target.GetComponent<RangeWeaponController>();
-        _weapons = _target.GetComponent<TempWeaponSwitcher>()._keys;
+        _weapons = _target.GetComponent<WeaponSwitcher>()._keys;
     }
 
     public override ActionStatus OnUpdate()
