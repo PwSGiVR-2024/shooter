@@ -6,13 +6,13 @@ public class FuriousGhoulCoroutine : MonoBehaviour
 {
     RangeWeaponController _rangeWeaponController;
 
-    public void StartTheCoroutine(int _changePercentage, StarterAssets.FirstPersonController _playerController, Player _playerHealth, Weapon[] weapons, RangeWeaponController rangeWeaponController)
+    public void StartTheCoroutine(int _changePercentage, StarterAssets.FirstPersonController _playerController, PlayerHealth _playerHealth, Weapon[] weapons, RangeWeaponController rangeWeaponController)
     {
         _rangeWeaponController = rangeWeaponController;
         StartCoroutine(ApplyFuriousGhoulEffect(_changePercentage, _playerController, _playerHealth, weapons));
     }
 
-    private IEnumerator ApplyFuriousGhoulEffect(int _changePercentage, FirstPersonController _playerController, Player _playerHealth, Weapon[] weapons)
+    private IEnumerator ApplyFuriousGhoulEffect(int _changePercentage, FirstPersonController _playerController, PlayerHealth _playerHealth, Weapon[] weapons)
     {
         float changeFactor = 1 + _changePercentage / 100f; // Calculate change factor based on _changePercentage
 

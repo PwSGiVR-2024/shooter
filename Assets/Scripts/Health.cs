@@ -4,11 +4,11 @@ public abstract class Health : MonoBehaviour
 {
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private int _startedHealth = 100;
-    private int _currentHealth;
+    protected int _currentHealth;
 
     public int MaxHealth => _maxHealth;
 
-    public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
+    public virtual int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
 
     protected virtual void Start()
     {

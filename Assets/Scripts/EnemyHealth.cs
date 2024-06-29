@@ -3,6 +3,7 @@ using System;
 public class EnemyHealth : Health
 {
     public event Action OnEnemyDeath;
+    public event Action OnEnemyTakeDamage;
 
     protected override void Die()
     {
@@ -15,6 +16,7 @@ public class EnemyHealth : Health
         {
             return;
         }
+        OnEnemyTakeDamage?.Invoke();
         base.TakeDamage(damage);
     }
 }

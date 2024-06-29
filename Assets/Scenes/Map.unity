@@ -53350,7 +53350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.35675, y: 435.6858}
+  m_AnchoredPosition: {x: -37.35669, y: 435.6858}
   m_SizeDelta: {x: -925.2867, y: -928.6284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886642272
@@ -63122,7 +63122,6 @@ GameObject:
   - component: {fileID: 5393215579636179571}
   - component: {fileID: 1453246659}
   - component: {fileID: 5393215579636179583}
-  - component: {fileID: 5393215579636179582}
   m_Layer: 7
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -63219,30 +63218,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215579636179569}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &5393215579636179582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5393215579636179569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c37f65e36baf6b94ab6857901baef93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: {fileID: 1621151112}
-  PlayerTransform: {fileID: 8997996946028883165}
-  HitSound: {fileID: 0}
-  MaxHealth: 100
-  InvincibilityTime: 1
-  Invincibility: 0
-  InvincibilityTimer: 0
-  DeathMenuUI: {fileID: 1174909937}
-  FirstPersonController: {fileID: 8616685847622301280}
-  shootingManager: {fileID: 1467510330}
-  Dead: 0
-  ProtectionPercentage: 0
 --- !u!114 &5393215579636179583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63255,12 +63230,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78be8183724f104ca85e6d3fdd577e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _startedHealth: 100
-  HealthText: {fileID: 1621151112}
-  DeathMenuUI: {fileID: 1174909937}
-  FirstPersonController: {fileID: 8616685847622301280}
-  ShootingManager: {fileID: 1467510330}
+  _maxHealth: 100000
+  _startedHealth: 100000
+  InvincibilityTimer: 0
+  InvincibilityTime: 1
+  Invincibility: 0
+  ProtectionPercentage: 0
+  _healthText: {fileID: 1621151112}
+  _deathMenuUI: {fileID: 1174909937}
+  _firstPersonController: {fileID: 8616685847622301280}
+  _shootingManager: {fileID: 1467510330}
 --- !u!114 &5420857362451753499
 MonoBehaviour:
   m_ObjectHideFlags: 0

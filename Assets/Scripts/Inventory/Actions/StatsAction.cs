@@ -15,7 +15,7 @@ public class StatsAction : Action
     [SerializeField] ActionType _actionType;
 
     private GameObject _target;
-    private Player _playerHealth;
+    private PlayerHealth _playerHealth;
     private FirstPersonController _playerController;
     private RangeWeaponController _rangeWeaponController;
     private Weapon[] _weapons;
@@ -23,7 +23,7 @@ public class StatsAction : Action
     public override void OnStart()
     {
         _target = GameObject.Find("PlayerBody");
-        _playerHealth = _target.GetComponent<Player>();
+        _playerHealth = _target.GetComponent<PlayerHealth>();
         _target = GameObject.Find("PlayerCapsule");
         _playerController = _target.GetComponent<FirstPersonController>();
         _target = GameObject.Find("ShootingManager");

@@ -9,6 +9,7 @@ public class EnemyNavigation : MonoBehaviour
     [SerializeField] private int _attackDamage = 10;
     [SerializeField] private float _attackRange = 1.25f;
     [SerializeField] private float _attackCooldown = 1.5f;
+
     private Transform _playerTransform;
     private PlayerHealth _playerHealth;
     private Animator _anim;
@@ -87,7 +88,6 @@ public class EnemyNavigation : MonoBehaviour
         }
         if (distanceToPlayer <= _attackRange && _canAttack)
         {
-            _anim.SetTrigger("Attack");
             StartCoroutine(AttackWithCooldown());
         }
     }
@@ -103,5 +103,6 @@ public class EnemyNavigation : MonoBehaviour
     private void AttackPlayer()
     {
         _playerHealth.TakeDamage(_attackDamage);
+        _anim.SetTrigger("Attack");
     }
 }
