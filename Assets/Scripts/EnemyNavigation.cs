@@ -86,20 +86,10 @@ public class EnemyNavigation : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
 
-        int ghoulRemainsCount = Random.Range(0, 3);
-        for (int i = 0; i < ghoulRemainsCount; i++)
-        {
-            Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
-            Instantiate(GameObject.Find("ItemPrefabs").GetComponent<ItemPrefabs>().GhoulRemains, transform.position + offset, transform.rotation);
-        }
-
-        int rottenApplesCount = Random.Range(0, 4);
-        for (int i = 0; i < rottenApplesCount; i++)
-        {
-            Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
-            Instantiate(GameObject.Find("ItemPrefabs").GetComponent<ItemPrefabs>().RottenApple, transform.position + offset, transform.rotation);
-        }
-
+        GameObject spawner = new(name + "DropSpawner");
+        spawner.transform.position = transform.position;
+        spawner.AddComponent<GhoulDropSpawner>();
+        spawner.GetComponent<GhoulDropSpawner>().Spawn(2.5f);
         Destroy(gameObject, 2f);
     }
 }

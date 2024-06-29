@@ -1,3 +1,4 @@
+using StarterAssets;
 using TMPro;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ public class Tooltip : MonoBehaviour
     {
         SelectGameObjectBeingLookedAt();
 
-        if (_itemContainerCount < 2 && HasGameObjectTargeted())
+        if (_itemContainerCount < 2 && HasGameObjectTargeted() && NoCutscene())
         {
             _tooltip.gameObject.SetActive(true);
         }
@@ -42,7 +43,7 @@ public class Tooltip : MonoBehaviour
     private void SelectGameObjectBeingLookedAt()
     {
         Ray ray = Camera.main.ViewportPointToRay(Vector3.one / 2f);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, 3f, _layerMask))
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, 2.5f, _layerMask))
         {
             if (!hitInfo.collider.TryGetComponent<TooltipText>(out var hitObject))
             {
@@ -58,5 +59,10 @@ public class Tooltip : MonoBehaviour
         {
             _lookingAt = null;
         }
+    }
+
+    private bool NoCutscene()
+    {
+        return GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>().enabled;
     }
 }
