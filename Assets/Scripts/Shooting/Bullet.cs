@@ -30,7 +30,6 @@ public class Bullet : MonoBehaviour
         EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemy)
         {
-            Debug.Log("Bullet hit enemy");
             enemy.TakeDamage((_bulletDamage));
         }
         DestroyBullet();

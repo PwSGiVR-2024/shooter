@@ -45,12 +45,9 @@ public class BossFight : EnemyHealth
     {
         if (!_canTakeDamage)
         {
-            Debug.Log("Can't take damage");
             return;
         }
-        Debug.Log($"Taking damage: {damage}. Current health: {CurrentHealth}");
         base.TakeDamage(damage);
-        Debug.Log($"After damage: {CurrentHealth}");
         OnBossHealthChanged?.Invoke(CurrentHealth);
 
         int newHealthThreshold = (CurrentHealth / 250);

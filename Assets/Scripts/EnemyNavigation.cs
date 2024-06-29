@@ -1,95 +1,119 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyNavigation : MonoBehaviour
 {
-    Animator anim;
-    private Transform Player;
+    [SerializeField] private float _enemySpeed = 2.5f;
+    [SerializeField] private float _detectionRange = 30.0f;
+    [SerializeField] private int _attackDamage = 10;
+    [SerializeField] private float _attackRange = 1.25f;
+    [SerializeField] private float _attackCooldown = 1.5f;
+    private Transform _playerTransform;
+    private PlayerHealth _playerHealth;
+    private Animator _anim;
     private NavMeshAgent _agent;
-    public float DetectionRange = 30.0f;
-    public float AttackDamage = 10.0f;
     private Vector3 _lastKnownPlayerPosition;
-    public float EnemySpeed = 2.5f;
-    public float AttackRange = 1.25f;
-    public float Health = 100.0f;
-    private bool isDead = false;
+    private bool _isDead = false;
+    private bool _canAttack = true;
 
-    void Start()
+    private void Start()
     {
+        _playerTransform = GameObject.FindWithTag("Player").transform;
+        _playerHealth = _playerTransform.GetComponentInChildren<PlayerHealth>();
         _agent = GetComponent<NavMeshAgent>();
-        _agent.speed = EnemySpeed;
-        anim = GetComponent<Animator>();
-        Player = GameObject.FindWithTag("Player").transform;
-
-        EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+        _agent.speed = _enemySpeed;
+        _anim = GetComponent<Animator>();
+        EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
         enemyHealth.OnEnemyDeath += Die;
     }
 
-    void Update()
+    private void Update()
     {
-        if (isDead)
+        if (_isDead)
+        {
             return;
+        }
+        DebugInput();
+        TryAttackPlayer();
+    }
 
+    private void DebugInput()
+    {
         if (Input.GetKeyDown(KeyCode.H))
         {
             Die();
             return;
         }
-
-        float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
-
-        if (distanceToPlayer <= DetectionRange)
-        {
-            _lastKnownPlayerPosition = Player.position;
-            _agent.destination = _lastKnownPlayerPosition;
-        }
-        else
-        {
-            _agent.destination = _lastKnownPlayerPosition;
-        }
-
-        if (_agent.velocity.magnitude > 0.1f)
-        {
-            anim.SetBool("Walking", true);
-        }
-        else
-        {
-            anim.SetBool("Walking", false);
-        }
-
-        if (distanceToPlayer <= AttackRange)
-        {
-            anim.SetTrigger("Attack");
-        }
-
     }
 
-    //public void EnemyTakeDamage(float amount)
-    //{
-    //    Health -= amount;
-
-    //    if (Health <= 0f)
-    //    {
-    //        Die();
-    //    }
-    //}
-
-    void Die()
+    private void Die()
     {
-        isDead = true;
+        _isDead = true;
         _agent.enabled = false;
-        anim.SetTrigger("Die");
-
+        _anim.SetTrigger("Die");
         Collider collider = GetComponent<Collider>();
         collider.enabled = false;
-
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
+        int ghoulRemainsCount = Random.Range(0, 3);
+        for (int i = 0; i < ghoulRemainsCount; i++)
+        {
+            Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
+            Instantiate(GameObject.Find("ItemPrefabs").GetComponent<ItemPrefabs>().GhoulRemains, transform.position + offset, transform.rotation);
+        }
+        int rottenApplesCount = Random.Range(0, 4);
+        for (int i = 0; i < rottenApplesCount; i++)
+        {
+            Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
+            Instantiate(GameObject.Find("ItemPrefabs").GetComponent<ItemPrefabs>().RottenApple, transform.position + offset, transform.rotation);
+        }
 
         GameObject spawner = new(name + "DropSpawner");
         spawner.transform.position = transform.position;
         spawner.AddComponent<GhoulDropSpawner>();
         spawner.GetComponent<GhoulDropSpawner>().Spawn(2.5f);
+
         Destroy(gameObject, 2f);
+    }
+
+    private void TryAttackPlayer()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.position);
+        if (distanceToPlayer <= _detectionRange)
+        {
+            _lastKnownPlayerPosition = _playerTransform.position;
+            _agent.destination = _lastKnownPlayerPosition;
+        }
+        else
+        {
+            _agent.destination = _lastKnownPlayerPosition;
+        }
+        if (_agent.velocity.magnitude > 0.1f)
+        {
+            _anim.SetBool("Walking", true);
+        }
+        else
+        {
+            _anim.SetBool("Walking", false);
+        }
+        if (distanceToPlayer <= _attackRange && _canAttack)
+        {
+            _anim.SetTrigger("Attack");
+            StartCoroutine(AttackWithCooldown());
+        }
+    }
+
+    private IEnumerator AttackWithCooldown()
+    {
+        _canAttack = false;
+        AttackPlayer();
+        yield return new WaitForSeconds(_attackCooldown);
+        _canAttack = true;
+    }
+
+    private void AttackPlayer()
+    {
+        _playerHealth.TakeDamage(_attackDamage);
     }
 }

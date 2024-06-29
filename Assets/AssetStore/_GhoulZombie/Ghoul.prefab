@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: -1241973693364641255}
   - component: {fileID: -517054148242275268}
   - component: {fileID: 2758668758618688138}
-  - component: {fileID: 9096564772378392836}
+  - component: {fileID: 6460518658082680606}
   - component: {fileID: 5958358862688688426}
   m_Layer: 0
   m_Name: Ghoul
@@ -1061,7 +1061,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &9096564772378392836
+--- !u!114 &6460518658082680606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1070,15 +1070,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309486516299566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba464aa058f37b34db275c6265c87e8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aeed8565d35d6c4a8eeac9f423716b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTransform: {fileID: 0}
-  _playerHealth: {fileID: 0}
   _enemySpeed: 2.5
   _detectionRange: 30
   _attackDamage: 10
   _attackRange: 1.25
+  _attackCooldown: 1.5
 --- !u!114 &5958358862688688426
 MonoBehaviour:
   m_ObjectHideFlags: 0
