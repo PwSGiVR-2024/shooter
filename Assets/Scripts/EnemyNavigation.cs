@@ -85,7 +85,7 @@ public class EnemyNavigation : MonoBehaviour
         GameObject spawner = new(name + "DropSpawner");
         spawner.transform.position = transform.position;
         spawner.AddComponent<GhoulDropSpawner>();
-        spawner.GetComponent<GhoulDropSpawner>().Spawn(2f);
+        spawner.GetComponent<GhoulDropSpawner>().Spawn(2.5f);
         Destroy(gameObject, 2f);
     }
 }
