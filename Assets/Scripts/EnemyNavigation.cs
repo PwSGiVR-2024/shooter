@@ -20,11 +20,14 @@ public class EnemyNavigation : MonoBehaviour
 
     private void Start()
     {
+        _anim = GetComponent<Animator>();
+
         _playerTransform = GameObject.FindWithTag("Player").transform;
         _playerHealth = _playerTransform.GetComponentInChildren<PlayerHealth>();
+
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = _enemySpeed;
-        _anim = GetComponent<Animator>();
+
         EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
         enemyHealth.OnEnemyDeath += Die;
     }
