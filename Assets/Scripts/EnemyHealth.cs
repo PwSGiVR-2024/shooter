@@ -8,4 +8,13 @@ public class EnemyHealth : Health
     {
         OnEnemyDeath?.Invoke();
     }
+
+    public override void TakeDamage(int damage)
+    {
+        if (CurrentHealth <= 0)
+        {
+            return;
+        }
+        base.TakeDamage(damage);
+    }
 }
