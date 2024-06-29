@@ -9,6 +9,7 @@ public class CutsceneHandler2 : MonoBehaviour
     public PlayableDirector dir;
     public FirstPersonController fpc;
     public Boss bossScript;
+    public AudioSource soundchange;
     public GameObject enemyHealthBar;
     private bool hasCutscenePlayed = false;
     public AudioSource sound;
@@ -17,6 +18,7 @@ public class CutsceneHandler2 : MonoBehaviour
     public Canvas crosshairCanvas;
     public GameObject shootingManager;
     private List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
+    public AudioSource wylaudio;
 
     void Start()
     {
@@ -57,6 +59,8 @@ public class CutsceneHandler2 : MonoBehaviour
         bossScript.enabled = true;
         enemyHealthBar.SetActive(true);
         StartCoroutine(EnableWeaponWithDelay());
+        soundchange.Play();
+        wylaudio.Stop();
 
         foreach (MonoBehaviour script in shootingScripts)
         {

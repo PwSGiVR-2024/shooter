@@ -17,6 +17,8 @@ public class FinalLightChange : MonoBehaviour
     public Camera WeaponCamera;
     public float WeaponTurnOnDelay;
     public Canvas CrosshairCanvas;
+    public AudioSource soundchangefor;
+    public AudioSource soundchangefrom;
     public GameObject ShootingManager;
     private readonly List<MonoBehaviour> shootingScripts = new List<MonoBehaviour>();
 
@@ -41,6 +43,8 @@ public class FinalLightChange : MonoBehaviour
         if (other.CompareTag("Girl"))
         {
             Dir.Play();
+            soundchangefor.Play();
+            soundchangefrom.Stop();
             PostProcessingVolume.priority = NewPriority;
             Debug.LogWarning("Post-Processing Activated");
 
