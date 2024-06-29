@@ -64,7 +64,7 @@ public class EnemyNavigation : MonoBehaviour
     {
         Health -= amount;
 
-        if (Health <= 0f)
+        if (Health <= 0f && !isDead)
         {
             Die();
         }
