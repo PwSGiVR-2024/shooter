@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press f to interact
+  Text: Press F to interact
 --- !u!65 &102010522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press f to open
+  Text: Press F to open
 --- !u!1 &790187563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press f to interact
+  Text: Press F to interact
 --- !u!65 &1147964669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press f to open
+  Text: Press F to open
 --- !u!65 &1563129315
 BoxCollider:
   m_ObjectHideFlags: 0
