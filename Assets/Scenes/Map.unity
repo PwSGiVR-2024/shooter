@@ -14042,6 +14042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 100
+  _isUnlocked: 0
   _bulletPrefab: {fileID: 4705823182834152769, guid: 9188bdbabdf8c404e9bc22c9fe2b79e4,
     type: 3}
   _gunEnd: {fileID: 1850704627}
@@ -24080,6 +24081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 0
+  _isUnlocked: 0
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 522113393}
@@ -37531,6 +37533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 10
+  _isUnlocked: 0
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1591989120}
@@ -56386,6 +56389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 10
+  _isUnlocked: 1
   _range: 3
 --- !u!65 &2009165668
 BoxCollider:
@@ -58027,6 +58031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 20
+  _isUnlocked: 1
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1867044821}

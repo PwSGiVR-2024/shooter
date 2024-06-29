@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,16 +7,16 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField] GameObject _weaponsSlot;
     [SerializeField] Weapon _startWeapon;
+
     private PlayerInput _playerInput;
     private StarterAssetsInputs _input;
     private IAttackStrategy _currentAttackStrategy;
-
     private Weapon _currentWeapon;
-
     private ItemContainerCallbacks _itemContainerCallbacks;
     private int _itemContainerCount;
-    public Weapon CurrentWeapon { get => _currentWeapon; set => _currentWeapon = value; }
+    private Dictionary<string, Weapon> _weapons = new Dictionary<string, Weapon>();
 
+    public Weapon CurrentWeapon { get => _currentWeapon; set => _currentWeapon = value; }
 
     // Singleton pattern
     public static WeaponManager Instance { get; private set; }
@@ -35,6 +36,12 @@ public class WeaponManager : MonoBehaviour
     public void Update()
     {
         HandleAttackPressed();
+
+        // Delete it later pls
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            UnlockWeapon("Pistol");
+        }
     }
 
     private void Start()
@@ -43,6 +50,7 @@ public class WeaponManager : MonoBehaviour
         Weapon[] weapons = _weaponsSlot.GetComponentsInChildren<Weapon>(true);
         foreach (var weapon in weapons)
         {
+            _weapons.Add(weapon.name, weapon);
             weapon.OnWeaponChange += GetCurrentWeaponData;
         }
 
@@ -66,6 +74,15 @@ public class WeaponManager : MonoBehaviour
     public void GetCurrentWeaponData(Weapon weapon)
     {
         _currentWeapon = weapon;
+    }
+
+    private void UnlockWeapon(string weaponName)
+    {
+        if (_weapons.ContainsKey(weaponName))
+        {
+            Debug.Log($"Weapon {weaponName} has been unlocked");
+            _weapons[weaponName].IsUnlocked = true;
+        }
     }
 
     private void HandleAttackPressed()

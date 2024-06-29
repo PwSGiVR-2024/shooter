@@ -35,7 +35,7 @@ public class WeaponSwitcher : MonoBehaviour
     {
         foreach (var key in _keys)
         {
-            if (key == weapon)
+            if (key == weapon && weapon.IsUnlocked)
             {
                 key.gameObject.SetActive(true);
                 if (weapon is RangeWeapon)
