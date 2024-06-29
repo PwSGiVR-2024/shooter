@@ -11,12 +11,12 @@ public class HealthAction : Action
     [SerializeField] HealType _healType;
 
     private GameObject _target;
-    private PlayerHealth _playerHealth;
+    private Player _playerHealth;
 
     public override void OnStart()
     {
         _target = GameObject.Find("PlayerBody");
-        _playerHealth = _target.GetComponent<PlayerHealth>();
+        _playerHealth = _target.GetComponent<Player>();
     }
 
     public override ActionStatus OnUpdate()

@@ -6,13 +6,13 @@ public class FuriousGhoulCoroutine : MonoBehaviour
 {
     RangeWeaponController _rangeWeaponController;
 
-    public void StartTheCoroutine(int _changePercentage, StarterAssets.FirstPersonController _playerController, PlayerHealth _playerHealth, Weapon[] weapons, RangeWeaponController rangeWeaponController)
+    public void StartTheCoroutine(int _changePercentage, StarterAssets.FirstPersonController _playerController, Player _playerHealth, Weapon[] weapons, RangeWeaponController rangeWeaponController)
     {
         _rangeWeaponController = rangeWeaponController;
         StartCoroutine(ApplyFuriousGhoulEffect(_changePercentage, _playerController, _playerHealth, weapons));
     }
 
-    private IEnumerator ApplyFuriousGhoulEffect(int _changePercentage, FirstPersonController _playerController, PlayerHealth _playerHealth, Weapon[] weapons)
+    private IEnumerator ApplyFuriousGhoulEffect(int _changePercentage, FirstPersonController _playerController, Player _playerHealth, Weapon[] weapons)
     {
         float changeFactor = 1 + _changePercentage / 100f; // Calculate change factor based on _changePercentage
 
@@ -20,7 +20,7 @@ public class FuriousGhoulCoroutine : MonoBehaviour
         float originalSprintSpeed = _playerController.SprintSpeed;
         float originalCrouchSpeed = _playerController.CrouchSpeed;
         // original weapon damages
-        float[] originalWeaponDamages = new float[weapons.Length];
+        int[] originalWeaponDamages = new int[weapons.Length];
         for (int i = 0; i < weapons.Length; i++)
         {
             originalWeaponDamages[i] = weapons[i].Dmg;
@@ -32,7 +32,7 @@ public class FuriousGhoulCoroutine : MonoBehaviour
         _playerController.CrouchSpeed *= changeFactor;
         for (int i = 0; i < weapons.Length; i++)
         {
-            weapons[i].Dmg *= changeFactor;
+            weapons[i].Dmg *= (int)changeFactor;
             TryRefresh(weapons[i]);
         }
 

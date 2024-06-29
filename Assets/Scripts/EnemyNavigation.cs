@@ -7,6 +7,7 @@ public class EnemyNavigation : MonoBehaviour
     private Transform Player;
     private NavMeshAgent _agent;
     public float DetectionRange = 30.0f;
+    public float AttackDamage = 10.0f;
     private Vector3 _lastKnownPlayerPosition;
     public float EnemySpeed = 2.5f;
     public float AttackRange = 1.25f;
@@ -19,6 +20,9 @@ public class EnemyNavigation : MonoBehaviour
         _agent.speed = EnemySpeed;
         anim = GetComponent<Animator>();
         Player = GameObject.FindWithTag("Player").transform;
+
+        EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth.OnEnemyDeath += Die;
     }
 
     void Update()
@@ -60,15 +64,15 @@ public class EnemyNavigation : MonoBehaviour
 
     }
 
-    public void EnemyTakeDamage(float amount)
-    {
-        Health -= amount;
+    //public void EnemyTakeDamage(float amount)
+    //{
+    //    Health -= amount;
 
-        if (Health <= 0f)
-        {
-            Die();
-        }
-    }
+    //    if (Health <= 0f)
+    //    {
+    //        Die();
+    //    }
+    //}
 
     void Die()
     {

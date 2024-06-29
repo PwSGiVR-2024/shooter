@@ -4,9 +4,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _timeToDestroyBullet = 10f;
-    private float _bulletDamage = 1f;
+    private int _bulletDamage = 1;
 
-    public float BulletDamage { get => _bulletDamage; set => _bulletDamage = value; }
+    public int BulletDamage { get => _bulletDamage; set => _bulletDamage = value; }
 
 
     private void Start()
@@ -27,16 +27,12 @@ public class Bullet : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        EnemyNavigation enemy = collision.gameObject.GetComponent<EnemyNavigation>();
-        Boss boss = collision.gameObject.GetComponent<Boss>();
+        EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemy)
         {
-            enemy.EnemyTakeDamage(_bulletDamage);
-        } else if (boss)
-        {
-            boss.TakeDamage(_bulletDamage);
+            Debug.Log("Bullet hit enemy");
+            enemy.TakeDamage((_bulletDamage));
         }
-
         DestroyBullet();
     }
 }

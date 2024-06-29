@@ -20,7 +20,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     private PlayerInput _playerInput;
     private StarterAssetsInputs _input;
     private float _bulletForce = 10f;
-    private float _dmg = 5f;
+    private int _dmg = 5;
     private float _shootRate = 1f;
     private bool _shootDelayPassed = true;
     private int _magazineCapacity = 0;

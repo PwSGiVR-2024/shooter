@@ -4,16 +4,16 @@ using UnityEngine.UI;
 public class BossHealthBar : MonoBehaviour
 {
     public Slider healthSlider;
-    private Boss boss;
+    private Boss _boss;
 
     void Start()
     {
-        boss = FindObjectOfType<Boss>();
+        _boss = FindObjectOfType<Boss>();
 
-        healthSlider.maxValue = boss.MaxHealth;
-        healthSlider.value = boss.CurrentHealth;
+        healthSlider.maxValue = _boss.MaxHealth;
+        healthSlider.value = _boss.CurrentHealth;
 
-        boss.OnHealthChanged += UpdateHealthBar;
+        _boss.OnHealthChanged += UpdateHealthBar;
     }
 
     void UpdateHealthBar(int currentHealth)

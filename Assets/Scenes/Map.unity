@@ -14041,7 +14041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bb2edf96b245f4a88d7149514f054d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 5
+  _dmg: 0
   _bulletPrefab: {fileID: 4705823182834152769, guid: 9188bdbabdf8c404e9bc22c9fe2b79e4,
     type: 3}
   _gunEnd: {fileID: 1850704627}
@@ -24079,7 +24079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 10
+  _dmg: 0
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 522113393}
@@ -37530,7 +37530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 10
+  _dmg: 0
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1591989120}
@@ -42997,30 +42997,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1451753498}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1453246655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5393215579636179569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c812e39a461f35848adfe8689ce9fc5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: {fileID: 1621151112}
-  Player: {fileID: 5393215579636179570}
-  HitSound: {fileID: 0}
-  MaxHealth: 100
-  InvincibilityTime: 1
-  Invincibility: 0
-  InvincibilityTimer: 0
-  DeathMenuUI: {fileID: 1174909937}
-  FirstPersonController: {fileID: 8616685847622301280}
-  shootingManager: {fileID: 1467510330}
-  Dead: 0
-  ProtectionPercentage: 0
 --- !u!54 &1453246659
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44942,7 +44918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
@@ -56396,7 +56372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a5fb3a6accab044a7fc4c5ffbbe43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 10
+  _dmg: 0
   _range: 3
 --- !u!65 &2009165668
 BoxCollider:
@@ -58037,7 +58013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 10
+  _dmg: 0
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1867044821}
@@ -63132,7 +63108,8 @@ GameObject:
   - component: {fileID: 5393215579636179580}
   - component: {fileID: 5393215579636179571}
   - component: {fileID: 1453246659}
-  - component: {fileID: 1453246655}
+  - component: {fileID: 5393215579636179583}
+  - component: {fileID: 5393215579636179582}
   m_Layer: 7
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -63229,6 +63206,48 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5393215579636179569}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5393215579636179582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393215579636179569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37f65e36baf6b94ab6857901baef93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 1621151112}
+  PlayerTransform: {fileID: 8997996946028883165}
+  HitSound: {fileID: 0}
+  MaxHealth: 100
+  InvincibilityTime: 1
+  Invincibility: 0
+  InvincibilityTimer: 0
+  DeathMenuUI: {fileID: 1174909937}
+  FirstPersonController: {fileID: 8616685847622301280}
+  shootingManager: {fileID: 1467510330}
+  Dead: 0
+  ProtectionPercentage: 0
+--- !u!114 &5393215579636179583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393215579636179569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78be8183724f104ca85e6d3fdd577e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _startedHealth: 100
+  HealthText: {fileID: 1621151112}
+  DeathMenuUI: {fileID: 1174909937}
+  FirstPersonController: {fileID: 8616685847622301280}
+  ShootingManager: {fileID: 1467510330}
 --- !u!114 &5420857362451753499
 MonoBehaviour:
   m_ObjectHideFlags: 0

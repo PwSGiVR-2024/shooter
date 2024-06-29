@@ -5,13 +5,13 @@ public abstract class Weapon : MonoBehaviour
 {
     public event Action<Weapon> OnWeaponChange;
 
-    [SerializeField] private float _dmg;
+    [SerializeField] private int _dmg;
 
     private Animator _animator;
     private bool _isCurrentlyUsed = false;
 
     public Animator Animator => _animator;
-    public float Dmg { get => _dmg; set => _dmg = value; }
+    public int Dmg { get => _dmg; set => _dmg = value; }
     public bool IsCurrentlyUsed { get => _isCurrentlyUsed; set => _isCurrentlyUsed = value; }
 
     void Start()

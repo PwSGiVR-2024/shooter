@@ -15,7 +15,7 @@ public class Pellet : Bullet
     private void LateUpdate()
     {
         _aliveTime = Time.time - _activationTime;
-        BulletDamage -= Mathf.Clamp(_aliveTime * _dmgTimeDecreaser, 0, BulletDamage);
+        BulletDamage -= (int)Mathf.Clamp(_aliveTime * _dmgTimeDecreaser, 0, BulletDamage);
     }
 
     protected override void OnCollisionEnter(Collision collision)

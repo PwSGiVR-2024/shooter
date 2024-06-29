@@ -15,7 +15,7 @@ public class StatsAction : Action
     [SerializeField] ActionType _actionType;
 
     private GameObject _target;
-    private PlayerHealth _playerHealth;
+    private Player _playerHealth;
     private FirstPersonController _playerController;
     private RangeWeaponController _rangeWeaponController;
     private Weapon[] _weapons;
@@ -23,7 +23,7 @@ public class StatsAction : Action
     public override void OnStart()
     {
         _target = GameObject.Find("PlayerBody");
-        _playerHealth = _target.GetComponent<PlayerHealth>();
+        _playerHealth = _target.GetComponent<Player>();
         _target = GameObject.Find("PlayerCapsule");
         _playerController = _target.GetComponent<FirstPersonController>();
         _target = GameObject.Find("ShootingManager");
@@ -76,7 +76,7 @@ public class StatsAction : Action
                 case 2:
                     foreach (var weapon in _weapons)
                     {
-                        weapon.Dmg *= changeFactor;
+                        weapon.Dmg *= (int)changeFactor;
                         TryRefresh(weapon);
                     }
                     break;

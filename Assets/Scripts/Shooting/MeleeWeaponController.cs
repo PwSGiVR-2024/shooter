@@ -41,13 +41,9 @@ public class MeleeWeaponController : MonoBehaviour, IAttackStrategy
         if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, attackRange))
         {
             // Check if the hit object has a health component or can be damaged
-            if (hit.collider.TryGetComponent<EnemyNavigation>(out var enemy))
+            if (hit.collider.TryGetComponent<EnemyHealth>(out var enemy))
             {
-                enemy.EnemyTakeDamage(_meleeWeapon.Dmg);
-            }
-            else if (hit.collider.TryGetComponent<Boss>(out var boss))
-            {
-                boss.TakeDamage(_meleeWeapon.Dmg);
+                enemy.TakeDamage(_meleeWeapon.Dmg);
             }
         }
     }
