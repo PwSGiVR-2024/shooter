@@ -6,7 +6,7 @@ public abstract class Health : MonoBehaviour
     [SerializeField] private int _startedHealth = 100;
     private int _currentHealth;
 
-    public int MaxHealth => MaxHealth;
+    public int MaxHealth => _maxHealth;
 
     public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
 

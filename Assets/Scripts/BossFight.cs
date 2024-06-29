@@ -2,58 +2,56 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class BossFight : EnemyHealth
 {
-    public int MaxHealth = 1000;
-    public int CurrentHealth;
     public GameObject MinionPrefab;
     public Transform[] SpawnPoints;
-    private bool _canTakeDamage = true;
-    private readonly List<GameObject> spawnedMinions = new List<GameObject>();
-    private Animator _anim;
-    private bool _isDead = false;
-    public event Action<int> OnHealthChanged;
+    public event Action<int> OnBossHealthChanged;
     public event Action OnBossDeath;
     public GameObject Fence;
     public GirlControllerEnd Girl;
     public int _lastHealthThreshold;
 
-    void Start()
-    {
-        CurrentHealth = MaxHealth;
-        _anim = GetComponent<Animator>();
-        OnHealthChanged?.Invoke(CurrentHealth);
-        _lastHealthThreshold = CurrentHealth / 250;
-    }
+    private bool _canTakeDamage = true;
+    private readonly List<GameObject> spawnedMinions = new List<GameObject>();
+    private Animator _anim;
+    private bool _isDead = false;
 
-    void Update()
+
+    private void Update()
     {
-        if (_isDead)
+        if(_isDead)
+        {
             return;
+        }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
             TakeDamage(50);
+            OnBossHealthChanged?.Invoke(CurrentHealth);
         }
 
         CheckMinions();
     }
+    protected override void Start()
+    {
+        base.Start();
+        _anim = GetComponent<Animator>();
+        OnBossHealthChanged?.Invoke(CurrentHealth);
+        _lastHealthThreshold = CurrentHealth / 250;
+    }
 
-    public void TakeDamage(float damage)
+    public override void TakeDamage(int damage)
     {
         if (!_canTakeDamage)
-            return;
-
-        int damageInt = (int)damage;
-        CurrentHealth -= damageInt;
-
-        OnHealthChanged?.Invoke(CurrentHealth);
-
-        if (CurrentHealth <= 0)
         {
-            Die();
+            Debug.Log("Can't take damage");
             return;
         }
+        Debug.Log($"Taking damage: {damage}. Current health: {CurrentHealth}");
+        base.TakeDamage(damage);
+        Debug.Log($"After damage: {CurrentHealth}");
+        OnBossHealthChanged?.Invoke(CurrentHealth);
 
         int newHealthThreshold = (CurrentHealth / 250);
         if (newHealthThreshold < _lastHealthThreshold)
@@ -86,7 +84,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void Die()
+    protected override void Die()
     {
         _isDead = true;
         _anim.SetTrigger("Die");

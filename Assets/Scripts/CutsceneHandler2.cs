@@ -8,7 +8,7 @@ public class CutsceneHandler2 : MonoBehaviour
 {
     public PlayableDirector dir;
     public FirstPersonController fpc;
-    public Boss bossScript;
+    public BossFight bossScript;
     public AudioSource soundchange;
     public GameObject enemyHealthBar;
     private bool hasCutscenePlayed = false;
