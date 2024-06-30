@@ -11853,7 +11853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 50
-  _isUnlocked: 0
+  _isUnlocked: 1
   _bulletPrefab: {fileID: 4705823182834152769, guid: 9188bdbabdf8c404e9bc22c9fe2b79e4,
     type: 3}
   _gunEnd: {fileID: 1850704627}
@@ -11863,7 +11863,7 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 1690549116}
   _bulletForce: 2.5
   _shootRate: 1
-  _reloadTime: 4.5
+  _reloadTime: 3.5
   _magazineCapacity: 8
   _currentAmmo: 30
   _backpackAmmo: 30
@@ -35478,7 +35478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 10
-  _isUnlocked: 0
+  _isUnlocked: 1
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1591989120}
@@ -35488,7 +35488,7 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 1670244599}
   _bulletForce: 4
   _shootRate: 0.26
-  _reloadTime: 3.24
+  _reloadTime: 2
   _magazineCapacity: 30
   _currentAmmo: 90
   _backpackAmmo: 200
@@ -54597,7 +54597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 10
-  _isUnlocked: 0
+  _isUnlocked: 1
   _range: 3
 --- !u!65 &2009165668
 BoxCollider:
@@ -56239,7 +56239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dmg: 15
-  _isUnlocked: 0
+  _isUnlocked: 1
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1867044821}

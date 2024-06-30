@@ -196,6 +196,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     private IEnumerator StartReloading()
     {
         _isReloading = true;
+        _currentWeapon.Animator.SetTrigger("TrReload");
         _audioSource.PlayOneShot(_currentWeapon.SoundOfReload); // Use AudioSource for reload sound
         yield return new WaitForSeconds(_reloadTime);
         Reload();

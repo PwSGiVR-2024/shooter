@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # Visual Studio Files
 *.vsconfig
+add
+Assets/Scripts/CopyFiles.ps1
+Assets/Scripts/CopyFiles.ps1.meta
