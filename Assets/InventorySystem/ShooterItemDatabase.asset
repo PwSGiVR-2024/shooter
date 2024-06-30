@@ -329,7 +329,7 @@ MonoBehaviour:
   m_BuyCurrency: {fileID: 8883075558970539077}
   m_SellPrice: 1
   m_SellCurrency: {fileID: 8883075558970539077}
-  m_Stack: 16
+  m_Stack: 1
   m_MaxStack: 64
   m_IsDroppable: 0
   m_DropSound: {fileID: 0}
@@ -381,7 +381,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
-        _nominalChange: 16
+        _nominalChange: 1
         _changePercentage: 0
         _actionType: 7
 --- !u!114 &-6765540527067700291
@@ -483,28 +483,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Starter items
   m_Items:
-  - {fileID: 7412821362038872476}
-  - {fileID: 699154121686944933}
-  - {fileID: 5893682275855013920}
-  - {fileID: 807157276921112907}
-  - {fileID: 658975925613817371}
-  - {fileID: -177731457329092658}
-  - {fileID: 4080001356417443470}
-  - {fileID: -8176726717483479457}
-  - {fileID: -6838942018923607821}
-  - {fileID: 1458447079128920551}
-  - {fileID: 2628942872923275136}
-  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000100000001000000010000000
+  - {fileID: 8883075558970539077}
+  - {fileID: -7745811722786590564}
+  m_Amounts: c800000001000000
   m_Modifiers:
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
   - modifiers: []
   - modifiers: []
 --- !u!114 &-5876170768647668609
@@ -1281,7 +1263,7 @@ MonoBehaviour:
   m_BuyCurrency: {fileID: 8883075558970539077}
   m_SellPrice: 5
   m_SellCurrency: {fileID: 8883075558970539077}
-  m_Stack: 16
+  m_Stack: 1
   m_MaxStack: 64
   m_IsDroppable: 0
   m_DropSound: {fileID: 0}
@@ -1333,7 +1315,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
-        _nominalChange: 16
+        _nominalChange: 1
         _changePercentage: 0
         _actionType: 8
 --- !u!114 &1509813841542432728
@@ -1424,7 +1406,7 @@ MonoBehaviour:
   m_BuyCurrency: {fileID: 8883075558970539077}
   m_SellPrice: 2
   m_SellCurrency: {fileID: 8883075558970539077}
-  m_Stack: 16
+  m_Stack: 1
   m_MaxStack: 64
   m_IsDroppable: 0
   m_DropSound: {fileID: 0}
@@ -1476,7 +1458,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
-        _nominalChange: 16
+        _nominalChange: 1
         _changePercentage: 0
         _actionType: 9
 --- !u!114 &3625471696320115051

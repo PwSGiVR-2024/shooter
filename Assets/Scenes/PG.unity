@@ -1518,6 +1518,36 @@ MonoBehaviour:
     chance: 0.2
     modifiers:
       modifiers: []
+  - item: {fileID: 4080001356417443470, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 1
+    chance: 0.2
+    modifiers:
+      modifiers: []
+  - item: {fileID: -8176726717483479457, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 1
+    chance: 0.1
+    modifiers:
+      modifiers: []
+  - item: {fileID: 1458447079128920551, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 8
+    chance: 0.5
+    modifiers:
+      modifiers: []
+  - item: {fileID: -6838942018923607821, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 16
+    chance: 0.5
+    modifiers:
+      modifiers: []
+  - item: {fileID: 2628942872923275136, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 48
+    chance: 0.5
+    modifiers:
+      modifiers: []
   m_MaxAmount: 11
 --- !u!1 &1147964666
 GameObject:
@@ -22807,6 +22837,24 @@ MonoBehaviour:
     minStack: 1
     maxStack: 1
     chance: 0.4
+    modifiers:
+      modifiers: []
+  - item: {fileID: -177731457329092658, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 1
+    chance: 0.2
+    modifiers:
+      modifiers: []
+  - item: {fileID: -6838942018923607821, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 16
+    chance: 0.5
+    modifiers:
+      modifiers: []
+  - item: {fileID: 1458447079128920551, guid: d62e9ba76a758b64098058b70df3b092, type: 2}
+    minStack: 1
+    maxStack: 8
+    chance: 0.5
     modifiers:
       modifiers: []
   m_MaxAmount: 4
