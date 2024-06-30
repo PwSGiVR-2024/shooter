@@ -41,11 +41,17 @@ public class WeaponSwitcher : MonoBehaviour
                 if (weapon is RangeWeapon)
                 {
                     WeaponManager.Instance.SetAttackStrategy(GetComponent<RangeWeaponController>());
+                    UIController.Instance.ShowAmmoUI(true);
                 }
                 else if (weapon is MeleeWeapon)
                 {
                     WeaponManager.Instance.SetAttackStrategy(GetComponent<MeleeWeaponController>());
+                    UIController.Instance.ShowAmmoUI(false);
                 }
+            }
+            else if (!weapon.IsUnlocked)
+            {
+                UIController.Instance.ShowAmmoUI(false);
             }
             else
             {

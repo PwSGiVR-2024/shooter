@@ -91,6 +91,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
             _reloadTime = rangeWeapon.ReloadTime;
             _muzzleFlash = rangeWeapon.MuzzleFlash;
             _isFullauto = rangeWeapon.IsFullauto;
+            UpdateAmmo(_currentAmmo, _backpackAmmo);
         }
     }
 
@@ -109,6 +110,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     {
         _currentWeapon.CurrentAmmo = currentAmmo;
         _currentWeapon.BackpackAmmo = backpackAmmo;
+        UIController.Instance.UpdateAmmoUI(currentAmmo, backpackAmmo);
     }
 
     private IEnumerator ShootWithCheckFireRate()

@@ -53,7 +53,12 @@ public class WeaponManager : MonoBehaviour
         {
             _currentWeapon = _startWeapon;
             WeaponSwitcher.Instance.SetWeaponActive(_currentWeapon);
+            UIController.Instance.ShowAmmoUI(_currentWeapon is RangeWeapon);
         }
+        else
+        {
+            UIController.Instance.ShowAmmoUI(false);
+        } 
 
         // Handle input
         _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
