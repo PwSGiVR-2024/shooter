@@ -14,6 +14,8 @@ public class EnemyNavigation : MonoBehaviour
     [SerializeField] private AudioClip _hitSound;
     [SerializeField] private AudioClip _ghoulIdle;
     [SerializeField] private AudioClip _ghoulWalk;
+    [SerializeField] private float _soundInterval = 5f;
+    [SerializeField] private float _idleSoundRange = 15f;
 
     private Transform _playerTransform;
     private PlayerHealth _playerHealth;
@@ -22,6 +24,9 @@ public class EnemyNavigation : MonoBehaviour
     private Vector3 _lastKnownPlayerPosition;
     private bool _isDead = false;
     private bool _canAttack = true;
+    private bool _wasSoundPlayed = false;
+    private bool _hasStartedChasing = false;
+
 
     private void Start()
     {
@@ -65,6 +70,33 @@ public class EnemyNavigation : MonoBehaviour
         }
         DebugInput();
         TryAttackPlayer();
+        TryPlayIdleSound();
+    }
+
+    private void TryPlayIdleSound()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.position);
+
+        if (distanceToPlayer <= _idleSoundRange && _agent.velocity.magnitude < 0.1f)
+        {
+            if (!_wasSoundPlayed)
+            {
+                PlayGhoulSound(_ghoulIdle);
+                StartCoroutine(SoundCooldown());
+            }
+        }
+    }
+
+    private IEnumerator SoundCooldown()
+    {
+        _wasSoundPlayed = true;
+        yield return new WaitForSeconds(_soundInterval);
+        _wasSoundPlayed = false;
+    }
+
+    private void PlayGhoulSound(AudioClip clip)
+    {
+        AudioManager.Instance.PlaySound(clip, gameObject.transform.position);
     }
 
     private void DebugInput()
@@ -79,9 +111,9 @@ public class EnemyNavigation : MonoBehaviour
     private void Die()
     {
         _isDead = true;
+        GameManager.Instance.AudioManager.PlaySound(_deathSound, gameObject.transform.position);
         _agent.enabled = false;
         _anim.SetTrigger("Die");
-        AudioManager.Instance.PlaySound(_deathSound, gameObject.transform.position);
         Collider collider = GetComponent<Collider>();
         collider.enabled = false;
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -100,17 +132,22 @@ public class EnemyNavigation : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.position);
         if (distanceToPlayer <= _detectionRange)
         {
+            if (!_hasStartedChasing)
+            {
+                PlayGhoulSound(_ghoulWalk);
+                _hasStartedChasing = true;
+            }
             _lastKnownPlayerPosition = _playerTransform.position;
             _agent.destination = _lastKnownPlayerPosition;
         }
         else
         {
-            _agent.destination = _lastKnownPlayerPosition;
+            _agent.destination = transform.position;
+            _hasStartedChasing = false;
         }
         if (_agent.velocity.magnitude > 0.1f)
         {
             _anim.SetBool("Walking", true);
-            //AudioManager.Instance.PlaySound(_ghoulWalk, gameObject.transform.position);
         }
         else
         {
