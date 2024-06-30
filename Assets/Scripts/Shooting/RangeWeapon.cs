@@ -6,7 +6,6 @@ public class RangeWeapon : Weapon
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private GameObject _gunEnd;
     [SerializeField] private GameObject _fireLight;
-    [SerializeField] private AudioClip _soundOfShoot;
     [SerializeField] private AudioClip _soundOfReload;
     [SerializeField] private VisualEffect _muzzleFlash;
     [SerializeField] private float _bulletForce = 10f;
@@ -20,7 +19,6 @@ public class RangeWeapon : Weapon
     public GameObject BulletPrefab { get => _bulletPrefab; set => _bulletPrefab = value; }
     public GameObject GunEnd { get => _gunEnd; set => _gunEnd = value; }
     public GameObject FireLight => _fireLight;
-    public AudioClip SoundOfShoot => _soundOfShoot;
     public AudioClip SoundOfReload => _soundOfReload;
     public VisualEffect MuzzleFlash { get => _muzzleFlash; set => _muzzleFlash = value; }
     public float BulletForce { get => _bulletForce; set => _bulletForce = value; }

@@ -12604,11 +12604,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dmg: 50
   _isUnlocked: 1
+  _soundOfAttack: {fileID: 8300000, guid: 7128b6e0da404f849b2d0aedbe2de66f, type: 3}
   _bulletPrefab: {fileID: 4705823182834152769, guid: 9188bdbabdf8c404e9bc22c9fe2b79e4,
     type: 3}
   _gunEnd: {fileID: 1850704627}
   _fireLight: {fileID: 1690549114}
-  _soundOfShoot: {fileID: 8300000, guid: 7128b6e0da404f849b2d0aedbe2de66f, type: 3}
   _soundOfReload: {fileID: 8300000, guid: 92c20e824356f714ba5529a3614cab98, type: 3}
   _muzzleFlash: {fileID: 1690549116}
   _bulletForce: 2.5
@@ -23355,11 +23355,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dmg: 0
   _isUnlocked: 0
+  _soundOfAttack: {fileID: 0}
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 522113393}
   _fireLight: {fileID: 568591083}
-  _soundOfShoot: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
   _soundOfReload: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
   _muzzleFlash: {fileID: 522113396}
   _bulletForce: 4
@@ -37240,11 +37240,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dmg: 10
   _isUnlocked: 1
+  _soundOfAttack: {fileID: 8300000, guid: d9d6710dbbefbb646876684570c257c0, type: 3}
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1591989120}
   _fireLight: {fileID: 1670244597}
-  _soundOfShoot: {fileID: 8300000, guid: d9d6710dbbefbb646876684570c257c0, type: 3}
   _soundOfReload: {fileID: 8300000, guid: 6c5d72de0aca36d429aebda05641db71, type: 3}
   _muzzleFlash: {fileID: 1670244599}
   _bulletForce: 4
@@ -40927,6 +40927,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377245163}
   m_Mesh: {fileID: 4300006, guid: 05e04fedc78047c48af519e94c595e13, type: 3}
+--- !u!1001 &1379603333
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_Name
+      value: Ghoul
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 172.13878
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 105.786674
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 164.30731
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467757482891228, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
 --- !u!4 &1380207972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 482562, guid: 4b8bfd825ef8db444b6bb8add0914c2c,
@@ -43480,6 +43537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeWeapon: {fileID: 2009165667}
+  _animationDelay: 0
+  _soundDelay: 0.15
 --- !u!114 &1467510339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56752,6 +56811,7 @@ GameObject:
   - component: {fileID: 2009165668}
   - component: {fileID: 2009165667}
   - component: {fileID: 2009165666}
+  - component: {fileID: 2009165669}
   m_Layer: 9
   m_Name: Fireaxe
   m_TagString: Untagged
@@ -56810,6 +56870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dmg: 10
   _isUnlocked: 1
+  _soundOfAttack: {fileID: 8300000, guid: 19c4c606f0d0e654692d137ebdcfa134, type: 3}
   _range: 3
 --- !u!65 &2009165668
 BoxCollider:
@@ -56832,6 +56893,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 2600, z: 880}
   m_Center: {x: 0, y: 24, z: 38}
+--- !u!82 &2009165669
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009165664}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2014777552
 GameObject:
   m_ObjectHideFlags: 0
@@ -58655,11 +58813,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dmg: 15
   _isUnlocked: 1
+  _soundOfAttack: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
     type: 3}
   _gunEnd: {fileID: 1867044821}
   _fireLight: {fileID: 815712517}
-  _soundOfShoot: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
   _soundOfReload: {fileID: 8300000, guid: 40c68347c00afc94393e23f0cb5dc843, type: 3}
   _muzzleFlash: {fileID: 815712519}
   _bulletForce: 4
@@ -63934,8 +64092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78be8183724f104ca85e6d3fdd577e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _startedHealth: 100
+  _maxHealth: 1000
+  _startedHealth: 1000
   InvincibilityTimer: 0
   InvincibilityTime: 1
   Invincibility: 0
@@ -64571,3 +64729,4 @@ SceneRoots:
   - {fileID: 963954088}
   - {fileID: 552569731}
   - {fileID: 826108047}
+  - {fileID: 1379603333}

@@ -166,7 +166,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     private void ShootEffects()
     {
         // Sound
-        _audioSource.PlayOneShot(_currentWeapon.SoundOfShoot);
+        _audioSource.PlayOneShot(_currentWeapon.SoundOfAttack);
 
         // Visual Effect
         _recoilShooting.RecoilFire();

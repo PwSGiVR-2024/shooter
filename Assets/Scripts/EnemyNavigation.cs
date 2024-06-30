@@ -11,6 +11,7 @@ public class EnemyNavigation : MonoBehaviour
     [SerializeField] private float _attackCooldown = 1.5f;
     [SerializeField] private AudioClip _deathSound;
     [SerializeField] private AudioClip _attackSound;
+    [SerializeField] private AudioClip _hitSound;
 
     private Transform _playerTransform;
     private PlayerHealth _playerHealth;
@@ -35,6 +36,26 @@ public class EnemyNavigation : MonoBehaviour
 
         EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
         enemyHealth.OnEnemyDeath += Die;
+        enemyHealth.OnEnemyTakeDamage += TakeDamage;
+
+    }
+
+    private void TakeDamage()
+    {
+        if (WeaponManager.Instance.CurrentWeapon is MeleeWeapon)
+        {
+            StartCoroutine(PlayHitWithDelay(0.4f));
+        }
+        else
+        {
+            StartCoroutine(PlayHitWithDelay(0f));
+        }
+    }
+
+    private IEnumerator PlayHitWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        PlaySound(_hitSound);
     }
 
     private void Update()
@@ -121,8 +142,7 @@ public class EnemyNavigation : MonoBehaviour
     {
         if (_audioSource != null && clip != null)
         {
-            _audioSource.clip = clip;
-            _audioSource.Play();
+            _audioSource.PlayOneShot(clip);
         }
     }
 }

@@ -7,6 +7,8 @@ public abstract class Weapon : MonoBehaviour
 
     [SerializeField] private int _dmg;
     [SerializeField] private bool _isUnlocked = false;
+    [SerializeField] private AudioClip _soundOfAttack;
+
 
     private Animator _animator;
     private bool _isCurrentlyUsed = false;
@@ -15,6 +17,7 @@ public abstract class Weapon : MonoBehaviour
     public Animator Animator => _animator;
     public bool IsCurrentlyUsed { get => _isCurrentlyUsed; set => _isCurrentlyUsed = value; }
     public bool IsUnlocked { get => _isUnlocked; set => _isUnlocked = value; }
+    public AudioClip SoundOfAttack => _soundOfAttack;
 
     void Start()
     {
