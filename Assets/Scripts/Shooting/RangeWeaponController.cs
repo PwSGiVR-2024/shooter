@@ -42,7 +42,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
         _playerInput.actions["Reload"].started += OnReloadClick;
 
         // Initialize AudioSource
-        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource = gameObject.GetComponent<AudioSource>();
         _audioSource.outputAudioMixerGroup = _shootingMixerGroup;
 
         GetWeaponsData();
@@ -166,7 +166,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     private void ShootEffects()
     {
         // Sound
-        _audioSource.PlayOneShot(_currentWeapon.SoundOfAttack);
+        AudioManager.Instance.PlaySound(_currentWeapon.SoundOfAttack, gameObject.transform.position); // Use AudioManager for shooting sound
 
         // Visual Effect
         _recoilShooting.RecoilFire();
@@ -197,7 +197,7 @@ public class RangeWeaponController : MonoBehaviour, IAttackStrategy
     {
         _isReloading = true;
         _currentWeapon.Animator.SetTrigger("TrReload");
-        _audioSource.PlayOneShot(_currentWeapon.SoundOfReload); // Use AudioSource for reload sound
+        AudioManager.Instance.PlaySound(_currentWeapon.SoundOfReload, gameObject.transform.position); // Use AudioManager for reload sound
         yield return new WaitForSeconds(_reloadTime);
         Reload();
         _isReloading = false;

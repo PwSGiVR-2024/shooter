@@ -1082,6 +1082,8 @@ MonoBehaviour:
   _deathSound: {fileID: 8300000, guid: 1e33e60bc70627c4fb7e41939b5412b9, type: 3}
   _attackSound: {fileID: 8300000, guid: 5a8c4e9d7d7c80c45bafadb7d085a1a1, type: 3}
   _hitSound: {fileID: 8300000, guid: 048d633b538d08645b1b843e1046d519, type: 3}
+  _ghoulIdle: {fileID: 8300000, guid: a90fd2e16062c274db5eee5b456066fb, type: 3}
+  _ghoulWalk: {fileID: 8300000, guid: 73892dd51a36c2f4e8e2749895589a34, type: 3}
 --- !u!114 &5958358862688688426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,8 +1107,7 @@ AudioSource:
   m_GameObject: {fileID: 1309486516299566}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

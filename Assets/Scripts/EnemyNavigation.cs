@@ -12,6 +12,8 @@ public class EnemyNavigation : MonoBehaviour
     [SerializeField] private AudioClip _deathSound;
     [SerializeField] private AudioClip _attackSound;
     [SerializeField] private AudioClip _hitSound;
+    [SerializeField] private AudioClip _ghoulIdle;
+    [SerializeField] private AudioClip _ghoulWalk;
 
     private Transform _playerTransform;
     private PlayerHealth _playerHealth;
@@ -20,7 +22,6 @@ public class EnemyNavigation : MonoBehaviour
     private Vector3 _lastKnownPlayerPosition;
     private bool _isDead = false;
     private bool _canAttack = true;
-    private AudioSource _audioSource;
 
     private void Start()
     {
@@ -31,8 +32,6 @@ public class EnemyNavigation : MonoBehaviour
 
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = _enemySpeed;
-
-        _audioSource = GetComponent<AudioSource>();
 
         EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
         enemyHealth.OnEnemyDeath += Die;
@@ -55,7 +54,7 @@ public class EnemyNavigation : MonoBehaviour
     private IEnumerator PlayHitWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        PlaySound(_hitSound);
+        AudioManager.Instance.PlaySound(_hitSound, gameObject.transform.position);
     }
 
     private void Update()
@@ -82,7 +81,7 @@ public class EnemyNavigation : MonoBehaviour
         _isDead = true;
         _agent.enabled = false;
         _anim.SetTrigger("Die");
-        PlaySound(_deathSound);
+        AudioManager.Instance.PlaySound(_deathSound, gameObject.transform.position);
         Collider collider = GetComponent<Collider>();
         collider.enabled = false;
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -111,6 +110,7 @@ public class EnemyNavigation : MonoBehaviour
         if (_agent.velocity.magnitude > 0.1f)
         {
             _anim.SetBool("Walking", true);
+            //AudioManager.Instance.PlaySound(_ghoulWalk, gameObject.transform.position);
         }
         else
         {
@@ -133,16 +133,16 @@ public class EnemyNavigation : MonoBehaviour
     private IEnumerator AttackPlayerWithDelay()
     {
         _anim.SetTrigger("Attack");
-        PlaySound(_attackSound);
+        AudioManager.Instance.PlaySound(_attackSound, gameObject.transform.position);
         yield return new WaitForSeconds(0.8f);
         _playerHealth.TakeDamage(_attackDamage);
     }
 
-    private void PlaySound(AudioClip clip)
-    {
-        if (_audioSource != null && clip != null)
-        {
-            _audioSource.PlayOneShot(clip);
-        }
-    }
+    //private void PlaySound(AudioClip clip)
+    //{
+    //    if (_audioSource != null && clip != null)
+    //    {
+    //        _audioSource.PlayOneShot(clip);
+    //    }
+    //}
 }

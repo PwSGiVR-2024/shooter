@@ -7262,6 +7262,8 @@ GameObject:
   m_Component:
   - component: {fileID: 302647501}
   - component: {fileID: 302647500}
+  - component: {fileID: 302647503}
+  - component: {fileID: 302647502}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7298,6 +7300,35 @@ Transform:
   - {fileID: 1373272347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &302647502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302647499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c50b0226a78ada48ac94cd2a9100571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &302647503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302647499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945c0d067d7f83742ab3924ecaf9635e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxMixerGroup: {fileID: -4563803716662325589, guid: 730ebb62920b9974eb8ba4643bea909e,
+    type: 2}
+  _musicMixerGroup: {fileID: 7959633910106081797, guid: 730ebb62920b9974eb8ba4643bea909e,
+    type: 2}
+  _numAudioSources: 5
 --- !u!1001 &304000292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43366,6 +43397,7 @@ GameObject:
   - component: {fileID: 1467510338}
   - component: {fileID: 1467510337}
   - component: {fileID: 1467510340}
+  - component: {fileID: 1467510341}
   m_Layer: 0
   m_Name: ShootingManager
   m_TagString: Untagged
@@ -43522,7 +43554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponsSlot: {fileID: 790028179}
   _recoilShooting: {fileID: 1467510336}
-  _shootingMixerGroup: {fileID: 24300002, guid: 08813bea6fa2f304d8179aec903c1bd9,
+  _shootingMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
     type: 2}
 --- !u!114 &1467510338
 MonoBehaviour:
@@ -43570,6 +43602,102 @@ MonoBehaviour:
   Key3: {fileID: 510799588}
   Key4: {fileID: 2065751642}
   _keys: []
+--- !u!82 &1467510341
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467510330}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1468557372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64719,7 +64847,6 @@ SceneRoots:
   - {fileID: 1956247795}
   - {fileID: 955975970}
   - {fileID: 1395994501}
-  - {fileID: 302647501}
   - {fileID: 324306556}
   - {fileID: 1322321251}
   - {fileID: 1925015904}
@@ -64729,4 +64856,5 @@ SceneRoots:
   - {fileID: 963954088}
   - {fileID: 552569731}
   - {fileID: 826108047}
+  - {fileID: 302647501}
   - {fileID: 1379603333}

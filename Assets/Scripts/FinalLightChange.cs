@@ -91,6 +91,6 @@ public class FinalLightChange : MonoBehaviour
         WeaponCamera.enabled = true;
         CrosshairCanvas.enabled = true;
 
-        SceneController.instance.NextLevel();
+        GameManager.Instance.NextLevel();
     }
 }
