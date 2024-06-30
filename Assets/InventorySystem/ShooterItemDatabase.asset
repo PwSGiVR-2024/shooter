@@ -485,12 +485,8 @@ MonoBehaviour:
   m_Items:
   - {fileID: 8883075558970539077}
   - {fileID: -7745811722786590564}
-  - {fileID: 1458447079128920551}
-  - {fileID: 4080001356417443470}
-  m_Amounts: c8000000010000000100000001000000
+  m_Amounts: c800000001000000
   m_Modifiers:
-  - modifiers: []
-  - modifiers: []
   - modifiers: []
   - modifiers: []
 --- !u!114 &-5876170768647668609
