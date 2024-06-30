@@ -1075,8 +1075,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 2.5
-  _detectionRange: 30
-  _attackDamage: 10
+  _detectionRange: 25
+  _attackDamage: 25
   _attackRange: 1.25
   _attackCooldown: 1.5
   _deathSound: {fileID: 8300000, guid: 1e33e60bc70627c4fb7e41939b5412b9, type: 3}
@@ -1084,6 +1084,8 @@ MonoBehaviour:
   _hitSound: {fileID: 8300000, guid: 048d633b538d08645b1b843e1046d519, type: 3}
   _ghoulIdle: {fileID: 8300000, guid: a90fd2e16062c274db5eee5b456066fb, type: 3}
   _ghoulWalk: {fileID: 8300000, guid: 73892dd51a36c2f4e8e2749895589a34, type: 3}
+  _soundInterval: 5
+  _idleSoundRange: 20
 --- !u!114 &5958358862688688426
 MonoBehaviour:
   m_ObjectHideFlags: 0

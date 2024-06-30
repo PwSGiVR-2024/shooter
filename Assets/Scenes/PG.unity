@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2675,22 +2675,32 @@ PrefabInstance:
     - target: {fileID: 5958358862688688426, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
         type: 3}
       propertyPath: _maxHealth
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5958358862688688426, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
         type: 3}
       propertyPath: _startedHealth
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6460518658082680606, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
         type: 3}
       propertyPath: _enemySpeed
-      value: 1
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460518658082680606, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
+        type: 3}
+      propertyPath: _attackDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6460518658082680606, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
         type: 3}
       propertyPath: _detectionRange
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460518658082680606, guid: 227ee07e9e5b7914ba8fbb8f430be9a5,
+        type: 3}
+      propertyPath: _idleSoundRange
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
