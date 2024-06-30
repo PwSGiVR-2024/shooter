@@ -3,19 +3,32 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Enemy
+  - zmianalight
+  - rot
+  - Ground
+  - Fire
+  - Boss
+  - Girl
+  - Item container
+  - login
+  - password
+  - regpassword
+  - reglogin
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MiniMap
+  - Player
+  - NoPP
+  - Weapon
+  - Tooltiper
   - 
   - 
   - 
