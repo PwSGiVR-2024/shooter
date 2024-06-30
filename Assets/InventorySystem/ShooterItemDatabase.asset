@@ -367,7 +367,7 @@ MonoBehaviour:
         item: {fileID: -6838942018923607821}
         m_WindowName: Inventory
         m_Item: {fileID: -6838942018923607821}
-        m_Amount: 16
+        m_Amount: 1
     - rid: 7602509968429023238
       type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
       data:
@@ -485,8 +485,12 @@ MonoBehaviour:
   m_Items:
   - {fileID: 8883075558970539077}
   - {fileID: -7745811722786590564}
-  m_Amounts: c800000001000000
+  - {fileID: 1458447079128920551}
+  - {fileID: 4080001356417443470}
+  m_Amounts: c8000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
   - modifiers: []
 --- !u!114 &-5876170768647668609
@@ -1301,7 +1305,7 @@ MonoBehaviour:
         item: {fileID: 1458447079128920551}
         m_WindowName: Inventory
         m_Item: {fileID: 1458447079128920551}
-        m_Amount: 16
+        m_Amount: 1
     - rid: 7602509968429023238
       type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
       data:
@@ -1444,7 +1448,7 @@ MonoBehaviour:
         item: {fileID: 2628942872923275136}
         m_WindowName: Inventory
         m_Item: {fileID: 2628942872923275136}
-        m_Amount: 16
+        m_Amount: 1
     - rid: 7602509968429023238
       type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
       data:
