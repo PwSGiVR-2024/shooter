@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
             AudioManager = gameObject.AddComponent<AudioManager>();
             SettingsManager = gameObject.AddComponent<SettingsManager>();
+            Application.targetFrameRate = 75;
             DontDestroyOnLoad(gameObject);
         }
         else
