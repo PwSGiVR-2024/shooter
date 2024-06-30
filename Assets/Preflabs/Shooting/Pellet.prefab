@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToDestroyBullet: 10
-  _dmgTimeDecreaser: 0.8
+  _dmgTimeDecreaser: 50
 --- !u!54 &-5657840082926939619
 Rigidbody:
   m_ObjectHideFlags: 0

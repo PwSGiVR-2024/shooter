@@ -5,17 +5,23 @@ public class Pellet : Bullet
     [SerializeField] private float _dmgTimeDecreaser = 1;
     private float _activationTime;
     private float _aliveTime;
-
+    private float _dmgDecreased;
 
     private void OnEnable()
     {
         _activationTime = Time.time;
     }
 
+    private void Start()
+    {
+        _dmgDecreased = BulletDamage;
+    }
+
     private void LateUpdate()
     {
         _aliveTime = Time.time - _activationTime;
-        BulletDamage -= (int)Mathf.Clamp(_aliveTime * _dmgTimeDecreaser, 0, BulletDamage);
+        _dmgDecreased = Mathf.Clamp(_dmgDecreased - (_aliveTime * _dmgTimeDecreaser), 0, BulletDamage);
+        BulletDamage = (int)_dmgDecreased;
     }
 
     protected override void OnCollisionEnter(Collision collision)
@@ -25,8 +31,6 @@ public class Pellet : Bullet
         {
             return;
         }
-        //print("Single bullet will gives: " + BulletDamage);
-
         // Takes the rest of function from Bullet class
         base.OnCollisionEnter(collision);
     }

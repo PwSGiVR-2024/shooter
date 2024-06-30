@@ -4,10 +4,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _timeToDestroyBullet = 10f;
-    private int _bulletDamage = 1;
+    private int _bulletDamage;
 
     public int BulletDamage { get => _bulletDamage; set => _bulletDamage = value; }
-
 
     private void Start()
     {
@@ -30,7 +29,7 @@ public class Bullet : MonoBehaviour
         EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemy)
         {
-            enemy.TakeDamage((_bulletDamage));
+            enemy.TakeDamage(BulletDamage);
         }
         DestroyBullet();
     }
