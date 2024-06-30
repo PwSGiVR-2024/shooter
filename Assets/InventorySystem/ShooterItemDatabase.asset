@@ -97,6 +97,95 @@ MonoBehaviour:
         m_Clip: {fileID: 8300000, guid: cd44b2cb1261d2d42bc33e904f536692, type: 3}
         m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
+--- !u!114 &-8176726717483479457
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: M16 Rifle
+  m_EditorClassIdentifier: 
+  m_Id: 2cb66a94-bded-4b25-9fc6-ea9df85a4333
+  m_ItemName: M16 Rifle
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: fbe9f89e43c89dd43a90f509b02fccef, type: 3}
+  m_Prefab: {fileID: 0}
+  m_Description: 'The M16 Rifle is a versatile assault rifle suitable for mid to
+    long-range engagements. Its high shoot rate and substantial magazine capacity
+    allow for sustained fire in combat scenarios.
+
+
+    Statistics:
+
+    - 15 Damage
+
+    -
+    0.1 Shoot Rate
+
+    - 2.8 Reload Time
+
+    - 30 Magazine Capacity'
+  m_Category: {fileID: 1509813841542432728}
+  m_IsSellable: 1
+  m_BuyPrice: 300
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 150
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 2
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: Blacksmithy
+  m_CraftingModifier:
+    modifiers: []
+  ingredients: []
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602510059489198082
+  - rid: 7602510059489198080
+  - rid: 7602510059489198081
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602510059489198080
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: -8176726717483479457}
+        m_WindowName: Inventory
+        m_Item: {fileID: -8176726717483479457}
+        m_Amount: 1
+    - rid: 7602510059489198081
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 920a528fece932f4091cdef43ba9ab6e, type: 3}
+        m_AudioMixerGroup: {fileID: 0}
+        m_Volume: 1
+    - rid: 7602510059489198082
+      type: {class: WeaponUnlock, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: WeaponUnlock
+        m_Enabled: 1
+        _weaponName: FullautoWeapon
 --- !u!114 &-7774872582519584064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,11 +204,13 @@ MonoBehaviour:
   - {fileID: 5893682275855013920}
   - {fileID: -6765540527067700291}
   - {fileID: 3729242472080980421}
+  - {fileID: 658975925613817371}
   - {fileID: 9017250990669595880}
   - {fileID: 807157276921112907}
-  - {fileID: 658975925613817371}
-  m_Amounts: 01000000010000000100000001000000010000000100000001000000
+  - {fileID: -8176726717483479457}
+  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
   - modifiers: []
   - modifiers: []
   - modifiers: []
@@ -137,10 +228,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
-  m_Name: Apple juice
+  m_Name: Apple Juice
   m_EditorClassIdentifier: 
   m_Id: c6480c5d-332a-4579-bd90-024d1bf41d30
-  m_ItemName: Apple juice
+  m_ItemName: Apple Juice
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
   m_Icon: {fileID: 21300000, guid: da9c20c6fe919ae489c0ff2b801a18e6, type: 3}
@@ -313,8 +404,14 @@ MonoBehaviour:
   - {fileID: 5893682275855013920}
   - {fileID: 807157276921112907}
   - {fileID: 658975925613817371}
-  m_Amounts: 0100000001000000010000000100000001000000
+  - {fileID: -177731457329092658}
+  - {fileID: 4080001356417443470}
+  - {fileID: -8176726717483479457}
+  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
   - modifiers: []
   - modifiers: []
@@ -448,8 +545,12 @@ MonoBehaviour:
   - {fileID: 6847829911516276468}
   - {fileID: -4730761301371283280}
   - {fileID: 7412821362038872476}
-  m_Amounts: 01000000010000000100000001000000
+  - {fileID: -177731457329092658}
+  - {fileID: 4080001356417443470}
+  m_Amounts: 010000000100000001000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
   - modifiers: []
   - modifiers: []
@@ -470,6 +571,95 @@ MonoBehaviour:
   name: Food
   m_EditorColor: {r: 0.45705712, g: 1, b: 0, a: 0}
   m_Cooldown: 1
+--- !u!114 &-177731457329092658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  m_Id: 3c4f8ff4-0edd-46ba-b7a4-68944da66bae
+  m_ItemName: Pistol
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: 31b7caa736b089d48accb8afdb78591b, type: 3}
+  m_Prefab: {fileID: 0}
+  m_Description: 'A standard issue sidearm, the Pistol is reliable and effective
+    at short to mid-range combat. Its moderate damage and high shoot rate make it
+    an excellent choice for quick, precise engagements.
+
+
+    Statistics:
+
+    -
+    10 Damage
+
+    - 0.26 Shoot Rate
+
+    - 3.24 Reload Time
+
+    - 30 Magazine Capacity'
+  m_Category: {fileID: 1509813841542432728}
+  m_IsSellable: 1
+  m_BuyPrice: 100
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 50
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 2
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: Blacksmithy
+  m_CraftingModifier:
+    modifiers: []
+  ingredients: []
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602510059489198082
+  - rid: 7602510059489198080
+  - rid: 7602510059489198081
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602510059489198080
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: -177731457329092658}
+        m_WindowName: Inventory
+        m_Item: {fileID: -177731457329092658}
+        m_Amount: 1
+    - rid: 7602510059489198081
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 920a528fece932f4091cdef43ba9ab6e, type: 3}
+        m_AudioMixerGroup: {fileID: 0}
+        m_Volume: 1
+    - rid: 7602510059489198082
+      type: {class: WeaponUnlock, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: WeaponUnlock
+        m_Enabled: 1
+        _weaponName: Pistol
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +686,9 @@ MonoBehaviour:
   - {fileID: 9017250990669595880}
   - {fileID: 807157276921112907}
   - {fileID: 658975925613817371}
+  - {fileID: -177731457329092658}
+  - {fileID: 4080001356417443470}
+  - {fileID: -8176726717483479457}
   currencies:
   - {fileID: 8883075558970539077}
   raritys: []
@@ -505,6 +698,7 @@ MonoBehaviour:
   - {fileID: -2780984881116590516}
   - {fileID: 5840860836026957122}
   - {fileID: -4591142104480814045}
+  - {fileID: 1509813841542432728}
   equipments: []
   itemGroups:
   - {fileID: -6726322294913613531}
@@ -960,6 +1154,22 @@ MonoBehaviour:
   savingKey: Player
   savingRate: 60
   provider: 0
+--- !u!114 &1509813841542432728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4abab319188bac4a8515c585b13ba9d, type: 3}
+  m_Name: Weapon
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: -8448528318726398373}
+  name: Weapon
+  m_EditorColor: {r: 0, g: 0.5764303, b: 1, a: 0}
+  m_Cooldown: 1
 --- !u!114 &1853004012934154525
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1114,6 +1324,95 @@ MonoBehaviour:
         m_Enabled: 1
         _changePercentage: 25
         _actionType: 3
+--- !u!114 &4080001356417443470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  m_Id: 14a938a8-1f55-4699-8834-7a39cf047b88
+  m_ItemName: Shotgun
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: f056fa8a0bf413141912f125a5ff2b0e, type: 3}
+  m_Prefab: {fileID: 0}
+  m_Description: 'The Shotgun is a powerful close-range weapon capable of dealing
+    massive damage at the expense of a slower shoot rate. Its spread shot is perfect
+    for handling multiple enemies up close.
+
+
+    Statistics:
+
+    - 50 Damage
+
+    -
+    1 Shoot Rate
+
+    - 4.5 Reload Time
+
+    - 8 Magazine Capacity'
+  m_Category: {fileID: 1509813841542432728}
+  m_IsSellable: 1
+  m_BuyPrice: 200
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 100
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 1
+  m_MaxStack: 1
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 2
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: Blacksmithy
+  m_CraftingModifier:
+    modifiers: []
+  ingredients: []
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602510059489198082
+  - rid: 7602510059489198080
+  - rid: 7602510059489198081
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602510059489198080
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 4080001356417443470}
+        m_WindowName: Inventory
+        m_Item: {fileID: 4080001356417443470}
+        m_Amount: 1
+    - rid: 7602510059489198081
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: 920a528fece932f4091cdef43ba9ab6e, type: 3}
+        m_AudioMixerGroup: {fileID: 0}
+        m_Volume: 1
+    - rid: 7602510059489198082
+      type: {class: WeaponUnlock, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: WeaponUnlock
+        m_Enabled: 1
+        _weaponName: Shotgun
 --- !u!114 &5840860836026957122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1238,10 +1537,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
-  m_Name: Rotten apple
+  m_Name: Rotten Apple
   m_EditorClassIdentifier: 
   m_Id: 7e7125dc-7329-4712-9499-ab97c565ebd4
-  m_ItemName: Rotten apple
+  m_ItemName: Rotten Apple
   m_UseItemNameAsDisplayName: 1
   m_DisplayName: New Item
   m_Icon: {fileID: 21300000, guid: ca1f032870c4f6243a0c1f12ae4f3fdd, type: 3}
