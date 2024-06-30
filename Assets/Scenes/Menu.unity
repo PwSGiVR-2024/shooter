@@ -1168,9 +1168,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1493587358}
+      - m_Target: {fileID: 1493587359}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetSensitivity
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5997,9 +5997,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1493587358}
+      - m_Target: {fileID: 1493587359}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1493587358}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12314,6 +12326,7 @@ GameObject:
   - component: {fileID: 1493587357}
   - component: {fileID: 1493587356}
   - component: {fileID: 1493587358}
+  - component: {fileID: 1493587359}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -12373,6 +12386,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c50b0226a78ada48ac94cd2a9100571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1493587359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493587355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4ff21d5e5cb1540b6e558ae34df35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AudioMixer1: {fileID: 24100000, guid: 0b8041958f2a6ca45811bde009b200d7, type: 2}
