@@ -95,8 +95,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: cd44b2cb1261d2d42bc33e904f536692, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
 --- !u!114 &-7774872582519584064
 MonoBehaviour:
@@ -209,8 +208,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 7ec6ba4061547e24994f36737a76abd9, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
 --- !u!114 &-6765540527067700291
 MonoBehaviour:
@@ -287,8 +285,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
     - rid: 7602509968429023244
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
@@ -310,9 +307,19 @@ MonoBehaviour:
   m_Name: Starter items
   m_EditorClassIdentifier: 
   m_GroupName: Starter items
-  m_Items: []
-  m_Amounts: 
-  m_Modifiers: []
+  m_Items:
+  - {fileID: 7412821362038872476}
+  - {fileID: 699154121686944933}
+  - {fileID: 5893682275855013920}
+  - {fileID: 807157276921112907}
+  - {fileID: 658975925613817371}
+  m_Amounts: 0100000001000000010000000100000001000000
+  m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
 --- !u!114 &-5876170768647668609
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,9 +767,8 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 508d684dd5fbfd4428c948e3db758fb1, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
-        m_Volume: 1
+        m_AudioMixerGroup: {fileID: 0}
+        m_Volume: 5
     - rid: 7602509968429023243
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
       data:
@@ -845,8 +851,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
     - rid: 7602509968429023239
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
@@ -930,8 +935,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: c3e9b83a19dc2764dad4c17923f0e8fe, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
     - rid: 7602509968429023246
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
@@ -1101,8 +1105,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
     - rid: 7602509968429023241
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
@@ -1202,8 +1205,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 6b6cf59786c6f8648b3caf0c80615e49, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
     - rid: 7602509968429023240
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
@@ -1305,8 +1307,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: cd44b2cb1261d2d42bc33e904f536692, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
 --- !u!114 &7412821362038872476
 MonoBehaviour:
@@ -1384,8 +1385,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 00188f33be3476344a178564a0b0ed48, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
     - rid: 7602509968429023242
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
@@ -1513,8 +1513,7 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: c3e9b83a19dc2764dad4c17923f0e8fe, type: 3}
-        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
-          type: 2}
+        m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
     - rid: 7602509968429023245
       type: {class: StatsAction, ns: , asm: Assembly-CSharp}
