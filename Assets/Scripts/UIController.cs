@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static StatsAction;
 
 public class UIController : MonoBehaviour
 { 
@@ -9,8 +10,12 @@ public class UIController : MonoBehaviour
     [SerializeField] private RawImage _ammoImage;
     [SerializeField] private TextMeshProUGUI _healthText;
 
-
     public static UIController Instance { get; private set; }
+
+    private void Start()
+    {
+        StatsAction.OnPotionConsumed += UpdateEffectsUI;
+    }
 
     private void Awake()
     {
@@ -40,5 +45,10 @@ public class UIController : MonoBehaviour
     public void UpdateHealthUI(int health)
     {
         _healthText.text = $"Health: {health}";
+    }
+
+    private void UpdateEffectsUI(ActionType actionType)
+    {
+        Debug.Log($"Update effects UI: {actionType}");
     }
 }

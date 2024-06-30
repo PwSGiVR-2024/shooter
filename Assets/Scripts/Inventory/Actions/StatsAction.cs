@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class StatsAction : Action
 {
+    public static event System.Action<ActionType> OnPotionConsumed;
     public enum ActionType
     {
         Speed, Jump, Power, Protection, Ghoul, Magazine, FuriousGhoul
@@ -33,6 +34,7 @@ public class StatsAction : Action
 
     public override ActionStatus OnUpdate()
     {
+        OnPotionConsumed?.Invoke(_actionType);
         if (_actionType == ActionType.Speed)
         {
             _playerController.MoveSpeed += _playerController.MoveSpeed * _changePercentage / 100;
