@@ -9,6 +9,8 @@ public class EnemyNavigation : MonoBehaviour
     [SerializeField] private int _attackDamage = 10;
     [SerializeField] private float _attackRange = 1.25f;
     [SerializeField] private float _attackCooldown = 1.5f;
+    [SerializeField] private AudioClip _deathSound;
+    [SerializeField] private AudioClip _attackSound;
 
     private Transform _playerTransform;
     private PlayerHealth _playerHealth;
@@ -17,6 +19,7 @@ public class EnemyNavigation : MonoBehaviour
     private Vector3 _lastKnownPlayerPosition;
     private bool _isDead = false;
     private bool _canAttack = true;
+    private AudioSource _audioSource;
 
     private void Start()
     {
@@ -27,6 +30,8 @@ public class EnemyNavigation : MonoBehaviour
 
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = _enemySpeed;
+
+        _audioSource = GetComponent<AudioSource>();
 
         EnemyHealth enemyHealth = gameObject.GetComponent<EnemyHealth>();
         enemyHealth.OnEnemyDeath += Die;
@@ -56,6 +61,7 @@ public class EnemyNavigation : MonoBehaviour
         _isDead = true;
         _agent.enabled = false;
         _anim.SetTrigger("Die");
+        PlaySound(_deathSound);
         Collider collider = GetComponent<Collider>();
         collider.enabled = false;
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -98,14 +104,25 @@ public class EnemyNavigation : MonoBehaviour
     private IEnumerator AttackWithCooldown()
     {
         _canAttack = false;
-        AttackPlayer();
+        StartCoroutine(AttackPlayerWithDelay());
         yield return new WaitForSeconds(_attackCooldown);
         _canAttack = true;
     }
 
-    private void AttackPlayer()
+    private IEnumerator AttackPlayerWithDelay()
     {
-        _playerHealth.TakeDamage(_attackDamage);
         _anim.SetTrigger("Attack");
+        PlaySound(_attackSound);
+        yield return new WaitForSeconds(0.8f);
+        _playerHealth.TakeDamage(_attackDamage);
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (_audioSource != null && clip != null)
+        {
+            _audioSource.clip = clip;
+            _audioSource.Play();
+        }
     }
 }

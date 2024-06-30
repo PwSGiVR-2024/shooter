@@ -15,12 +15,17 @@ public class PlayerHealth : Health
     [SerializeField] private GameObject _deathMenuUI;
     [SerializeField] private FirstPersonController _firstPersonController;
     [SerializeField] private GameObject _shootingManager;
+    [SerializeField] private AudioClip _deathSound;
+    [SerializeField] private AudioClip _damageSound;
 
+    private AudioSource _audioSource;
+    private bool _isDead = false;
 
     protected override void Start()
     {
         base.Start();
         UIController.Instance.UpdateHealthUI(CurrentHealth);
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -41,10 +46,22 @@ public class PlayerHealth : Health
         Invincibility = true;
         InvincibilityTimer = Time.time + InvincibilityTime;
         BloodEffectManager.Instance.ShowBloodEffect();
+
+        if (!_isDead)
+        {
+            PlaySound(_damageSound);
+        }
     }
 
     protected override void Die()
     {
+        if (_isDead)
+        {
+            return;
+        }
+
+        PlaySound(_deathSound);
+        _isDead = true;
         _deathMenuUI.SetActive(true);
         _firstPersonController.enabled = false;
         DisableShootingScripts();
@@ -55,10 +72,6 @@ public class PlayerHealth : Health
     private void DisableShootingScripts()
     {
         _shootingManager.SetActive(false);
-        //foreach (MonoBehaviour script in ShootingManager.GetComponents<MonoBehaviour>())
-        //{
-        //    script.enabled = false;
-        //}
     }
 
     public override int CurrentHealth
@@ -79,6 +92,15 @@ public class PlayerHealth : Health
                 _currentHealth = value;
             }
             UIController.Instance.UpdateHealthUI(_currentHealth);
+        }
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (_audioSource != null && clip != null)
+        {
+            _audioSource.clip = clip;
+            _audioSource.Play();
         }
     }
 }

@@ -1079,6 +1079,8 @@ MonoBehaviour:
   _attackDamage: 10
   _attackRange: 1.25
   _attackCooldown: 1.5
+  _deathSound: {fileID: 8300000, guid: d35ae6aae88efe041a5b2716032699ea, type: 3}
+  _attackSound: {fileID: 8300000, guid: 0805de7e4fb0f4d03a30ae90e7c64311, type: 3}
 --- !u!114 &5958358862688688426
 MonoBehaviour:
   m_ObjectHideFlags: 0
