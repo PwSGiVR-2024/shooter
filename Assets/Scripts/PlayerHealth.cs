@@ -91,6 +91,7 @@ public class PlayerHealth : Health
                 // If it's not damage (e.g., healing), just update the health directly
                 _currentHealth = value;
             }
+            _currentHealth = Mathf.Clamp(_currentHealth, 0, MaxHealth);
             UIController.Instance.UpdateHealthUI(_currentHealth);
         }
     }
