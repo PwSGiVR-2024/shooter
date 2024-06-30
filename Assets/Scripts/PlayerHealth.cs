@@ -40,6 +40,7 @@ public class PlayerHealth : Health
 
         Invincibility = true;
         InvincibilityTimer = Time.time + InvincibilityTime;
+        BloodEffectManager.Instance.ShowBloodEffect();
     }
 
     protected override void Die()
