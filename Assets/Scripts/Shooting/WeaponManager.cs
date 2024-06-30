@@ -36,12 +36,6 @@ public class WeaponManager : MonoBehaviour
     public void Update()
     {
         HandleAttackPressed();
-
-        // Delete it later pls
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            UnlockWeapon("Pistol");
-        }
     }
 
     private void Start()
@@ -76,12 +70,13 @@ public class WeaponManager : MonoBehaviour
         _currentWeapon = weapon;
     }
 
-    private void UnlockWeapon(string weaponName)
+    public void UnlockWeapon(string weaponName)
     {
         if (_weapons.ContainsKey(weaponName))
         {
             Debug.Log($"Weapon {weaponName} has been unlocked");
             _weapons[weaponName].IsUnlocked = true;
+            WeaponSwitcher.Instance.SetWeaponActive(_weapons[weaponName]);
         }
     }
 
@@ -99,7 +94,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (_itemContainerCount != 0)
         {
-            return; 
+            return;
         }
         if (_currentAttackStrategy is RangeWeaponController rangeAttack && !rangeAttack.IsFullauto)
         {

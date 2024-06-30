@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press F to interact
+  Text: Press [F] to interact
 --- !u!65 &102010522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press F to open
+  Text: Press [F] to open
 --- !u!1 &790187563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1198,8 @@ MonoBehaviour:
   GhoulRemains: {fileID: 4163940541035698142, guid: 11d93107b12d1084e9b0e494297293a4,
     type: 3}
   RottenApple: {fileID: 7376372120281525656, guid: fe2ab05f4af9f1449b8138c667c325ca,
+    type: 3}
+  PickupSound: {fileID: 2809995521006324196, guid: 286ed3ba80acc7e4fa0480af55d36695,
     type: 3}
 --- !u!4 &790187565
 Transform:
@@ -1558,7 +1560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press F to interact
+  Text: Press [F] to interact
 --- !u!65 &1147964669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1625,7 +1627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press F to Pick Up
+  Text: Press [F] to Pick Up
 --- !u!65 &1298608942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2134,7 +2136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f09801ee39db740946d76b9472e229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Press F to open
+  Text: Press [F] to open
 --- !u!65 &1563129315
 BoxCollider:
   m_ObjectHideFlags: 0

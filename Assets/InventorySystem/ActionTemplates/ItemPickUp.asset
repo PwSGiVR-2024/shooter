@@ -39,5 +39,6 @@ MonoBehaviour:
         m_Type: DevionGames.Play
         m_Enabled: 1
         m_Clip: {fileID: 8300000, guid: 9ef5b527d90acaa428b516bbd9fc2cc4, type: 3}
-        m_AudioMixerGroup: {fileID: 0}
-        m_Volume: 0.4
+        m_AudioMixerGroup: {fileID: 24300002, guid: 0b8041958f2a6ca45811bde009b200d7,
+          type: 2}
+        m_Volume: 1

@@ -11,6 +11,8 @@ public class Tooltip : MonoBehaviour
     private TooltipText _lookingAt;
     private int _itemContainerCount;
 
+    private bool _axePicked = false;
+
     private void Start()
     {
         _itemContainerCallbacks.OnItemContainerCountChanged += UpdateItemContainerCount;
@@ -32,6 +34,17 @@ public class Tooltip : MonoBehaviour
         else
         {
             _tooltip.gameObject.SetActive(false);
+        }
+
+        if (!_axePicked && Input.GetKeyDown(KeyCode.F) && _lookingAt != null)
+        {
+            if (_lookingAt.Text == "Press [F] to Pick Up")
+            {
+                _lookingAt.transform.parent.gameObject.SetActive(false);
+                WeaponManager.Instance.UnlockWeapon("Fireaxe");
+                Instantiate(GameObject.Find("ItemPrefabs").GetComponent<ItemPrefabs>().PickupSound, transform.position, transform.rotation);
+                _axePicked = true;
+            }
         }
     }
 
