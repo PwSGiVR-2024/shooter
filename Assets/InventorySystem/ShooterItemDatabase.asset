@@ -208,8 +208,10 @@ MonoBehaviour:
   - {fileID: 9017250990669595880}
   - {fileID: 807157276921112907}
   - {fileID: -8176726717483479457}
-  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000
+  - {fileID: 2628942872923275136}
+  m_Amounts: 010000000100000001000000010000000100000001000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
   - modifiers: []
   - modifiers: []
   - modifiers: []
@@ -301,6 +303,87 @@ MonoBehaviour:
         m_Clip: {fileID: 8300000, guid: 7ec6ba4061547e24994f36737a76abd9, type: 3}
         m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
+--- !u!114 &-6838942018923607821
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: 9mm Bullet
+  m_EditorClassIdentifier: 
+  m_Id: 14a6cb9b-0208-40f0-bd79-2fad22a2bbe1
+  m_ItemName: 9mm Bullet
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: c769dd3722158a64aa17490aeec4cfda, type: 3}
+  m_Prefab: {fileID: 0}
+  m_Description: Standard ammunition for the Pistol.
+  m_Category: {fileID: 7146006941642778555}
+  m_IsSellable: 1
+  m_BuyPrice: 3
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 1
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 16
+  m_MaxStack: 64
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509968429023245
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: -6838942018923607821}
+        m_WindowName: Inventory
+        m_Item: {fileID: -6838942018923607821}
+        m_Amount: 16
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: b2ab3d9295a606a4e897fb50f353fb20, type: 3}
+        m_AudioMixerGroup: {fileID: 0}
+        m_Volume: 1
+    - rid: 7602509968429023245
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _nominalChange: 16
+        _changePercentage: 0
+        _actionType: 7
 --- !u!114 &-6765540527067700291
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,6 +466,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 25
         _actionType: 2
 --- !u!114 &-6726322294913613531
@@ -407,8 +491,14 @@ MonoBehaviour:
   - {fileID: -177731457329092658}
   - {fileID: 4080001356417443470}
   - {fileID: -8176726717483479457}
-  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000
+  - {fileID: -6838942018923607821}
+  - {fileID: 1458447079128920551}
+  - {fileID: 2628942872923275136}
+  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000100000001000000010000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
   - modifiers: []
   - modifiers: []
@@ -547,8 +637,12 @@ MonoBehaviour:
   - {fileID: 7412821362038872476}
   - {fileID: -177731457329092658}
   - {fileID: 4080001356417443470}
-  m_Amounts: 010000000100000001000000010000000100000001000000
+  - {fileID: -6838942018923607821}
+  - {fileID: 1458447079128920551}
+  m_Amounts: 0100000001000000010000000100000001000000010000000100000001000000
   m_Modifiers:
+  - modifiers: []
+  - modifiers: []
   - modifiers: []
   - modifiers: []
   - modifiers: []
@@ -689,6 +783,9 @@ MonoBehaviour:
   - {fileID: -177731457329092658}
   - {fileID: 4080001356417443470}
   - {fileID: -8176726717483479457}
+  - {fileID: -6838942018923607821}
+  - {fileID: 1458447079128920551}
+  - {fileID: 2628942872923275136}
   currencies:
   - {fileID: 8883075558970539077}
   raritys: []
@@ -699,6 +796,7 @@ MonoBehaviour:
   - {fileID: 5840860836026957122}
   - {fileID: -4591142104480814045}
   - {fileID: 1509813841542432728}
+  - {fileID: 7146006941642778555}
   equipments: []
   itemGroups:
   - {fileID: -6726322294913613531}
@@ -968,6 +1066,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 75
         _actionType: 6
 --- !u!114 &699154121686944933
@@ -1052,6 +1151,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 25
         _actionType: 0
 --- !u!114 &807157276921112907
@@ -1136,6 +1236,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 50
         _actionType: 5
 --- !u!114 &1235675407137278491
@@ -1154,6 +1255,87 @@ MonoBehaviour:
   savingKey: Player
   savingRate: 60
   provider: 0
+--- !u!114 &1458447079128920551
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: Shotgun Shell
+  m_EditorClassIdentifier: 
+  m_Id: 9181474f-2db3-4d99-8d9f-820cae43ce2e
+  m_ItemName: Shotgun Shell
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: 9bcb7f3d276e371499bb001f5fbc7b56, type: 3}
+  m_Prefab: {fileID: 0}
+  m_Description: Standard ammunition for the Shotgun.
+  m_Category: {fileID: 7146006941642778555}
+  m_IsSellable: 1
+  m_BuyPrice: 10
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 5
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 16
+  m_MaxStack: 64
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509968429023245
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 1458447079128920551}
+        m_WindowName: Inventory
+        m_Item: {fileID: 1458447079128920551}
+        m_Amount: 16
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: b2ab3d9295a606a4e897fb50f353fb20, type: 3}
+        m_AudioMixerGroup: {fileID: 0}
+        m_Volume: 1
+    - rid: 7602509968429023245
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _nominalChange: 16
+        _changePercentage: 0
+        _actionType: 8
 --- !u!114 &1509813841542432728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1216,6 +1398,87 @@ MonoBehaviour:
   - item: {fileID: -4730761301371283280}
     amount: 2
   properties: []
+--- !u!114 &2628942872923275136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a78acd5557204d499bcf3420fd4ee78, type: 3}
+  m_Name: 5.56mm Bullet
+  m_EditorClassIdentifier: 
+  m_Id: 9e70bd0a-759d-446d-b4fc-80bd22ce259e
+  m_ItemName: 5.56mm Bullet
+  m_UseItemNameAsDisplayName: 1
+  m_DisplayName: New Item
+  m_Icon: {fileID: 21300000, guid: a2a4a8b280df6d74ba5e97e0f0e4cf67, type: 3}
+  m_Prefab: {fileID: 0}
+  m_Description: Standard ammunition for the M16 Rifle.
+  m_Category: {fileID: 7146006941642778555}
+  m_IsSellable: 1
+  m_BuyPrice: 5
+  m_CanBuyBack: 0
+  m_BuyCurrency: {fileID: 8883075558970539077}
+  m_SellPrice: 2
+  m_SellCurrency: {fileID: 8883075558970539077}
+  m_Stack: 16
+  m_MaxStack: 64
+  m_IsDroppable: 0
+  m_DropSound: {fileID: 0}
+  m_OverridePrefab: {fileID: 0}
+  m_IsCraftable: 0
+  m_CraftingDuration: 5
+  m_UseCraftingSkill: 0
+  m_SkillWindow: Skills
+  m_CraftingSkill: {fileID: 0}
+  m_RemoveIngredientsWhenFailed: 0
+  m_MinCraftingSkillValue: 0
+  m_CraftingAnimatorState: 
+  m_CraftingModifier:
+    modifiers: []
+  ingredients:
+  - item: {fileID: 1853004012934154525}
+    amount: 2
+  - item: {fileID: 6847829911516276468}
+    amount: 1
+  properties: []
+  m_UseCategoryCooldown: 1
+  m_Cooldown: 1
+  actions:
+  - rid: 7602509968429023245
+  - rid: 7602509565042884617
+  - rid: 7602509968429023238
+  references:
+    version: 2
+    RefIds:
+    - rid: 7602509565042884617
+      type: {class: RemoveItem, ns: DevionGames.InventorySystem.ItemActions, asm: DevionGames.InventorySystem}
+      data:
+        m_Type: DevionGames.InventorySystem.ItemActions.RemoveItem
+        m_Enabled: 1
+        item: {fileID: 2628942872923275136}
+        m_WindowName: Inventory
+        m_Item: {fileID: 2628942872923275136}
+        m_Amount: 16
+    - rid: 7602509968429023238
+      type: {class: Play, ns: DevionGames, asm: DevionGames.Triggers}
+      data:
+        m_Type: DevionGames.Play
+        m_Enabled: 1
+        m_Clip: {fileID: 8300000, guid: b2ab3d9295a606a4e897fb50f353fb20, type: 3}
+        m_AudioMixerGroup: {fileID: 0}
+        m_Volume: 1
+    - rid: 7602509968429023245
+      type: {class: StatsAction, ns: , asm: Assembly-CSharp}
+      data:
+        m_Type: StatsAction
+        m_Enabled: 1
+        _nominalChange: 16
+        _changePercentage: 0
+        _actionType: 9
 --- !u!114 &3625471696320115051
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1322,6 +1585,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 25
         _actionType: 3
 --- !u!114 &4080001356417443470
@@ -1511,6 +1775,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 50
         _actionType: 1
 --- !u!114 &6737240886870754698
@@ -1608,6 +1873,22 @@ MonoBehaviour:
         m_Clip: {fileID: 8300000, guid: cd44b2cb1261d2d42bc33e904f536692, type: 3}
         m_AudioMixerGroup: {fileID: 0}
         m_Volume: 1
+--- !u!114 &7146006941642778555
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4abab319188bac4a8515c585b13ba9d, type: 3}
+  m_Name: Ammo
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: -8448528318726398373}
+  name: Ammo
+  m_EditorColor: {r: 0, g: 1, b: 1, a: 0}
+  m_Cooldown: 1
 --- !u!114 &7412821362038872476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1691,6 +1972,7 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 25
         _actionType: 4
 --- !u!114 &8883075558970539077
@@ -1819,5 +2101,6 @@ MonoBehaviour:
       data:
         m_Type: StatsAction
         m_Enabled: 1
+        _nominalChange: 0
         _changePercentage: 25
         _actionType: 5

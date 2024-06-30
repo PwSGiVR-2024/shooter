@@ -14,7 +14,7 @@ public class RangeWeapon : Weapon
     [SerializeField] private float _reloadTime = 2f;
     [SerializeField] public int _magazineCapacity = 30; // max ammo in magazine after reload
     [SerializeField] private int _currentAmmo; // current ammo in magazine
-    [SerializeField] private int _backpackAmmo;
+    [SerializeField] public int _backpackAmmo;
     [SerializeField] private bool _isFullauto = false;
 
     public GameObject BulletPrefab { get => _bulletPrefab; set => _bulletPrefab = value; }

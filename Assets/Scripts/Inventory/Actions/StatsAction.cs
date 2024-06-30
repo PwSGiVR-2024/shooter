@@ -9,9 +9,10 @@ public class StatsAction : Action
     public static event System.Action<ActionType> OnPotionConsumed;
     public enum ActionType
     {
-        Speed, Jump, Power, Protection, Ghoul, Magazine, FuriousGhoul
+        Speed, Jump, Power, Protection, Ghoul, Magazine, FuriousGhoul, PistolAmmo, ShotgunAmmo, M16Ammo
     }
 
+    [SerializeField] int _nominalChange = 0;
     [SerializeField] int _changePercentage = 10;
     [SerializeField] ActionType _actionType;
 
@@ -94,15 +95,47 @@ public class StatsAction : Action
                 if (weapon is RangeWeapon rangeWeapon)
                 {
                     rangeWeapon.MagazineCapacity += rangeWeapon.MagazineCapacity * _changePercentage / 100;
+                    TryRefresh(weapon);
                 }
-                TryRefresh(weapon);
             }
-
         }
         else if (_actionType == ActionType.FuriousGhoul)
         {
             FuriousGhoulCoroutine furiousGhoulCoroutine = gameObject.AddComponent<FuriousGhoulCoroutine>();
             furiousGhoulCoroutine.StartTheCoroutine(_changePercentage, _playerController, _playerHealth, _weapons, _rangeWeaponController);
+        }
+        else if (_actionType == ActionType.PistolAmmo)
+        {
+            foreach (var weapon in _weapons)
+            {
+                if (weapon is RangeWeapon rangeWeapon && weapon.gameObject.name == "Pistol")
+                {
+                    rangeWeapon.BackpackAmmo += _nominalChange;
+                    TryRefresh(weapon);
+                }
+            }
+        }
+        else if (_actionType == ActionType.ShotgunAmmo)
+        {
+            foreach (var weapon in _weapons)
+            {
+                if (weapon is RangeWeapon rangeWeapon && weapon is Shotgun)
+                {
+                    rangeWeapon.BackpackAmmo += _nominalChange;
+                    TryRefresh(weapon);
+                }
+            }
+        }
+        else if (_actionType == ActionType.M16Ammo)
+        {
+            foreach (var weapon in _weapons)
+            {
+                if (weapon is RangeWeapon rangeWeapon && weapon.gameObject.name == "FullautoWeapon")
+                {
+                    rangeWeapon.BackpackAmmo += _nominalChange;
+                    TryRefresh(weapon);
+                }
+            }
         }
         return ActionStatus.Success;
     }
@@ -115,3 +148,4 @@ public class StatsAction : Action
         }
     }
 }
+
