@@ -12,7 +12,6 @@ public class PlayerHealth : Health
     public bool Invincibility = false;
     public int ProtectionPercentage = 0;
 
-    [SerializeField] private TextMeshProUGUI _healthText;
     [SerializeField] private GameObject _deathMenuUI;
     [SerializeField] private FirstPersonController _firstPersonController;
     [SerializeField] private GameObject _shootingManager;
@@ -21,7 +20,7 @@ public class PlayerHealth : Health
     protected override void Start()
     {
         base.Start();
-        UpdateHealthUI();
+        UIController.Instance.UpdateHealthUI(CurrentHealth);
     }
 
     private void Update()
@@ -41,11 +40,6 @@ public class PlayerHealth : Health
 
         Invincibility = true;
         InvincibilityTimer = Time.time + InvincibilityTime;
-    }
-
-    private void UpdateHealthUI()
-    {
-        _healthText.text = $"Health: {CurrentHealth}";
     }
 
     protected override void Die()
@@ -83,7 +77,7 @@ public class PlayerHealth : Health
                 // If it's not damage (e.g., healing), just update the health directly
                 _currentHealth = value;
             }
-            UpdateHealthUI();
+            UIController.Instance.UpdateHealthUI(_currentHealth);
         }
     }
 }

@@ -48266,6 +48266,7 @@ MonoBehaviour:
   _currentAmmoText: {fileID: 1267281959}
   _backbackAmmoText: {fileID: 558540583}
   _ammoImage: {fileID: 1289421623}
+  _healthText: {fileID: 1621151112}
 --- !u!1001 &1763661363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61448,7 +61449,6 @@ MonoBehaviour:
   InvincibilityTime: 1
   Invincibility: 0
   ProtectionPercentage: 0
-  _healthText: {fileID: 1621151112}
   _deathMenuUI: {fileID: 1174909937}
   _firstPersonController: {fileID: 8616685847622301280}
   _shootingManager: {fileID: 1467510330}

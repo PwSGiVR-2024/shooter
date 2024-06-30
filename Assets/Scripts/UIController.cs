@@ -7,7 +7,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentAmmoText;
     [SerializeField] private TextMeshProUGUI _backbackAmmoText;
     [SerializeField] private RawImage _ammoImage;
-    //[SerializeField] private TextMeshProUGUI _healthText;
+    [SerializeField] private TextMeshProUGUI _healthText;
 
 
     public static UIController Instance { get; private set; }
@@ -35,5 +35,10 @@ public class UIController : MonoBehaviour
         _currentAmmoText.gameObject.SetActive(show);
         _backbackAmmoText.gameObject.SetActive(show);
         _ammoImage.gameObject.SetActive(show);
+    }
+
+    public void UpdateHealthUI(int health)
+    {
+        _healthText.text = $"Health: {health}";
     }
 }
