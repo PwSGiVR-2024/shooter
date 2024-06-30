@@ -13,10 +13,6 @@ public class BloodEffectManager : MonoBehaviour
 
     private void Awake()
     {
-        if (transform.parent != null)
-        {
-            transform.SetParent(null); // Make it a root object
-        }
         // Singleton pattern implementation
         if (Instance != null && Instance != this)
         {
