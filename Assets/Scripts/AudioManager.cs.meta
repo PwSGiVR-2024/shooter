@@ -3,7 +3,11 @@ guid: 945c0d067d7f83742ab3924ecaf9635e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _sfxMixerGroup: {fileID: -4563803716662325589, guid: 730ebb62920b9974eb8ba4643bea909e,
+      type: 2}
+  - _musicMixerGroup: {fileID: 7959633910106081797, guid: 730ebb62920b9974eb8ba4643bea909e,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

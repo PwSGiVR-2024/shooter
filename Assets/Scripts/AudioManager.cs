@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioMixerGroup _sfxMixerGroup;
     [SerializeField] private AudioMixerGroup _musicMixerGroup;
-    [SerializeField] private int _numAudioSources = 5;
+    [SerializeField] private int _numAudioSources = 30;
 
     private Queue<AudioSource> _availableSfxSources = new Queue<AudioSource>();
     private AudioSource _musicSource;

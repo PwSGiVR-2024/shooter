@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+
+            AudioManager = gameObject.AddComponent<AudioManager>();
+            SettingsManager = gameObject.AddComponent<SettingsManager>();
             DontDestroyOnLoad(gameObject);
         }
         else

@@ -7328,7 +7328,7 @@ MonoBehaviour:
     type: 2}
   _musicMixerGroup: {fileID: 7959633910106081797, guid: 730ebb62920b9974eb8ba4643bea909e,
     type: 2}
-  _numAudioSources: 5
+  _numAudioSources: 30
 --- !u!1001 &304000292
 PrefabInstance:
   m_ObjectHideFlags: 0
