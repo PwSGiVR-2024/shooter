@@ -12633,7 +12633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bb2edf96b245f4a88d7149514f054d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 50
+  _dmg: 10
   _isUnlocked: 0
   _soundOfAttack: {fileID: 8300000, guid: 7128b6e0da404f849b2d0aedbe2de66f, type: 3}
   _bulletPrefab: {fileID: 4705823182834152769, guid: 9188bdbabdf8c404e9bc22c9fe2b79e4,
@@ -56939,7 +56939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a5fb3a6accab044a7fc4c5ffbbe43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 10
+  _dmg: 15
   _isUnlocked: 0
   _soundOfAttack: {fileID: 8300000, guid: 19c4c606f0d0e654692d137ebdcfa134, type: 3}
   _range: 3
@@ -58882,7 +58882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4fdd88e24bbd84d8c7f64aa377c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dmg: 15
+  _dmg: 20
   _isUnlocked: 0
   _soundOfAttack: {fileID: 8300000, guid: 2a973e2eb03dffd4699cb9b8b234cab2, type: 3}
   _bulletPrefab: {fileID: 6681654351760152539, guid: c97bf28b399ede54f841137d6663efd1,
