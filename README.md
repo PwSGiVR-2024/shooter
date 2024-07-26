@@ -8,6 +8,9 @@ Shadowlands: The Rescue to shooter z elementami fabularnymi osadzonymi w otwarty
 
 Shadowlands: The Rescue is a shooter with narrative elements set in an open world. The player appears on the map, admiring the views and natural graphics. While exploring, they notice a girl and her father taking a walk. When the girl gets lost in a cave, the player sets out to discover what happened. However, upon entering the cave, the world changes from bright colors to dark, indicating evil. The player realizes they must rescue the girl from this wicked world. The girl's father will provide hints, and weapons will be available in crates. During the journey, the player will battle various monsters, collect coins, and upgrade weapons. In the end, they must face the boss who kidnapped the girl.
 
+# Gameplay
+[![Shadowlands: The Rescue](http://img.youtube.com/vi/zcQf8Ingw8bG_fkN/0.jpg)](http://www.youtube.com/watch?v=zcQf8Ingw8bG_fkN "Shadowlands: The Rescue​ Game Play #1")
+
 # External assets and resources
 
 - [StarterAssets - FirstPerson](https://assetstore.unity.com/packages/essentials/starterassets-firstperson-updates-in-new-charactercontroller-pac-196525) is used for the player controls and camera.
@@ -43,11 +46,6 @@ Hubert Zienda - Developer:
 
 
 Kamil Szot - Developer:
-
-- Second camera for weapon texture rendering,
-
-
-Szymon Sobieraj - Scrum Master:
 
 
 Piotr Grzegorzek - Code KING:
