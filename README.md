@@ -10,9 +10,7 @@ Shadowlands: The Rescue is a shooter with narrative elements set in an open worl
 
 # Gameplay
 
-<p align="center">
 [![Shadowlands: The Rescue](http://img.youtube.com/vi/nbGJ3wXpPbg/0.jpg)](http://www.youtube.com/watch?v=nbGJ3wXpPbg "Shadowlands: The Rescue​ Game Play #1")
-</p>
 
 # External assets and resources
 
