@@ -12,6 +12,8 @@ Shadowlands: The Rescue is a shooter with narrative elements set in an open worl
 
 [![Shadowlands: The Rescue](http://img.youtube.com/vi/nbGJ3wXpPbg/0.jpg)](http://www.youtube.com/watch?v=nbGJ3wXpPbg "Shadowlands: The Rescue​ Game Play #1")
 
+[Check out our Presentation](https://github.com/PwSGiVR-2024/shooter/blob/main/Presentation.pptx)
+
 # External assets and resources
 
 - [StarterAssets - FirstPerson](https://assetstore.unity.com/packages/essentials/starterassets-firstperson-updates-in-new-charactercontroller-pac-196525) is used for the player controls and camera.
